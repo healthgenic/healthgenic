@@ -1,12 +1,16 @@
 package com.healthgenic.entities.user.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class User {
-	private String fullName;
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String fullName;
 	private long mobileNumber;
 	private String password;
 	private String email;
@@ -15,12 +19,21 @@ public class User {
 		super();
 	}
 
-	public User(String fullName, long mobileNumber, String password, String email) {
+	public User(int id,String fullName, long mobileNumber, String password, String email) {
 		super();
+		this.id = id;
 		this.fullName = fullName;
 		this.mobileNumber = mobileNumber;
 		this.password = password;
 		this.email = email;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFullName() {
