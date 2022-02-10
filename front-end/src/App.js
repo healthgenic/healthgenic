@@ -8,7 +8,7 @@ import Footer from './Components/HomePage/Footer';
 import UserLogin from './Components/Login/UserLogin';
 import OnlineConsultation from './Components/Online_Consultation/OnlineConsultation';
 import Epharma from './Components/E_pharma/Epharma';
-import UserRegistration from './Components/Register/UserRegistration';
+import UserRegistration from './Components/Register/UserRegistration'
 
 
 function App() {
@@ -26,9 +26,8 @@ function App() {
                     <Route path="/login" component={UserLogin}/>
                     <Route path="/consult" component={OnlineConsultation}/>    
                     <Route path="/Epharma" component={Epharma}/>
-                    <Route path="/Register">
-                      <UserRegistration/>
-                    </Route>
+                    <Route path="/Register" component={UserRegistration} exact/>
+               
                 </Switch>
         <div>
           <Footer/>

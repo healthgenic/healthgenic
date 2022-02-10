@@ -2,7 +2,7 @@ import react, { Fragment, useEffect, useState } from "react";
 import { Button, Container, Form, FormGroup, Input } from "reactstrap";
 
 import axios from "axios";
-import base_url from "../api/service";
+import base_url from "../../api/service";
 
 const AddUser = () => {
 

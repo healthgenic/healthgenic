@@ -20,8 +20,7 @@ export default class UserLogin extends Component {
         <input type="password" placeholder="Password" id="password" name="pass" required/>
 
         <button>Log In</button>
-        <Link className='link' to="/Register">Not registered ? Register Here</Link>
-
+  
     </form>
 
     </div>;
