@@ -4,11 +4,12 @@ import java.util.Optional;
 
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.healthgenic.entities.response.Response;
 import com.healthgenic.entities.user.dao.UserDaoInterface;
 import com.healthgenic.entities.user.model.User;
-
+@Service
 public class UserService implements UserServiceInterface {
 	@Autowired 
 	private UserDaoInterface userDaoInterface;
