@@ -34,6 +34,7 @@ public class UserService implements UserServiceInterface {
 	public Response createUser(User user) {
 		User userFromDatabase = null;
 		try {
+			user.setDateCreated(new java.util.Date());
 			userFromDatabase = userDaoInterface.save(user);
 		}catch(HibernateException he) {
 			System.out.println("Exception occured while saving user "
@@ -44,6 +45,11 @@ public class UserService implements UserServiceInterface {
 		String userHomePageUrl = "http://localhost:8080/user/"+userFromDatabase.getId();
 		System.out.println(userHomePageUrl);
 		return new Response(userHomePageUrl);
+	}
+	@Override
+	public boolean validateUserDetails(User user) {
+
+		return false;
 	}
 
 }

@@ -1,9 +1,7 @@
 package com.healthgenic.entities.user.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -14,18 +12,21 @@ public class User {
 	private long mobileNumber;
 	private String password;
 	private String email;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dateCreated;
 
 	public User() {
 		super();
 	}
 
-	public User(int id,String fullName, long mobileNumber, String password, String email) {
+	public User(int id, String fullName, long mobileNumber, String password, String email) {
 		super();
 		this.id = id;
 		this.fullName = fullName;
 		this.mobileNumber = mobileNumber;
 		this.password = password;
 		this.email = email;
+		this.dateCreated = new Date();
 	}
 	
 	public int getId() {
@@ -68,4 +69,11 @@ public class User {
 		this.email = email;
 	}
 
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
 }

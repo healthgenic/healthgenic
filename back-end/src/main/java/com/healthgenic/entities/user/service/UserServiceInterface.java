@@ -6,4 +6,6 @@ import com.healthgenic.entities.user.model.User;
 public interface UserServiceInterface {
 	public User getUser(int id);
 	public Response createUser(User user);
+
+    boolean validateUserDetails(User user);
 }
