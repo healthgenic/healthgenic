@@ -20,7 +20,11 @@ public class UserController {
 	
 	@PostMapping("/user")
 	public Response createUser(@RequestBody User user) {
-	 return userServiceInterface.createUser(user);
+		if(userServiceInterface.validateUserDetails(user)){
+			return userServiceInterface.createUser(user);
+		}
+		String errorPageUrl = "http://localhost:8080/error-page";
+		return new Response(errorPageUrl);
 
 	}
 	@GetMapping("/user/{id}")

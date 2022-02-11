@@ -1,6 +1,8 @@
 package com.healthgenic.entities.user.service;
 
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +50,20 @@ public class UserService implements UserServiceInterface {
 	}
 	@Override
 	public boolean validateUserDetails(User user) {
-
-		return false;
+		//check fullname
+		Pattern pattern = Pattern.compile("^[a-z\\s]{2,}$");
+		Matcher matcher = pattern.matcher(user.getFullName());
+		if(!matcher.find()){
+			return false;
+		}
+		//check mobile number
+		pattern = pattern.compile("^[\\d]{10}$");
+			matcher = pattern.matcher(""+user.getMobileNumber());
+		if(!matcher.find()){
+			return false;
+		}
+		//check password
+		return true;
 	}
 
 }
