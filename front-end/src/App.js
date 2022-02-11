@@ -28,7 +28,7 @@ function App() {
                     <Route path="/Epharma" component={Epharma}/>
                     <Route path="/Register" component={UserRegistration} exact/>
                     <Route path="/DocRegister" component={DocterRegistration}/>
-               
+                    
                 </Switch>
         <div>
           <Footer/>
@@ -43,7 +43,7 @@ function App() {
 }
 
 export default App;
-
+//hello
 
 
 // {/* <Route path = "/add-employee/:id" component = {CreateEmployeeComponent}></Route>
