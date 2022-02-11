@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 
-export default class DocterRegistration extends Component {
-  render() {
-    return <div></div>;
-  }
+function Docter  (){
+  return <h1>
+    Docter Registration using functions
+  </h1>;
+
 }
+
+export default Docter;
+

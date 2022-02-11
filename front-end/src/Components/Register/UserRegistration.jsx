@@ -4,6 +4,8 @@ import { Button, Container, Form, FormGroup, Input } from "reactstrap";
 import axios from "axios";
 import base_url from "../../api/service";
 
+
+
 const AddUser = () => {
 
     /*  useEffect(() => {
@@ -61,7 +63,6 @@ const AddUser = () => {
                                         setUser({ ...user, fullname: e.target.value });
                                     }
                                 }
-
 
                             />
 
@@ -147,10 +148,6 @@ const AddUser = () => {
 
 
                         </FormGroup>
-
-
-
-
                         <Container className="text-center" >
 
                             <Button type="submit" color="warning" > Register </Button>
@@ -165,3 +162,4 @@ const AddUser = () => {
 }
 
 export default AddUser;
+
