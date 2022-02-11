@@ -13,8 +13,4 @@ git push
 
 git status -check if changes are made
 
-<<<<<<< HEAD
 git pull - To update changes in our local machine done my someone else.
-=======
-git pull - To update changes in our local machine done my someone else.
->>>>>>> 9144ee47434d22a5144b7f146f045c81827a5d0c
