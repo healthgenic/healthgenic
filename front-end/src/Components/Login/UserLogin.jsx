@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './login.css';
+//import './login.scss';
 
 export default class UserLogin extends Component {
   render() { 
@@ -20,11 +20,12 @@ export default class UserLogin extends Component {
         <input type="password" placeholder="Password" id="password" name="pass" required/>
 
         <button>Log In</button>
-        <Link className='link' to="/Register">Not registered ? Register Here</Link>
-
+        <Link className='doc_reg' to="/Register">Docter Registration</Link>
     </form>
 
     </div>;
     
   }
 }
+
+
