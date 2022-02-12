@@ -7,4 +7,6 @@ public interface UserServiceInterface {
 	public User getUser(int id);
 	public Response createUser(User user);
     boolean isUserRegistrationDetailsValid(User user);
+
+	boolean isUserPresent(long mobileNumber);
 }
