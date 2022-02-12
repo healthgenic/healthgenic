@@ -48,8 +48,9 @@ public class UserService implements UserServiceInterface {
 		System.out.println(userHomePageUrl);
 		return new Response(userHomePageUrl);
 	}
+
 	@Override
-	public boolean validateUserDetails(User user) {
+	public boolean isUserRegistrationDetailsValid(User user) {
 		//check fullname
 		Pattern pattern = Pattern.compile("^[a-z\\s]{2,}$");
 		Matcher matcher = pattern.matcher(user.getFullName());
@@ -58,12 +59,11 @@ public class UserService implements UserServiceInterface {
 		}
 		//check mobile number
 		pattern = pattern.compile("^[\\d]{10}$");
-			matcher = pattern.matcher(""+user.getMobileNumber());
+		matcher = pattern.matcher(""+user.getMobileNumber());
 		if(!matcher.find()){
 			return false;
 		}
 		//check password
 		return true;
 	}
-
 }
