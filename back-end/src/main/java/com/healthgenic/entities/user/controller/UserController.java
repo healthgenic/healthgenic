@@ -20,11 +20,19 @@ public class UserController {
 	
 	@PostMapping("/user")
 	public Response createUser(@RequestBody User user) {
-		if(userServiceInterface.validateUserDetails(user)){
+		String redirectionUrl = "";
+		String message = "";
+		if(userServiceInterface.isUserRegistrationDetailsValid(user)){
+			if(userServiceInterface.isUserPresent(user.getMobileNumber())) {
+				redirectionUrl = "http://localhost:3000/login-page";
+				message = "User already exist";
+				return new Response(redirectionUrl,message);
+			}
 			return userServiceInterface.createUser(user);
 		}
-		String errorPageUrl = "http://localhost:8080/error-page";
-		return new Response(errorPageUrl);
+		redirectionUrl = "http://localhost:8080/error-page";
+		message = "bad data given";
+		return new Response(redirectionUrl,message);
 
 	}
 	@GetMapping("/user/{id}")
