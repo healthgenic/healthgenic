@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import './login.scss';
-=======
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./login.css";
->>>>>>> 18fe35a3034e6fb41c51de0e37d6a51a7b26b265
 
 export default class UserLogin extends Component {
   render() {
