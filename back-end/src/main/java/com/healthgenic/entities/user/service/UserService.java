@@ -35,25 +35,25 @@ public class UserService implements UserServiceInterface {
 	@Override
 	public Response createUser(User user) {
 		User userFromDatabase = null;
+		String redirectionUrl ="";
 		try {
 			user.setDateCreated(new java.util.Date());
 			userFromDatabase = userDaoInterface.save(user);
 		}catch(HibernateException he) {
 			System.out.println("Exception occured while saving user "
 					+ "object into database");
-			String errorPageUrl = "http://localhost:8080/error-page";
-			return new Response(errorPageUrl);
+			redirectionUrl = "http://localhost:8080/error-page";
+			return new Response(redirectionUrl, "error");
 		}
-		String userHomePageUrl = "http://localhost:8080/user/"+userFromDatabase.getId();
-		System.out.println(userHomePageUrl);
-		return new Response(userHomePageUrl);
+		redirectionUrl = "http://localhost:8080/user/"+userFromDatabase.getId();
+		return new Response(redirectionUrl, "success");
 	}
 
 	@Override
 	public boolean isUserRegistrationDetailsValid(User user) {
 		//check fullname
 		Pattern pattern = Pattern.compile("^[a-z\\s]{2,}$");
-		Matcher matcher = pattern.matcher(user.getFullName());
+		Matcher matcher = pattern.matcher(user.getFullName()); //ajay
 		if(!matcher.find()){
 			return false;
 		}
@@ -65,5 +65,14 @@ public class UserService implements UserServiceInterface {
 		}
 		//check password
 		return true;
+	}
+
+	@Override
+	public boolean isUserPresent(long mobileNumber) {
+		User user  = userDaoInterface.findByMobileNumber(mobileNumber);
+		if(user != null ){
+			return true;
+		}
+		return  false;
 	}
 }
