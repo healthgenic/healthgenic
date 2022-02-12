@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-// import './login.scss';
-=======
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./login.css";
->>>>>>> 18fe35a3034e6fb41c51de0e37d6a51a7b26b265
+// import "./login.css";
 
 export default class UserLogin extends Component {
   render() {
@@ -48,7 +42,7 @@ export default class UserLogin extends Component {
           <div class="d-flex align-items-center justify-content-center pb-2">
             <p class="mb-2 me-2">Don't have an account?</p>
             <button type="button" class="btn btn-outline-danger">
-              Create new
+             <Link to="/DocRegister">Create new</Link> 
             </button>
           </div>
         </form>
