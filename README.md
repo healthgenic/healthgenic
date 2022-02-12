@@ -1,18 +1,19 @@
-# health-genic-web-app
-**Git commit changes***
 
-git clone https://github.com/healthgenic/healthgenic.git
 
-git status  - to check changes if any done
+**Git commit changes**
 
-git add .   - To add files on git
+    git clone https://github.com/healthgenic/healthgenic.git
 
-git commit -m "message" - commit changes on main branch
+`git status`  - to check changes if any done
 
-git push
+`git add .`   - To add files on git
 
-git status -check if changes are made
+`git commit -m "message"` - commit changes on main branch
 
-git pull - To update changes in our local machine done my someone else.
+    git push
 
-///comment
+`git status` -check if changes are made
+
+`git pull` - To update changes in our local machine done my someone else.
+
+
