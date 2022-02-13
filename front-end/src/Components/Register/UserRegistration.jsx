@@ -1,165 +1,119 @@
-import react, { Fragment, useEffect, useState } from "react";
-import { Button, Container, Form, FormGroup, Input } from "reactstrap";
-
-import axios from "axios";
-import base_url from "../../api/service";
+import react, { Fragment } from 'react';
+import 'firebase/auth';
+import firebase from './firebase';
 
 
+import { getAuth, RecaptchaVerifier } from "firebase/auth";
+import { signInWithPhoneNumber } from "firebase/auth";
+import {Container, Form, FormGroup, Input, Button} from "reactstrap";
 
-const AddUser = () => {
+class UserRegistration extends react.Component {
+  handleChange = (e) => {
+    const { name, value } = e.target
+    this.setState({
+      [name]: value
+    })
+  }
+  configureCaptch = () => {
+    const auth = getAuth();
+    window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
+      'size': 'invisible',
+      'callback': (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        this.onSignInSubmit();
+        console.log("recaptch varify ")
+      
+      },
+  
+    }, auth);
+  }
+  onSignInSubmit = (e) => {
+    // import { getAuth, signInWithPhoneNumber } from "firebase/auth";
+    e.preventDefault()
+    this.configureCaptch()
+    const phoneNumber = "+91" + this.state.mnumber
+    console.log(phoneNumber)
+    const appVerifier = window.recaptchaVerifier;
 
-    /*  useEffect(() => {
-         document.title="Registration-Page";
-     },[]) */
+    const auth = getAuth();
+    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+      .then((confirmationResult) => {
+        // SMS sent. Prompt user to type the code from the message, then sign the
+        // user in with confirmationResult.confirm(code).
+        window.confirmationResult = confirmationResult;
+        console.log("OTP has been send");
+        // ...
+      }).catch((error) => {
+        // Error; SMS not sent
+        // ...
+        console.log(error);
+      });
+  }
+  onSubmitOTP = (e) => {
+    e.preventDefault()
+    const code = this.state.OTP
+    console.log("code")
 
-    //function to call server
-    const [user, setUser] = useState({});
-    //form handler function
-    const handleForm = (e) => {
-        console.log(user);
+    window.confirmationResult.confirm(code).then((result) => {
+      // User signed in successfully.
+      const user = result.user;
+      console.log(JSON.stringify(user))
+      alert("User registration successfully")
+      // ...
+    }).catch((error) => {
+      // User couldn't sign in (bad verification code?)
+      // ...
+    });
 
-        e.preventDefault();
-    };
-
-    //creating function to post data on server
-
-    const postDatatoServer = (data) => {
-
-        axios.post(`${base_url}/add`, data).then(
-            (response) => {
-                console.log(response);
-                console.log("Success");
-
-            }, (error) => {
-                console.log(error);
-                console.log("Success");
-
-            }
-
-
-        )
-
-    }
-
-
+  }
+  render() {
     return (
-        <div >
+      <Fragment>
 
-            <Fragment >
+         <h1 className='text-center'>*******Enter Your Details*******</h1> 
+          
+          <Form onSubmit={this.onSignInSubmit}>
+            <div id="sign-in-button"></div>
+           
+           <FormGroup>
+            <label><b>Full Name </b></label><br />
+            <Input type="text" placeholder="Enter Your Name" id="username" name="userID" required /><br />
+            </FormGroup>
 
-                <h1 className="text-center my-4" > ** ** ** ** * Enter Your Details ** ** ** ** * </h1>
+            <FormGroup>
+            <label><b>Mobile number</b></label><br />
+            <Input typw="number" placeholder="Enter Mobile number" id="moNumber" name="mnumber" required onChange={this.handleChange} /><br />
+            </FormGroup>
 
-                    <Form onSubmit={handleForm} >
+            <FormGroup>
+            <label><b>Email id</b> :</label><br />
+            <Input type="email" placeholder="Enter Email ID" id="emailid" name="mailid" required /><br />
+            </FormGroup>
 
-                        <FormGroup >
+            <FormGroup>
+            <label><b>Password</b></label><br />
+            <Input type="password" placeholder="Enter Your Password" id="password" name="password" required /><br />
+            <Button color="warning">Generate OTP</Button>
+            </FormGroup>
 
-                            <label> < b > Full Name </b></label >
+            <br/>
+             </Form>
 
-                            <Input type="text"
-                                placeholder="Enter Your Name"
-                                name="userName"
-                                onChange={
-                                    (e) => {
-                                        setUser({ ...user, fullname: e.target.value });
-                                    }
-                                }
+          <form onSubmit={this.onSubmitOTP} >
 
-                            />
-
-
-                        </FormGroup>
-
-
-                        <FormGroup >
-
-                            <label> < b > Email </b></label >
-
-                            <Input type="email"
-                                placeholder="Enter Your Email-ID"
-                                id="userEmail"
-
-                                onChange={
-                                    (e) => {
-                                        setUser({ ...user, email: e.target.value });
-                                    }
-                                }
-
-
-                            />
-
-
-                        </FormGroup>
-
-
-                        <FormGroup >
-
-                            <label> < b > Mobile No. </b></label >
-
-                            <Input type="number"
-                                placeholder="Enter Your Mobile Number"
-                                id="userMobile"
-
-                                onChange={
-                                    (e) => {
-                                        setUser({ ...user, mobileNo: e.target.value });
-                                    }
-                                }
-
-                            />
-
-
-                        </FormGroup>
-                        <FormGroup >
-
-                            <label > < b > OTP </b></label >
-
-                            <Input type="number"
-                                placeholder="Enter The OTP"
-                                id="otp"
-
-                                onChange={
-                                    (e) => {
-                                        setUser({ ...user, otp: e.target.value });
-                                    }
-                                }
-
-
-                            />
-
-
-                        </FormGroup>
-
-                        <FormGroup >
-
-                            <label > < b > Password </b></label >
-
-                            <Input type="password"
-                                placeholder="Enter The password"
-                                id="pass"
-
-                                onChange={
-                                    (e) => {
-                                        setUser({ ...user, password: e.target.value });
-                                    }
-                                }
-
-
-                            />
-
-
-                        </FormGroup>
-                        <Container className="text-center" >
-
-                            <Button type="submit" color="warning" > Register </Button>
-                        </Container>
-                    </Form>
-
-
-            </Fragment>
-        </div>
+            <FormGroup>
+            <label><b>OTP</b></label><br/>
+            <Input type="number" name="OTP" placeholder='Enter The OTP' required onChange={this.handleChange} /><br />
+            </FormGroup>
+            <Container className='text-center'>
+            <Button type="submit" color="warning">Register</Button>
+            </Container>
+            
+          </form>
+        
+          </Fragment>
     );
-
+  }
 }
 
-export default AddUser;
-
+export default UserRegistration;
