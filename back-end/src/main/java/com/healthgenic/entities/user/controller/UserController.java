@@ -29,8 +29,9 @@ public class UserController {
 		return new Response(redirectionUrl,message);
 
 	}
-	@PostMapping("/login/")
+	@PostMapping("/login")
 	public User getUser(@RequestBody User user) {
+		System.out.println(user);
 		return userServiceInterface.getUser(user);
 	}
 }
