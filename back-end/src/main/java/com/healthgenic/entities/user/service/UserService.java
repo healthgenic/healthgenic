@@ -17,18 +17,15 @@ public class UserService implements UserServiceInterface {
 	private UserDaoInterface userDaoInterface;
 	
 	@Override
-	public User getUser(User id) {
-		Optional<User> userX = null;
-		User user = null;
-		try {
-			userX = userDaoInterface.findById(id);
-		}catch(IllegalArgumentException iae) {
-			return null;
+	public User getUser(User user) {
+		User userFromDatabase = userDaoInterface.findByMobileNumberAndEmail(user.getMobileNumber(), user.getEmail());
+		if(userFromDatabase != null){
+			if(userFromDatabase.getPassword().matches(user.getPassword())){
+				return userFromDatabase;
+			}
 		}
-		if(userX.isPresent()) {
-			user = userX.get();
-		}
-		return user;
+
+		return null;
 
 	}
 
