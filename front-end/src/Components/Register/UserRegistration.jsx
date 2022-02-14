@@ -3,7 +3,7 @@ import 'firebase/auth';
 import firebase from './firebase';
 import swal from 'sweetalert';
 
-
+import axios from 'axios';
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
 import {Container, Form, FormGroup, Input, Button} from "reactstrap";
@@ -52,16 +52,45 @@ class UserRegistration extends react.Component {
   }
   onSubmitOTP = (e) => {
     e.preventDefault()
-    const code = this.state.OTP
-    console.log("code")
+    const otp = this.state.OTP
+    console.log(otp);
+    // this is a temporary TEST code to establish connection between http request 
+    // from react to spring boot
+    
+    
+    window.confirmationResult.confirm(otp).then((result) => {
+      let user ={};
+      //to do - form data validation
+      user.fullName = document.getElementById("username").value.toLowerCase();
+      user.mobileNumber = document.getElementById("moNumber").value;
+      user.email = document.getElementById("emailid").value;
+      user.password = document.getElementById("password").value;
+      console.log(user);
+      axios.post('http://localhost:8080/user', user)
+      .then(function (response) {
+        let serverResponseData = response.data; 
+        
+        // server returns json data with 2 fields : 
+        // "urlToDirect" describing which page to go depending on the result 
+        // like error page or login page and 
+        // "message" describing result of this request
 
-    window.confirmationResult.confirm(code).then((result) => {
-      // User signed in successfully.
-      const user = result.user;
-      console.log(JSON.stringify(user))
-      swal("Congratulations!! You Have Registered Successfully");
-     // alert("User registration successfully")
-      // ...
+
+        console.log(serverResponseData);
+        if(response.status == 200 && serverResponseData.message=="success"){
+          swal("Congratulations!! You Have Registered Successfully");
+          document.body.innerHTML = "<h1 class='text-success'>user created, redirecting to log in page</h1>";
+          setTimeout(()=>{
+            window.location ="/home/login";
+          },3000)
+        }else{
+          document.body.innerHTML = `<code>${JSON.stringify(serverResponseData)}</code>`;
+        }
+      })
+      
+      .catch(function (error) {
+        console.log(error);
+      });
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
       // ...
@@ -74,7 +103,7 @@ class UserRegistration extends react.Component {
 
          <h1 className='text-center'>User Registration</h1> 
           
-          <Form onSubmit={this.onSignInSubmit}>
+          <Form className='w-25 center'>
             <div id="sign-in-button"></div>
            
            <FormGroup>
@@ -95,7 +124,7 @@ class UserRegistration extends react.Component {
             <FormGroup>
             <label><b>Password</b></label><br />
             <Input type="password" placeholder="Enter Your Password" id="password" name="password" required /><br />
-            <Button color="warning">Generate OTP</Button>
+            <Button color="warning" onClick={this.onSignInSubmit}>Generate OTP</Button>
             </FormGroup>
 
             <br/>
