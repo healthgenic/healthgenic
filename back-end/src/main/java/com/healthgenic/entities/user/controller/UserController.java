@@ -30,7 +30,7 @@ public class UserController {
 
 	}
 	@GetMapping("/user/")
-	public User getUser(@PathVariable int id) {
+	public User getUser(@RequestBody User user) {
 		return userServiceInterface.getUser(id);
 	}
 }
