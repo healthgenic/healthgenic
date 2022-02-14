@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.healthgenic.entities.response.Response;
@@ -15,7 +16,8 @@ import com.healthgenic.entities.user.model.User;
 public class UserService implements UserServiceInterface {
 	@Autowired 
 	private UserDaoInterface userDaoInterface;
-	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	@Override
 	public User getUser(User user) {
 		User userFromDatabase = userDaoInterface.findByMobileNumberAndEmail(user.getMobileNumber(), user.getEmail());
