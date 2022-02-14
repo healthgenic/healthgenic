@@ -31,11 +31,14 @@ class UserRegistration extends react.Component {
   onSignInSubmit = (e) => {
     // import { getAuth, signInWithPhoneNumber } from "firebase/auth";
     e.preventDefault()
-    this.configureCaptch()
-    const phoneNumber = "+91" + this.state.mnumber
-    console.log(phoneNumber)
-    const appVerifier = window.recaptchaVerifier;
-
+      this.configureCaptch()
+      const phoneNumber = "+91" + this.state.mnumber
+      console.log(phoneNumber)
+      const appVerifier = window.recaptchaVerifier;
+    document.getElementById("register-btn").removeAttribute("disabled");
+    document.getElementById("register-btn").classList.remove("disabled");
+   const alertContainer =  document.getElementById("alert");
+   let alert = document.createElement("div");
     const auth = getAuth();
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       .then((confirmationResult) => {
@@ -43,12 +46,21 @@ class UserRegistration extends react.Component {
         // user in with confirmationResult.confirm(code).
         window.confirmationResult = confirmationResult;
         console.log("OTP has been send");
-        // ...
+        alert.innerHTML=`<div class="alert alert-success p-3 w-50 mx-auto ">
+        OTP sent   
+        </div> `;
+        alertContainer.appendChild(alert);
       }).catch((error) => {
-        // Error; SMS not sent
-        // ...
+        alert.innerHTML=`<div class="alert alert-danger p-3 w-50 mx-auto ">
+        OTP    
+        </div> `;
+        alertContainer.appendChild(alert);
         console.log(error);
       });
+     
+      setTimeout(()=>{
+        alert.remove();
+      },2000);
   }
   onSubmitOTP = (e) => {
     e.preventDefault()
@@ -56,7 +68,7 @@ class UserRegistration extends react.Component {
     console.log(otp);
     // this is a temporary TEST code to establish connection between http request 
     // from react to spring boot
-    
+   
     
     window.confirmationResult.confirm(otp).then((result) => {
       let user ={};
@@ -92,8 +104,7 @@ class UserRegistration extends react.Component {
         console.log(error);
       });
     }).catch((error) => {
-      // User couldn't sign in (bad verification code?)
-      // ...
+   
     });
 
   }
@@ -101,9 +112,9 @@ class UserRegistration extends react.Component {
     return (
       <Fragment>
 
-         <h1 className='text-center'>User Registration</h1> 
-          
-          <Form className='w-25 center'>
+         <h1 className='mt-5 text-center'>User Registration</h1> 
+          <div id="alert" className=''></div>
+          <Form className='w-25 mt-5 mx-auto h-2'>
             <div id="sign-in-button"></div>
            
            <FormGroup>
@@ -124,20 +135,20 @@ class UserRegistration extends react.Component {
             <FormGroup>
             <label><b>Password</b></label><br />
             <Input type="password" placeholder="Enter Your Password" id="password" name="password" required /><br />
-            <Button color="warning" onClick={this.onSignInSubmit}>Generate OTP</Button>
+            <Button color="info" onClick={this.onSignInSubmit}>Generate OTP</Button>
             </FormGroup>
 
             <br/>
              </Form>
 
-          <form onSubmit={this.onSubmitOTP} >
+          <form onSubmit={this.onSubmitOTP} className='w-25 mx-auto'>
 
             <FormGroup>
             <label><b>OTP</b></label><br/>
-            <Input type="number" name="OTP" placeholder='Enter The OTP' required onChange={this.handleChange} /><br />
+            <Input type="number" name="OTP" placeholder='Enter The OTP' required onChange={this.handleChange}/><br />
             </FormGroup>
             <Container className='text-center'>
-            <Button type="submit" color="warning">Register</Button>
+            <Button type="submit" color="info" disabled id="register-btn">Register</Button>
             </Container>
             
           </form>
