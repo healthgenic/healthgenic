@@ -29,7 +29,7 @@ public class UserController {
 		return new Response(redirectionUrl,message);
 
 	}
-	@GetMapping("/user/")
+	@PostMapping("/login/")
 	public User getUser(@RequestBody User user) {
 		return userServiceInterface.getUser(user);
 	}
