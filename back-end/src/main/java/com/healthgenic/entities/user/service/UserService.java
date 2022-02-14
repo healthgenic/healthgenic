@@ -17,7 +17,7 @@ public class UserService implements UserServiceInterface {
 	private UserDaoInterface userDaoInterface;
 	
 	@Override
-	public User getUser(int id) {
+	public User getUser(User id) {
 		Optional<User> userX = null;
 		User user = null;
 		try {
