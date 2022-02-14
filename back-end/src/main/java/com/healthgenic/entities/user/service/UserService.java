@@ -37,6 +37,7 @@ public class UserService implements UserServiceInterface {
 		String redirectionUrl ="";
 		try {
 			user.setDateCreated(new java.util.Date());
+			user.setPassword(passwordEncoder.encode(user.getPassword()));
 			userFromDatabase = userDaoInterface.save(user);
 		}catch(HibernateException he) {
 			System.out.println("Exception occured while saving user "
