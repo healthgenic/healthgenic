@@ -21,11 +21,11 @@ public class UserService implements UserServiceInterface {
 	@Override
 	public User getUser(User user) {
 		User userFromDatabase = userDaoInterface.findByMobileNumberAndEmail(user.getMobileNumber(), user.getEmail());
-		if(userFromDatabase != null){
-			if(userFromDatabase.getPassword().matches(user.getPassword())){
+
+			if(passwordEncoder.matches(user.getPassword(),userFromDatabase.getPassword())){
 				return userFromDatabase;
 			}
-		}
+
 
 		return null;
 
