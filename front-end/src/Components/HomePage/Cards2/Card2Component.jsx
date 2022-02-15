@@ -1,4 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+import image1 from "./covidEssentials.jpg";
+import image2 from "./Ayush.jpg";
+import image3 from "./medicines.jpg";
+import image4 from "./medicalDevices.jpg";
 
 export default class 
 
@@ -11,41 +16,33 @@ extends Component {
 
     <div class="card-deck">
             <div className="card col-3 ml-2">
-                <img src="" className="card-img-top" alt="..."/>
+                <img src={image1} className="card-img-top" alt="..."/>
                     <div className="card-body">
-                        <h5 className="card-title">Online Video Consultation</h5>
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                        <Link to="/" className="btn btn-primary">Covid Essentials</Link>
                     </div>
             </div>
 
             <div className="card col-3">
-                <img src="" className="card-img-top" alt="..."/>
+                <img src={image2} className="card-img-top" alt="..."/>
                     <div className="card-body">
-                        <h5 className="card-title">Buy Medicines & HealthProducts</h5>
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                        <Link to="/" className="btn btn-primary">Ayurveda Products</Link>
                     </div>
             </div>
 
 
             <div className="card col-3">
-                <img src="" className="card-img-top" alt="..."/>
+                <img src={image3} className="card-img-top" alt="..."/>
                     <div className="card-body">
-                        <h5 className="card-title">Book LabTests</h5>
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                        <Link to="/" className="btn btn-primary">Medicines</Link>
                     </div>
             </div>
 
 
 
             <div className="card col-3">
-                <img src="" className="card-img-top" alt="..."/>
+                <img src={image4} className="card-img-top" alt="..."/>
                     <div className="card-body">
-                        <h5 className="card-title">Find Docter</h5>
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                        <Link to="/" className="btn btn-primary">Medical Devices</Link>
                     </div>
             </div>
             
