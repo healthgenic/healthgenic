@@ -13,6 +13,7 @@ extends Component {
       <div>
 <div className='container mt-5'>
 
+        <h3 className='mb-5'>Shop by Category</h3>
 
     <div class="card-deck">
             <div className="card col-3 ml-2">
