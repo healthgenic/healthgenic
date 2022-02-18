@@ -1,5 +1,6 @@
 package com.healthgenic.service;
 
+import com.healthgenic.model.ERole;
 import com.healthgenic.model.Role;
 import com.healthgenic.model.User;
 import com.healthgenic.repository.RoleRepository;
@@ -17,6 +18,7 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Service @AllArgsConstructor @Transactional @Slf4j
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -52,8 +54,24 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public Role getRole(String name) {
+        return roleRepository.findByName(name);
+    }
+
+    @Override
     public List<User> getUsers() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public boolean existsByUsername(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
+    @Override
+    public void deleteUser(String username) {
+        //User user = userRepository.findByUsername(username);
+        userRepository.deleteByUsername(username);
     }
 
     @Override

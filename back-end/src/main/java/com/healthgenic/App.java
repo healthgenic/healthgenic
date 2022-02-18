@@ -1,5 +1,6 @@
 package com.healthgenic;
 
+import com.healthgenic.model.ERole;
 import com.healthgenic.model.Role;
 import com.healthgenic.model.User;
 import com.healthgenic.service.UserService;
@@ -29,13 +30,13 @@ public class App{
 		return args -> {
 			userService.saveRole(new Role(null, "ROLE_USER"));
 			userService.saveRole(new Role(null, "ROLE_DOCTOR"));
-			userService.saveRole(new Role(null, "ROLE_PATIENT"));
 			userService.saveRole(new Role(null, "ROLE_ADMIN"));
+			userService.saveRole(new Role(null, "ROLE_PATIENT"));
 
-			userService.saveUser(new User(null, "akshay", "aksh@123", "aksh", new ArrayList<Role>()));
-			userService.saveUser(new User(null, "mahima", "mahima@123", "mahima", new ArrayList<Role>()));
-			userService.saveUser(new User(null, "mahesh", "mahesh@123", "mahesh", new ArrayList<Role>()));
-			userService.saveUser(new User(null, "ajay", "ajay@123", "ajay", new ArrayList<Role>()));
+			userService.saveUser(new User(null, "akshay", "aksh@123", "aksh", new ArrayList<>()));
+			userService.saveUser(new User(null, "mahima", "mahima@123", "mahima", new ArrayList<>()));
+			userService.saveUser(new User(null, "mahesh", "mahesh@123", "mahesh", new ArrayList<>()));
+			userService.saveUser(new User(null, "ajay", "ajay@123", "ajay", new ArrayList<>()));
 
 			userService.addRoleToUser("aksh@123", "ROLE_USER");
 			userService.addRoleToUser("mahima@123", "ROLE_USER");
