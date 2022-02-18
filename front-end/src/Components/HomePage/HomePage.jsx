@@ -9,8 +9,7 @@ import Testimonials from './Testimonials/Testimonials';
 export default class HomePage extends Component {
   render() {
     return <div>
-      
-     
+
       <Card1component/>
       <Card2Component/>
       <HealthConcern/>
