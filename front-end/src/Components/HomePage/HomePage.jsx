@@ -10,7 +10,7 @@ export default class HomePage extends Component {
   render() {
     return <div>
       
-     
+      <ControlledCarousel/>
       <Card1component/>
       <Card2Component/>
       <HealthConcern/>
