@@ -27,8 +27,7 @@ function App() {
                     <Route path="/consult" component={OnlineConsultation}/>    
                     <Route path="/Epharma" component={Epharma}/>
                     <Route path="/Register" component={UserRegistration} exact/>
-                    <Route path="/DocRegister" component={DocterRegistration}/>
-                    
+                    <Route path="/DocRegister" component={DocterRegistration}/>  
                 </Switch>
         <div>
           <Footer/>
