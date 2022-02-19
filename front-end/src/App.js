@@ -2,8 +2,11 @@
 import './App.css';
 import { BrowserRouter, Router, Route,Switch } from "react-router-dom";
 import Header from './Components/HomePage/Header';
+import ReactDOM from "react-dom";
+  import { BrowserRouter, Router, Route,Switch } from "react-router-dom";
+import Header from './Components/HomePage/SharedContent/Header';
 import HomePage from './Components/HomePage/HomePage';
-import Footer from './Components/HomePage/Footer';
+import Footer from './Components/HomePage/SharedContent/Footer';
 import UserLogin from './Components/Login/UserLogin';
 import OnlineConsultation from './Components/Online_Consultation/OnlineConsultation';
 import Epharma from './Components/E_pharma/Epharma';

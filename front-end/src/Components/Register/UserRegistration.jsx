@@ -61,6 +61,7 @@ class UserRegistration extends react.Component {
       console.log(JSON.stringify(user))
       swal("Congratulations!! You Have Registered Successfully");
       //alert("User registration successfully")
+     // alert("User registration successfully")
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
@@ -72,7 +73,7 @@ class UserRegistration extends react.Component {
     return (
       <Fragment>
 
-         <h1 className='text-center'>*******Enter Your Details*******</h1> 
+         <h1 className='text-center'>User Registration</h1> 
           
           <Form onSubmit={this.onSignInSubmit}>
             <div id="sign-in-button"></div>
