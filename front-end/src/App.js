@@ -1,9 +1,7 @@
 
 import './App.css';
 import { BrowserRouter, Router, Route,Switch } from "react-router-dom";
-import Header from './Components/HomePage/Header';
 import ReactDOM from "react-dom";
-  import { BrowserRouter, Router, Route,Switch } from "react-router-dom";
 import Header from './Components/HomePage/SharedContent/Header';
 import HomePage from './Components/HomePage/HomePage';
 import Footer from './Components/HomePage/SharedContent/Footer';
@@ -39,7 +37,7 @@ function App() {
                     
                 </Switch>
         
-        
+            <Footer/>
           
       </BrowserRouter>
       
