@@ -60,6 +60,7 @@ class UserRegistration extends react.Component {
       const user = result.user;
       console.log(JSON.stringify(user))
       swal("Congratulations!! You Have Registered Successfully");
+      //alert("User registration successfully")
      // alert("User registration successfully")
       // ...
     }).catch((error) => {

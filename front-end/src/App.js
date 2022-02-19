@@ -1,4 +1,7 @@
+
 import './App.css';
+import { BrowserRouter, Router, Route,Switch } from "react-router-dom";
+import Header from './Components/HomePage/Header';
 import ReactDOM from "react-dom";
   import { BrowserRouter, Router, Route,Switch } from "react-router-dom";
 import Header from './Components/HomePage/SharedContent/Header';
@@ -9,12 +12,14 @@ import OnlineConsultation from './Components/Online_Consultation/OnlineConsultat
 import Epharma from './Components/E_pharma/Epharma';
 import UserRegistration from './Components/Register/UserRegistration';
 import DocterRegistration from './Components/Register/DocterRegistration';
+import RazorPay from './Components/Payment/RazorPay';
+
 
 
 function App() {
   return (
     
-      
+    
 
       <BrowserRouter basename='/home'>
         <div className="App">
@@ -22,16 +27,18 @@ function App() {
              
         </div>
                 <Switch> 
+                  
                     <Route path="/" component={HomePage} exact/>          
                     <Route path="/login" component={UserLogin}/>
                     <Route path="/consult" component={OnlineConsultation}/>    
                     <Route path="/Epharma" component={Epharma}/>
                     <Route path="/Register" component={UserRegistration} exact/>
-                    <Route path="/DocRegister" component={DocterRegistration}/>  
+                    <Route path="/DocRegister" component={DocterRegistration}/>
+                    
+                    <Route path="/Payment" component={RazorPay}/>
+                    
                 </Switch>
-        <div>
-          <Footer/>
-        </div>
+        
         
           
       </BrowserRouter>
