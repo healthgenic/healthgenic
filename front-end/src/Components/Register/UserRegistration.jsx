@@ -1,6 +1,7 @@
 import react, { Fragment } from 'react';
 import 'firebase/auth';
 import firebase from './firebase';
+import swal from 'sweetalert';
 
 
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
@@ -58,7 +59,8 @@ class UserRegistration extends react.Component {
       // User signed in successfully.
       const user = result.user;
       console.log(JSON.stringify(user))
-      alert("User registration successfully")
+      swal("Congratulations!! You Have Registered Successfully");
+      //alert("User registration successfully")
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
