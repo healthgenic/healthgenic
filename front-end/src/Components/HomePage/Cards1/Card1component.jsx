@@ -13,7 +13,7 @@ export default class Card1component extends Component {
 
 
       <div class="card-deck">
-        <div className="card col-3 ml-2">
+        <div className="card ml-2">
             <img src={image1} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">Online Video Consultation</h5>
@@ -22,7 +22,7 @@ export default class Card1component extends Component {
                 </div>
         </div>
 
-        <div className="card col-3">
+        <div className="card">
             <img src={image2} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">Buy Medicines & HealthProducts</h5>
@@ -32,7 +32,7 @@ export default class Card1component extends Component {
         </div>
 
 
-        <div className="card col-3">
+        <div className="card">
             <img src={image3} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">Book LabTests</h5>
@@ -43,7 +43,7 @@ export default class Card1component extends Component {
 
 
 
-        <div className="card col-3">
+        <div className="card">
             <img src={image4} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">Find Docter</h5>
