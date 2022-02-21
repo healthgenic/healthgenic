@@ -11,7 +11,7 @@ import Epharma from './Components/E_pharma/Epharma';
 import UserRegistration from './Components/Register/UserRegistration';
 import DocterRegistration from './Components/Register/DocterRegistration';
 import RazorPay from './Components/Payment/RazorPay';
-
+import { ContextProvider } from './SocketContext';
 
 
 function App() {
@@ -25,15 +25,14 @@ function App() {
              
         </div>
                 <Switch> 
-                  
                     <Route path="/" component={HomePage} exact/>          
                     <Route path="/login" component={UserLogin}/>
-                    <Route path="/consult" component={OnlineConsultation}/>    
+                    <Route path="/consult" component={OnlineConsultation}/>
+                   
                     <Route path="/Epharma" component={Epharma}/>
                     <Route path="/Register" component={UserRegistration} exact/>
                     <Route path="/DocRegister" component={DocterRegistration}/>
                     <Route path="/Payment" component={RazorPay}/>
-                    
                 </Switch>
         
             <Footer/>
