@@ -128,7 +128,7 @@ const RazorPay=()=>  {
                             console.log(response.error.reason);
                             console.log(response.error.metadata.order_id);
                             console.log(response.error.metadata.payment_id);
-                             alert("faill...")
+                             alert("fail...")
                         
                         });
                            

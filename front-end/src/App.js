@@ -32,7 +32,6 @@ function App() {
                     <Route path="/Epharma" component={Epharma}/>
                     <Route path="/Register" component={UserRegistration} exact/>
                     <Route path="/DocRegister" component={DocterRegistration}/>
-                    
                     <Route path="/Payment" component={RazorPay}/>
                     
                 </Switch>
