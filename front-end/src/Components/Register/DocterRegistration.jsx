@@ -209,11 +209,24 @@ class DocterRegistration extends React.Component {
         // user in with confirmationResult.confirm(code).
         window.confirmationResult = confirmationResult;
         console.log("OTP has been send");
-        // ...
+        //send alert
+        this.setState({
+          title: "Otp Sent",
+          action: "success",
+          message: "! Please check messsage inbox.",
+          classList: this.alertSuccessClassList,
+        });
+        //reset alert
+        this.resetAlert();
       })
       .catch((error) => {
-        // Error; SMS not sent
-        // ...
+        this.setState({
+          title: "Otp send failed",
+          action: "danger",
+          message: "! Please click on Get otp again.",
+          classList: this.alertDangerClassList,
+        });
+        this.resetAlert();
         console.log(error);
       });
   };
