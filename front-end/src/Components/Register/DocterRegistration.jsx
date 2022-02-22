@@ -33,7 +33,6 @@ class DocterRegistration extends React.Component {
     };
   }
   isBackspacePressed = (e) => {
-    console.log(e.nativeEvent.inputType);
     return new Promise((resolve, reject) => {
       if (e.nativeEvent.inputType === "deleteContentBackward") {
         this.setState({ isBackspacePressed: true });
@@ -44,7 +43,6 @@ class DocterRegistration extends React.Component {
   };
   storeDigit = async (e) => {
     const fieldId = e.target.id;
-    console.log(e);
     switch (fieldId) {
       case "otp-enter-box-node1":
         await this.setState({ otpFirstDigit: e.target.value });
