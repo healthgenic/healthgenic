@@ -23,7 +23,7 @@ class DocterRegistration extends React.Component {
       fullNameHelpText: "",
       password: "",
       mobileNumber: "",
-      otpfirstDigit: "",
+      otpFirstDigit: "",
       otpSecondDigit: "",
       otpThirdDigit: "",
       otpFourthDigit: "",
