@@ -250,6 +250,19 @@ class DocterRegistration extends React.Component {
                       {this.state.fullNameHelpText}
                     </div>
                     <div className="mb-3">
+                      <label htmlFor="email" className="form-label">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        className="form-control"
+                        placeholder="yourname@email.com"
+                        required="required"
+                        value={this.state.email}
+                        onChange={this.validateEmail}
+                      />
+                    </div>
+                    <div className="mb-3">
                       <label htmlFor="" className="form-label">
                         Password
                       </label>
