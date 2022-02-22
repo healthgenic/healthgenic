@@ -16,6 +16,7 @@ import AyurvedaSection from './Components/E_pharma/Ayurveda_Products/AyurvedaSec
 import MedicalDeviceSection from './Components/E_pharma/Medical_Devices/MedicalDeviceSection'
 import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
 
+import { ContextProvider } from './SocketContext';
 
 
 function App() {
@@ -31,10 +32,10 @@ function App() {
              
         </div>
                 <Switch> 
-                  
                     <Route path="/" component={HomePage} exact/>          
                     <Route path="/login" component={UserLogin}/>
-                    <Route path="/consult" component={OnlineConsultation}/>    
+                    <Route path="/consult" component={OnlineConsultation}/>
+                   
                     <Route path="/Epharma" component={Epharma}/>
                     <Route path="/Register" component={UserRegistration} exact/>
                     <Route path="/DocRegister" component={DocterRegistration}/>
@@ -45,7 +46,6 @@ function App() {
                     
                     
                     <Route path="/Payment" component={RazorPay}/>
-                    
                 </Switch>
         
             <Footer/>
