@@ -12,13 +12,99 @@ class DocterRegistration extends React.Component {
     this.fullNameHelpRef = React.createRef();
     this.passwordHelpTextRef = React.createRef();
     this.mobileNumberHelpRef = React.createRef();
+    this.otpFirstDigitRef = React.createRef();
+    this.otpSecondDigitRef = React.createRef();
+    this.otpThirdDigitRef = React.createRef();
+    this.otpFourthDigitRef = React.createRef();
+    this.otpFifthDigitRef = React.createRef();
+    this.otpSixthDigitRef = React.createRef();
     this.state = {
       fullName: "",
       fullNameHelpText: "",
       password: "",
       mobileNumber: "",
+      otpfirstDigit: "",
+      otpSecondDigit: "",
+      otpThirdDigit: "",
+      otpFourthDigit: "",
+      otpFifthDigit: "",
+      otpSixthDigit: "",
+      isBackspacePressed: false,
     };
   }
+  isBackspacePressed = (e) => {
+    console.log(e.nativeEvent.inputType);
+    return new Promise((resolve, reject) => {
+      if (e.nativeEvent.inputType === "deleteContentBackward") {
+        this.setState({ isBackspacePressed: true });
+        resolve(true);
+      }
+      resolve(false);
+    });
+  };
+  storeDigit = async (e) => {
+    const fieldId = e.target.id;
+    console.log(e);
+    switch (fieldId) {
+      case "otp-enter-box-node1":
+        await this.setState({ otpFirstDigit: e.target.value });
+        this.isBackspacePressed(e).then((result) => {
+          if (!result) {
+            this.otpSecondDigitRef.current.focus();
+          }
+        });
+
+        break;
+      case "otp-enter-box-node2":
+        await this.setState({ otpSecondDigit: e.target.value });
+        this.isBackspacePressed(e).then((result) => {
+          if (!result) {
+            this.otpThirdDigitRef.current.focus();
+          }
+        });
+        break;
+      case "otp-enter-box-node3":
+        await this.setState({ otpThirdDigit: e.target.value });
+        this.isBackspacePressed(e).then((result) => {
+          if (!result) {
+            this.otpFourthDigitRef.current.focus();
+          }
+        });
+        break;
+      case "otp-enter-box-node4":
+        await this.setState({ otpFourthDigit: e.target.value });
+        this.isBackspacePressed(e).then((result) => {
+          if (!result) {
+            this.otpFifthDigitRef.current.focus();
+          }
+        });
+
+        break;
+      case "otp-enter-box-node5":
+        await this.setState({ otpFifthDigit: e.target.value });
+        this.isBackspacePressed(e).then((result) => {
+          if (!result) {
+            this.otpSixthDigitRef.current.focus();
+          }
+        });
+        break;
+      case "otp-enter-box-node6":
+        await this.setState({ otpSixthDigit: e.target.value });
+        break;
+      default:
+        console.log("unexpected");
+    }
+    const otp =
+      this.state.otpFirstDigit +
+      this.state.otpSecondDigit +
+      this.state.otpThirdDigit +
+      this.state.otpFourthDigit +
+      this.state.otpFifthDigit +
+      this.state.otpSixthDigit;
+    // let otpTemp = this.state.otp + digit;
+    // await this.setState({ otp: otpTemp });
+    console.log(otp);
+  };
   validateFullName = (e) => {
     const fullName = e.target.value;
     const node = this.fullNameHelpRef.current;
@@ -204,6 +290,73 @@ class DocterRegistration extends React.Component {
                           className="form-text"
                           ref={this.mobileNumberHelpRef}
                         ></div>
+                      </div>
+                    </div>
+                    <div className="mb-3">
+                      <button className="btn btn-primary">Get OTP</button>
+                    </div>
+                    <div className="mb-3">
+                      <div className="otp-container d-flex">
+                        <input
+                          type="text"
+                          name="otp"
+                          id="otp-enter-box-node1"
+                          className="form-control mx-1"
+                          maxLength="1"
+                          ref={this.otpFirstDigitRef}
+                          value={this.state.otpFirstDigit}
+                          onChange={this.storeDigit}
+                        />
+                        <input
+                          type="text"
+                          name="otp"
+                          id="otp-enter-box-node2"
+                          className="form-control mx-1"
+                          maxLength="1"
+                          ref={this.otpSecondDigitRef}
+                          value={this.state.otpSecondDigit}
+                          onChange={this.storeDigit}
+                        />
+                        <input
+                          type="text"
+                          name="otp"
+                          id="otp-enter-box-node3"
+                          ref={this.otpThirdDigitRef}
+                          value={this.state.otpThirdDigit}
+                          className="form-control mx-1"
+                          maxLength="1"
+                          onChange={this.storeDigit}
+                        />
+                        <input
+                          type="text"
+                          name="otp"
+                          id="otp-enter-box-node4"
+                          className="form-control mx-1"
+                          maxLength="1"
+                          ref={this.otpFourthDigitRef}
+                          value={this.state.otpFourthDigit}
+                          onChange={this.storeDigit}
+                        />
+                        <input
+                          type="text"
+                          name="otp"
+                          id="otp-enter-box-node5"
+                          className="form-control mx-1"
+                          maxLength="1"
+                          ref={this.otpFifthDigitRef}
+                          value={this.state.otpFifthDigit}
+                          onChange={this.storeDigit}
+                        />
+                        <input
+                          type="text"
+                          name="otp"
+                          id="otp-enter-box-node6"
+                          className="form-control mx-1"
+                          maxLength="1"
+                          ref={this.otpSixthDigitRef}
+                          value={this.state.otpSixthDigit}
+                          onChange={this.storeDigit}
+                        />
                       </div>
                     </div>
                   </div>
