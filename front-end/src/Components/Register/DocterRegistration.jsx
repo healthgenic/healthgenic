@@ -31,10 +31,10 @@ class DocterRegistration extends React.Component {
       otpSixthDigit: "",
       isBackspacePressed: false,
       otp: "",
-
     };
   }
   isBackspacePressed = (e) => {
+    e.preventDefault();
     return new Promise((resolve, reject) => {
       if (e.nativeEvent.inputType === "deleteContentBackward") {
         this.setState({ isBackspacePressed: true });
@@ -44,6 +44,7 @@ class DocterRegistration extends React.Component {
     });
   };
   storeDigit = async (e) => {
+    e.preventDefault();
     const fieldId = e.target.id;
     switch (fieldId) {
       case "otp-enter-box-node1":
@@ -106,7 +107,17 @@ class DocterRegistration extends React.Component {
       this.verifyOtp();
     }
   };
+  sendDoctorDetailsToServer = (e) => {
+    e.preventDefault();
+    const user = {};
+    user.fullName = this.state.fullName;
+    user.password = this.state.password;
+    user.email = this.state.email;
+    user.mobileNumber = this.state.mobileNumber;
+    console.log(user);
+  };
   validateFullName = (e) => {
+    e.preventDefault();
     const fullName = e.target.value;
     const node = this.fullNameHelpRef.current;
 
@@ -126,6 +137,7 @@ class DocterRegistration extends React.Component {
     }
   };
   validatePassword = (e) => {
+    e.preventDefault();
     const password = e.target.value;
     const node = this.passwordHelpTextRef.current;
     console.log(password);
@@ -142,6 +154,7 @@ class DocterRegistration extends React.Component {
     }
   };
   validateMobileNumber = (e) => {
+    e.preventDefault();
     const mobileNumber = e.target.value;
     console.log(mobileNumber);
     if (validate.isMobileNumber(mobileNumber))
@@ -197,7 +210,7 @@ class DocterRegistration extends React.Component {
         // User signed in successfully.
         const user = result.user;
         console.log(JSON.stringify(user));
-        alert("otp verified");
+        this.submitButtonRef.current.removeAttribute("disabled");
         // ...
       })
       .catch((error) => {
@@ -212,7 +225,7 @@ class DocterRegistration extends React.Component {
           <div className="row">
             <div className="col-md-6 form-container">
               <h1 className="heading-6 my-5">Sign Up</h1>
-              <form>
+              <form onSubmit={this.sendDoctorDetailsToServer}>
                 <div className="form-group">
                   <div className="mb-3">
                     <label htmlFor="full-name" className="form-label">
@@ -246,6 +259,7 @@ class DocterRegistration extends React.Component {
                         id="password"
                         className="form-control"
                         placeholder="Enter Password"
+                        required
                         area-describedby="passwordHelp"
                         value={this.state.password}
                         onChange={this.validatePassword}
@@ -273,6 +287,7 @@ class DocterRegistration extends React.Component {
                           id="mobile-number"
                           className="form-control"
                           placeholder="Enter 10 digit mobile number"
+                          required
                           area-describedby="mobileNumberHelp"
                           minLength="0"
                           maxLength="10"
