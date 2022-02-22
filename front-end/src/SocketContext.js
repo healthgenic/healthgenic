@@ -5,7 +5,8 @@ import Peer from 'simple-peer';
 const SocketContext =createContext();
 
 //const socket = io('http://localhost:8000');
-const socket = io('https://warm-wildwood-81069.herokuapp.com');
+const socket=io('https://healthgenicserver.herokuapp.com/');
+//const socket = io('https://warm-wildwood-81069.herokuapp.com');
 
 const ContextProvider = ({children})=> {
     const [stream , setStream]=useState();
@@ -33,8 +34,8 @@ const ContextProvider = ({children})=> {
         //part to create call
         socket.on('calluser',({from ,name :callerName ,signal }) => {
             setCall({isReceivedCall:true ,from,name :callerName,signal})
-        })
-    });
+        });
+    } ,[]);
 
     //Code for reciever side
     const answerCall = () => {
@@ -67,7 +68,7 @@ const ContextProvider = ({children})=> {
             userVideo.current.srcObject=currentStream;
         })
 
-        socket.on('callaccepted',(signal)=> {
+        socket.on('callAccepted',(signal)=> {
             setCallAccepted(true);
 
             peer.signal(signal);

@@ -9,13 +9,13 @@ const OnlineConsultation = () => {
     
   <h1 className='text-center'>Online Video Consultation </h1>
     <ContextProvider>
-        <VideoPlayer/>
-    </ContextProvider>
-      
-      <Options/>
-          <Notification/>
-      <Options/>
-  
+
+      <VideoPlayer/>   
+          <Options>
+              <Notification/>
+          </Options>
+
+      </ContextProvider>
     </div>
   
   )

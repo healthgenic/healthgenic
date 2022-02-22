@@ -79,7 +79,7 @@ class DocterRegistration extends react.Component {
             <label for="drname">Doctor name :</label><br />
             <input type="text" placeholder="Doctor name" id="drname" name="did" required /><br />
             <label for="moNumber">Mobile number :</label><br />
-            <input typw="number" placeholder="Mobile number" id="moNumber" name="mnumber" required onChange={this.handleChange} /><br />
+            <input type="number" placeholder="Mobile number" id="moNumber" name="mnumber" required onChange={this.handleChange} /><br />
             <label for="emailid">Email id :</label><br />
             <input type="email" placeholder="Email id" id="emailid" name="mailid" required /><br />
             <label for="password">Password :</label><br />
