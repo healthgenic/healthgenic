@@ -30,6 +30,7 @@ class DocterRegistration extends React.Component {
       otpFifthDigit: "",
       otpSixthDigit: "",
       isBackspacePressed: false,
+      otp :"",
     };
   }
   isBackspacePressed = (e) => {
@@ -99,9 +100,10 @@ class DocterRegistration extends React.Component {
       this.state.otpFourthDigit +
       this.state.otpFifthDigit +
       this.state.otpSixthDigit;
-    // let otpTemp = this.state.otp + digit;
-    // await this.setState({ otp: otpTemp });
-    console.log(otp);
+      if(otp.length == 6){
+        this.setState({otp:otp});
+        this.verifyOtp();
+      }
   };
   validateFullName = (e) => {
     const fullName = e.target.value;
@@ -145,12 +147,7 @@ class DocterRegistration extends React.Component {
       this.setState({ mobileNumber: mobileNumber });
     else this.setState({ mobileNumber: this.state.mobileNumber });
   };
-  handleChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
+ 
   configureCaptch = () => {
     const auth = getAuth();
     window.recaptchaVerifier = new RecaptchaVerifier(
@@ -159,18 +156,18 @@ class DocterRegistration extends React.Component {
         size: "invisible",
         callback: (response) => {
           // reCAPTCHA solved, allow signInWithPhoneNumber.
-          this.onSignInSubmit();
+          this.sendOtp();
           console.log("recaptch varify ");
         },
       },
       auth
     );
   };
-  onSignInSubmit = (e) => {
+  sendOtp = (e) => {
     // import { getAuth, signInWithPhoneNumber } from "firebase/auth";
     e.preventDefault();
     this.configureCaptch();
-    const phoneNumber = "+91" + this.state.mnumber;
+    const phoneNumber = "+91" + this.state.mobileNumber;
     console.log(phoneNumber);
     const appVerifier = window.recaptchaVerifier;
 
@@ -189,10 +186,9 @@ class DocterRegistration extends React.Component {
         console.log(error);
       });
   };
-  onSubmitOTP = (e) => {
-    e.preventDefault();
-    const code = this.state.OTP;
-    console.log("code");
+  verifyOtp = () => {
+    const code = this.state.otp;
+    console.log(code);
 
     window.confirmationResult
       .confirm(code)
@@ -200,12 +196,11 @@ class DocterRegistration extends React.Component {
         // User signed in successfully.
         const user = result.user;
         console.log(JSON.stringify(user));
-        alert("Doctor registration successfully");
+        alert("otp verified");
         // ...
       })
       .catch((error) => {
-        // User couldn't sign in (bad verification code?)
-        // ...
+        console.log(error.message);
       });
   };
   render() {
@@ -291,7 +286,7 @@ class DocterRegistration extends React.Component {
                       </div>
                     </div>
                     <div className="mb-3">
-                      <button className="btn btn-primary">Get OTP</button>
+                      <button className="btn btn-primary" onClick={this.sendOtp}>Get OTP</button>
                     </div>
                     <div className="mb-3">
                       <div className="otp-container d-flex">
