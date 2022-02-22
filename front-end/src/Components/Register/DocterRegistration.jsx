@@ -5,6 +5,7 @@ import firebase from "./firebase";
 import { validate } from "./validate";
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
+import Alert from "./Alert";
 class DocterRegistration extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,7 @@ class DocterRegistration extends React.Component {
     this.state = {
       fullName: "",
       fullNameHelpText: "Name should contain alphabets only",
-      email:"",
+      email: "",
       password: "",
       mobileNumber: "",
       otpFirstDigit: "",
@@ -32,8 +33,15 @@ class DocterRegistration extends React.Component {
       otpSixthDigit: "",
       isBackspacePressed: false,
       otp: "",
+      title: "",
+      message: "",
+      action: "",
+      classList: "",
     };
+    this.alertDangerClassList = "alert alert-danger fade show";
+    this.alertSuccessClassList = "alert alert-success fade show";
   }
+
   isBackspacePressed = (e) => {
     e.preventDefault();
     return new Promise((resolve, reject) => {
