@@ -5,7 +5,6 @@ import firebase from "./firebase";
 import { validate } from "./validate";
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
-
 class DocterRegistration extends React.Component {
   constructor(props) {
     super(props);
@@ -294,7 +293,7 @@ class DocterRegistration extends React.Component {
                           type="text"
                           name="otp"
                           id="otp-enter-box-node1"
-                          className="form-control mx-1"
+                          className="form-control mx-1 text-center"
                           maxLength="1"
                           ref={this.otpFirstDigitRef}
                           value={this.state.otpFirstDigit}
@@ -304,7 +303,7 @@ class DocterRegistration extends React.Component {
                           type="text"
                           name="otp"
                           id="otp-enter-box-node2"
-                          className="form-control mx-1"
+                          className="form-control mx-1 text-center"
                           maxLength="1"
                           ref={this.otpSecondDigitRef}
                           value={this.state.otpSecondDigit}
@@ -316,7 +315,7 @@ class DocterRegistration extends React.Component {
                           id="otp-enter-box-node3"
                           ref={this.otpThirdDigitRef}
                           value={this.state.otpThirdDigit}
-                          className="form-control mx-1"
+                          className="form-control mx-1 text-center"
                           maxLength="1"
                           onChange={this.storeDigit}
                         />
@@ -324,7 +323,7 @@ class DocterRegistration extends React.Component {
                           type="text"
                           name="otp"
                           id="otp-enter-box-node4"
-                          className="form-control mx-1"
+                          className="form-control mx-1 text-center"
                           maxLength="1"
                           ref={this.otpFourthDigitRef}
                           value={this.state.otpFourthDigit}
@@ -334,7 +333,7 @@ class DocterRegistration extends React.Component {
                           type="text"
                           name="otp"
                           id="otp-enter-box-node5"
-                          className="form-control mx-1"
+                          className="form-control mx-1 text-center"
                           maxLength="1"
                           ref={this.otpFifthDigitRef}
                           value={this.state.otpFifthDigit}
@@ -344,7 +343,7 @@ class DocterRegistration extends React.Component {
                           type="text"
                           name="otp"
                           id="otp-enter-box-node6"
-                          className="form-control mx-1"
+                          className="form-control mx-1 text-center"
                           maxLength="1"
                           ref={this.otpSixthDigitRef}
                           value={this.state.otpSixthDigit}
