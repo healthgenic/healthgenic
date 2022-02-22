@@ -163,7 +163,6 @@ class DocterRegistration extends React.Component {
                         <ul>
                           <li> Password Should be 8-15 characters long</li>
                           <li>
-                            {" "}
                             Must contain one lowercase,one uppercase,one
                             numeric,one special character
                           </li>
