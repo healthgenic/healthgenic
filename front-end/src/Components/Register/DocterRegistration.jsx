@@ -238,12 +238,28 @@ class DocterRegistration extends React.Component {
       .confirm(code)
       .then((result) => {
         // User signed in successfully.
+        this.setState({
+          title: "Otp verified",
+          action: "success",
+          message: "",
+          classList: this.alertSuccessClassList,
+        });
+        //reset alert
+        this.resetAlert();
         const user = result.user;
         console.log(JSON.stringify(user));
         this.submitButtonRef.current.removeAttribute("disabled");
         // ...
       })
       .catch((error) => {
+        this.setState({
+          title: "Otp is incorrect",
+          action: "danger",
+          message: "! Please renter correct otp.",
+          classList: this.alertDangerClassList,
+        });
+        //reset alert
+        this.resetAlert();
         console.log(error.message);
       });
   };
