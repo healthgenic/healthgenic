@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-//import './login.scss';
+import './login.css';
+import image from "./background.jpg";
 
 export default class UserLogin extends Component {
   render() {
     return (
-      <div>
+      <div> 
+        <img src={image}  className="card-img-top rounded-3" alt="..." />
         <form method="post" action="loginVerification.jsp">
-          <h3>
+        
+
+          <h3 className="text-center">
             <b>Login to your account</b>
           </h3>
 

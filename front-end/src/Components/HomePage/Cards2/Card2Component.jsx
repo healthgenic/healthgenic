@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import image1 from "./12.png";
 import image2 from "./13.jpg";
-import image3 from "./14.jpg";
+import image3 from "./bb.jpg";
 import image4 from "./11.jpg";
 
-export default class extends Component {
+export default class Card2Compnent extends Component {
   render() {
     return (
       <div>
@@ -14,7 +14,7 @@ export default class extends Component {
 
           <div class="card-deck">
             <div className="col-3">
-              <img src={image1} className="card-img-top" alt="..." />
+              <img src={image1} className="card-img-top rounded-3" alt="..." />
               <div className="card-body text-center">
                 <a href="#" className="btn btn-outline-success">
                   Covid Essentials
@@ -35,7 +35,7 @@ export default class extends Component {
               <img src={image3} className="card-img-top" alt="..." />
               <div className="card-body text-center">
                 <a href="#" className="btn btn-outline-success">
-                  Medicines
+                  Baby Care
                 </a>
               </div>
             </div>
