@@ -21,6 +21,7 @@ class DocterRegistration extends React.Component {
     this.state = {
       fullName: "",
       fullNameHelpText: "Name should contain alphabets only",
+      email:"",
       password: "",
       mobileNumber: "",
       otpFirstDigit: "",
