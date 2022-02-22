@@ -5,7 +5,10 @@ import image2 from "./13.jpg";
 import image3 from "./14.jpg";
 import image4 from "./11.jpg";
 
+
+
 export default class extends Component {
+
   render() {
     return (
       <div>
@@ -16,16 +19,17 @@ export default class extends Component {
             <div className="col-3">
               <img src={image1} className="card-img-top" alt="..." />
               <div className="card-body text-center">
-                <a href="#" className="btn btn-outline-success">
+                 <a href="http://localhost:3000/home/covidEssential" className="btn btn-outline-success">
                   Covid Essentials
-                </a>
+                </a> 
+               
               </div>
             </div>
 
             <div className="col-3">
               <img src={image2} className="card-img-top" alt="..." />
               <div className="card-body text-center">
-                <a href="#" className="btn btn-outline-success">
+                <a href="http://localhost:3000/home/Ayurveda" className="btn btn-outline-success" >
                   Ayurveda Products
                 </a>
               </div>
@@ -34,7 +38,7 @@ export default class extends Component {
             <div className="col-3">
               <img src={image3} className="card-img-top" alt="..." />
               <div className="card-body text-center">
-                <a href="#" className="btn btn-outline-success">
+                <a href="http://localhost:3000/home/Medicines" className="btn btn-outline-success">
                   Medicines
                 </a>
               </div>
@@ -43,7 +47,7 @@ export default class extends Component {
             <div className="col-3">
               <img src={image4} className="card-img-top" alt="..." />
               <div className="card-body text-center">
-                <a href="#" className="btn btn-outline-success">
+                <a href="http://localhost:3000/home/MedicalDevice" className="btn btn-outline-success">
                   Medical Devices
                 </a>
               </div>

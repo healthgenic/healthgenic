@@ -11,13 +11,19 @@ import Epharma from './Components/E_pharma/Epharma';
 import UserRegistration from './Components/Register/UserRegistration';
 import DocterRegistration from './Components/Register/DocterRegistration';
 import RazorPay from './Components/Payment/RazorPay';
+import CovidSection from './Components/E_pharma/Covid_Essentials/Section';
+import AyurvedaSection from './Components/E_pharma/Ayurveda_Products/AyurvedaSection'
+import MedicalDeviceSection from './Components/E_pharma/Medical_Devices/MedicalDeviceSection'
+import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
 
 
 
 function App() {
+
+  
   return (
     
-    
+       
 
       <BrowserRouter basename='/home'>
         <div className="App">
@@ -32,6 +38,11 @@ function App() {
                     <Route path="/Epharma" component={Epharma}/>
                     <Route path="/Register" component={UserRegistration} exact/>
                     <Route path="/DocRegister" component={DocterRegistration}/>
+                    <Route path="/covidEssential" component={CovidSection}/>
+                    <Route path="/Ayurveda" component={AyurvedaSection}/>
+                    <Route path="/Medicines" component={MedicinesSection}/>
+                    <Route path="/MedicalDevice" component={MedicalDeviceSection}/>
+                    
                     
                     <Route path="/Payment" component={RazorPay}/>
                     
