@@ -67,27 +67,8 @@ class DocterRegistration extends react.Component {
   }
   render() {
     return (
-      <body>
-        <div className="background">
-          <form onSubmit={this.onSignInSubmit}>
-            <div id="sign-in-button"></div>
-            <h3>Registration for doctor Here</h3>
-            <label for="drname">Doctor name :</label><br />
-            <input type="text" placeholder="Doctor name" id="drname" name="did" required /><br />
-            <label for="moNumber">Mobile number :</label><br />
-            <input typw="number" placeholder="Mobile number" id="moNumber" name="mnumber" required onChange={this.handleChange} /><br />
-            <label for="emailid">Email id :</label><br />
-            <input type="email" placeholder="Email id" id="emailid" name="mailid" required /><br />
-            <label for="password">Password :</label><br />
-            <input type="password" placeholder="password" id="password" name="password" required /><br />
-            <button>Send OTP</button>
-          </form>
-          <form onSubmit={this.onSubmitOTP}>
-            <input type="number" name="OTP" placeholder='OTP number' required onChange={this.handleChange} /><br />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </body>
+     <>
+     </>
     );
   }
 }
