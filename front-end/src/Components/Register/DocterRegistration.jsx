@@ -116,6 +116,11 @@ class DocterRegistration extends React.Component {
       this.verifyOtp();
     }
   };
+  resetAlert = () => {
+    setTimeout(() => {
+      this.setState({ title: "", message: "", action: "", classList: "" });
+    }, 2300);
+  };
   sendDoctorDetailsToServer = (e) => {
     e.preventDefault();
     const user = {};
