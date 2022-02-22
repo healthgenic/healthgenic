@@ -11,7 +11,13 @@ class DocterRegistration extends React.Component {
     super(props);
     this.fullNameHelpRef = React.createRef();
     this.passwordHelpTextRef = React.createRef();
-    this.state = { fullName: "", fullNameHelpText: "", password: "" };
+    this.mobileNumberHelpRef = React.createRef();
+    this.state = {
+      fullName: "",
+      fullNameHelpText: "",
+      password: "",
+      mobileNumber: "",
+    };
   }
   validateFullName = (e) => {
     const fullName = e.target.value;
@@ -47,6 +53,13 @@ class DocterRegistration extends React.Component {
       node.classList.remove("text-danger");
       node.classList.remove("text-success");
     }
+  };
+  validateMobileNumber = (e) => {
+    const mobileNumber = e.target.value;
+    console.log(mobileNumber);
+    if (validate.isMobileNumber(mobileNumber))
+      this.setState({ mobileNumber: mobileNumber });
+    else this.setState({ mobileNumber: this.state.mobileNumber });
   };
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -144,7 +157,9 @@ class DocterRegistration extends React.Component {
                       {this.state.fullNameHelpText}
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="" className="form-label"></label>
+                      <label htmlFor="" className="form-label">
+                        Password
+                      </label>
                       <input
                         type="password"
                         name="password"
@@ -167,6 +182,28 @@ class DocterRegistration extends React.Component {
                             numeric,one special character
                           </li>
                         </ul>
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="mobile-number" className="form-label">
+                          Mobile Number
+                        </label>
+                        <input
+                          type="text"
+                          name="mobileNumber"
+                          id="mobile-number"
+                          className="form-control"
+                          placeholder="Enter 10 digit mobile number"
+                          area-describedby="mobileNumberHelp"
+                          minLength="0"
+                          maxLength="10"
+                          value={this.state.mobileNumber}
+                          onChange={this.validateMobileNumber}
+                        />
+                        <div
+                          id="mobileNumberHelp"
+                          className="form-text"
+                          ref={this.mobileNumberHelpRef}
+                        ></div>
                       </div>
                     </div>
                   </div>
