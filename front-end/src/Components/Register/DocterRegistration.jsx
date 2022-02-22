@@ -20,7 +20,7 @@ class DocterRegistration extends React.Component {
     this.submitButtonRef = React.createRef();
     this.state = {
       fullName: "",
-      fullNameHelpText: "",
+      fullNameHelpText: "Name should contain alphabets only",
       password: "",
       mobileNumber: "",
       otpFirstDigit: "",
@@ -120,8 +120,6 @@ class DocterRegistration extends React.Component {
     e.preventDefault();
     const fullName = e.target.value;
     const node = this.fullNameHelpRef.current;
-
-    this.setState({ fullNameHelpText: "Name should contain alphabets only" });
     if (validate.isFullName(fullName)) {
       this.setState({ fullName: fullName });
       node.classList.add("text-success");
@@ -136,6 +134,11 @@ class DocterRegistration extends React.Component {
       node.classList.remove("text-success");
     }
   };
+  validateEmail = (e)=>{
+    e.preventDefault();
+    const email = e.target.value;
+    this.setState({email:email});
+  }
   validatePassword = (e) => {
     e.preventDefault();
     const password = e.target.value;
