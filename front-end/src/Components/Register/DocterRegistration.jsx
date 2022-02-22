@@ -10,7 +10,8 @@ class DocterRegistration extends React.Component {
   constructor(props) {
     super(props);
     this.fullNameHelpRef = React.createRef();
-    this.state = { fullName: "", fullNameHelpText: "" };
+    this.passwordHelpTextRef = React.createRef();
+    this.state = { fullName: "", fullNameHelpText: "", password: "" };
   }
   validateFullName = (e) => {
     const fullName = e.target.value;
@@ -28,6 +29,22 @@ class DocterRegistration extends React.Component {
     }
     if (fullName == "") {
       node.classList.add("text-success");
+      node.classList.remove("text-success");
+    }
+  };
+  validatePassword = (e) => {
+    const password = e.target.value;
+    const node = this.passwordHelpTextRef.current;
+    console.log(password);
+    this.setState({ password: password });
+    if (validate.isPassword(password)) {
+      node.classList.remove("text-danger");
+      node.classList.add("text-success");
+    } else {
+      node.classList.add("text-danger");
+    }
+    if (password == "") {
+      node.classList.remove("text-danger");
       node.classList.remove("text-success");
     }
   };
@@ -125,6 +142,33 @@ class DocterRegistration extends React.Component {
                       ref={this.fullNameHelpRef}
                     >
                       {this.state.fullNameHelpText}
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="" className="form-label"></label>
+                      <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        className="form-control"
+                        placeholder="Enter Password"
+                        area-describedby="passwordHelp"
+                        value={this.state.password}
+                        onChange={this.validatePassword}
+                      />
+                      <div
+                        id="passwordHelp"
+                        className="form-text mt-1"
+                        ref={this.passwordHelpTextRef}
+                      >
+                        <ul>
+                          <li> Password Should be 8-15 characters long</li>
+                          <li>
+                            {" "}
+                            Must contain one lowercase,one uppercase,one
+                            numeric,one special character
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
