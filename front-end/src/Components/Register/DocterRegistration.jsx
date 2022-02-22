@@ -241,7 +241,15 @@ class DocterRegistration extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 form-container">
-              <h1 className="heading-6 my-5">Sign Up</h1>
+              <div className="alert-container my-2" style={{ height: "58px" }}>
+                <Alert
+                  action={this.state.action}
+                  title={this.state.title}
+                  message={this.state.message}
+                  classList={this.state.classList}
+                />
+              </div>
+              <h1 className="heading-6 mb-3">Sign Up</h1>
               <form onSubmit={this.sendDoctorDetailsToServer}>
                 <div className="form-group">
                   <div className="mb-3">
