@@ -2,7 +2,7 @@ import react, { Fragment } from 'react';
 import 'firebase/auth';
 import firebase from './firebase';
 import swal from 'sweetalert';
-
+import image from "./ub2.jpg";
 
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
@@ -72,6 +72,7 @@ class UserRegistration extends react.Component {
   render() {
     return (
       <Fragment>
+                <img src={image}  className="card-img-top rounded-3" alt="..." />
 
          <h1 className='text-center'>User Registration</h1> 
           

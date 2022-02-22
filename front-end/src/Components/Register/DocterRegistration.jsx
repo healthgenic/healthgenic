@@ -5,6 +5,7 @@ import firebase from './firebase';
 
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
+import image from "./back2.jpg";
 
 class DocterRegistration extends react.Component {
   handleChange = (e) => {
@@ -69,7 +70,10 @@ class DocterRegistration extends react.Component {
     return (
       <body>
         <div className="background">
+        <img src={image}  className="card-img-top rounded-3" alt="..." />
+
           <form onSubmit={this.onSignInSubmit}>
+            
             <div id="sign-in-button"></div>
             <h3>Registration for doctor Here</h3>
             <label for="drname">Doctor name :</label><br />
