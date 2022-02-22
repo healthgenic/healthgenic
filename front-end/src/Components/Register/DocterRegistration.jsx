@@ -147,12 +147,13 @@ class DocterRegistration extends React.Component {
       node.classList.add("text-success");
       node.classList.remove("text-success");
     }
+    this.setState({ title: "foo" });
   };
-  validateEmail = (e)=>{
+  validateEmail = (e) => {
     e.preventDefault();
     const email = e.target.value;
-    this.setState({email:email});
-  }
+    this.setState({ email: email });
+  };
   validatePassword = (e) => {
     e.preventDefault();
     const password = e.target.value;
@@ -304,7 +305,9 @@ class DocterRegistration extends React.Component {
                       {this.state.fullNameHelpText}
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="email" className="form-label">Email</label>
+                      <label htmlFor="email" className="form-label">
+                        Email
+                      </label>
                       <input
                         type="email"
                         name="email"
