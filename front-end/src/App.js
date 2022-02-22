@@ -11,7 +11,7 @@ import Epharma from './Components/E_pharma/Epharma';
 import UserRegistration from './Components/Register/UserRegistration';
 import DocterRegistration from './Components/Register/DocterRegistration';
 import RazorPay from './Components/Payment/RazorPay';
-import CovidSection from './Components/E_pharma/Covid_Essentials/Section';
+import CovidSection from './Components/E_pharma/Covid_Essentials/CovidSection';
 import AyurvedaSection from './Components/E_pharma/Ayurveda_Products/AyurvedaSection'
 import MedicalDeviceSection from './Components/E_pharma/Medical_Devices/MedicalDeviceSection'
 import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
