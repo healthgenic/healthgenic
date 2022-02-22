@@ -17,6 +17,7 @@ class DocterRegistration extends React.Component {
     this.otpFourthDigitRef = React.createRef();
     this.otpFifthDigitRef = React.createRef();
     this.otpSixthDigitRef = React.createRef();
+    this.submitButtonRef = React.createRef();
     this.state = {
       fullName: "",
       fullNameHelpText: "",
@@ -29,7 +30,8 @@ class DocterRegistration extends React.Component {
       otpFifthDigit: "",
       otpSixthDigit: "",
       isBackspacePressed: false,
-      otp :"",
+      otp: "",
+
     };
   }
   isBackspacePressed = (e) => {
@@ -99,10 +101,10 @@ class DocterRegistration extends React.Component {
       this.state.otpFourthDigit +
       this.state.otpFifthDigit +
       this.state.otpSixthDigit;
-      if(otp.length == 6){
-        this.setState({otp:otp});
-        this.verifyOtp();
-      }
+    if (otp.length == 6) {
+      this.setState({ otp: otp });
+      this.verifyOtp();
+    }
   };
   validateFullName = (e) => {
     const fullName = e.target.value;
@@ -146,7 +148,7 @@ class DocterRegistration extends React.Component {
       this.setState({ mobileNumber: mobileNumber });
     else this.setState({ mobileNumber: this.state.mobileNumber });
   };
- 
+
   configureCaptch = () => {
     const auth = getAuth();
     window.recaptchaVerifier = new RecaptchaVerifier(
@@ -285,7 +287,12 @@ class DocterRegistration extends React.Component {
                       </div>
                     </div>
                     <div className="mb-3">
-                      <button className="btn btn-primary" onClick={this.sendOtp}>Get OTP</button>
+                      <button
+                        className="btn btn-primary"
+                        onClick={this.sendOtp}
+                      >
+                        Get OTP
+                      </button>
                     </div>
                     <div className="mb-3">
                       <div className="otp-container d-flex">
@@ -350,6 +357,15 @@ class DocterRegistration extends React.Component {
                           onChange={this.storeDigit}
                         />
                       </div>
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        type="submit"
+                        value="Sign Up"
+                        className="btn btn-block w-100 btn-primary "
+                        disabled
+                        ref={this.submitButtonRef}
+                      />
                     </div>
                   </div>
                 </div>
