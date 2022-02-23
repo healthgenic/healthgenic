@@ -18,7 +18,7 @@ export default class HealthConcern extends Component {
 
        
 
-          <div class="card-deck rounded-pill">
+          <div class="card-deck rounded-pill row">
             <div className="col-2 ">
             <img src={image1} className="card-img-top rounded-circle" alt="neuro" />
             <div className="text-center">
