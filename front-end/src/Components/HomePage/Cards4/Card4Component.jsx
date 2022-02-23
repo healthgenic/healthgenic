@@ -17,42 +17,42 @@ export default class Card4Component extends Component {
           Our Best Services
         </h3>
           <div class="card-deck row">
-            <div className="col-2 ">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image1} className="card-img-top border  rounded" alt="neuro" />
               <div className="card-body text-center">
               <h5>Neurology</h5>
               </div>
             </div>    
 
-            <div className="col-2">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image2} className="card-img-top border rounded" alt="hema" />
               <div className="card-body text-center">
               <h5>Hematology</h5>
               </div>
             </div>
 
-            <div className="col-2">
+            <div className="col-6 my-2 col-lg-3">
               <img src={image3} className="card-img-top border rounded" alt="cardio" />
               <div className="card-body text-center">
                 <h5>Cardiology</h5>
               </div>
             </div>
 
-            <div className="col-2">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image4} className="card-img-top border rounded" alt="ortho" />
               <div className="card-body text-center">
               <h5>Orthopedics</h5>
               </div>
             </div>
 
-            <div className="col-2">
+            <div className="col-6 my-2 col-lg-3">
               <img src={image5} className="card-img-top border rounded" alt="gastro" />
               <div className="card-body text-center">
                 <h5>Gastrology</h5>
               </div>
             </div>
             
-            <div className="col-2">              
+            <div className="col-6 my-2 col-lg-3">              
               <img src={image6} className="card-img-top border rounded" alt="optha" />
               <div className="card-body text-center">
                 <h5>Ophthalmology</h5>
