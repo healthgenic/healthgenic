@@ -16,7 +16,7 @@ export default class Card4Component extends Component {
         <h3 className="mb-5">
           Our Best Services
         </h3>
-          <div class="card-deck">
+          <div class="card-deck row">
             <div className="col-2 ">
             <img src={image1} className="card-img-top border  rounded" alt="neuro" />
               <div className="card-body text-center">
