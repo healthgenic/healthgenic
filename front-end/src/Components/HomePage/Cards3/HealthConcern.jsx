@@ -19,7 +19,7 @@ export default class HealthConcern extends Component {
        
 
           <div class="card-deck rounded-pill row">
-            <div className="col-2 ">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image1} className="card-img-top rounded-circle" alt="neuro" />
             <div className="text-center">
               <Link to="/" className="text-center text-success">
@@ -28,7 +28,7 @@ export default class HealthConcern extends Component {
             </div>
             </div> 
 
-            <div className="col-2 ">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image2} className="card-img-top rounded-circle" alt="neuro" />
             <div className="text-center">
               <Link to="/" className="text-center text-success">
@@ -37,7 +37,7 @@ export default class HealthConcern extends Component {
             </div>
             </div> 
 
-            <div className="col-2 ">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image3} className="card-img-top rounded-circle" alt="neuro" />
             <div className="text-center">
               <Link to="/" className="text-center text-success">
@@ -46,7 +46,7 @@ export default class HealthConcern extends Component {
             </div>
             </div>
 
-            <div className="col-2 ">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image4} className="card-img-top rounded-circle" alt="neuro" />
             <div className="text-center">
               <Link to="/" className="text-center text-success">
@@ -55,7 +55,7 @@ export default class HealthConcern extends Component {
             </div>
             </div>
 
-            <div className="col-2 ">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image5} className="card-img-top rounded-circle" alt="neuro" />
             <div className="text-center">
               <Link to="/" className="text-center text-success">
@@ -64,7 +64,7 @@ export default class HealthConcern extends Component {
             </div>
             </div>
           
-            <div className="col-2 ">
+            <div className="col-6 my-2 col-lg-3">
             <img src={image6} className="card-img-top rounded-circle" alt="neuro" />
             <div className="text-center">
               <Link to="/" className="text-center text-success">
