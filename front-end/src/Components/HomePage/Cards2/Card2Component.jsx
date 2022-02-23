@@ -12,7 +12,7 @@ export default class Card2Compnent extends Component {
         <div className="container mt-5">
           <h3 className="mb-5">Shop by Category</h3>
 
-          <div class="card-deck">
+          <div class="card-deck row">
             <div className="col-3">
               <img src={image1} className="card-img-top rounded-3" alt="..." />
               <div className="card-body text-center">
