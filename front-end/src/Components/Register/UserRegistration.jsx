@@ -72,9 +72,10 @@ class UserRegistration extends react.Component {
   render() {
     return (
       <Fragment>
-                <img src={image}  className="card-img-top rounded-3" alt="..." />
-
-         <h1 className='text-center'>User Registration</h1> 
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+              <h1 className='my-3 mt-5'>User Registration</h1> 
           
           <Form onSubmit={this.onSignInSubmit}>
             <div id="sign-in-button"></div>
@@ -114,7 +115,10 @@ class UserRegistration extends react.Component {
             </Container>
             
           </form>
-        
+              </div>
+              <div className="col-md-6"></div>
+            </div>
+          </div>
           </Fragment>
     );
   }
