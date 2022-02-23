@@ -13,7 +13,7 @@ export default class Card2Compnent extends Component {
           <h3 className="mb-5">Shop by Category</h3>
 
           <div class="card-deck row">
-            <div className="col-3">
+            <div className="col-6 my-2 col-lg-3">
               <img src={image1} className="card-img-top rounded-3" alt="..." />
               <div className="card-body text-center">
                  <a href="http://localhost:3000/home/covidEssential" className="btn btn-outline-success">
@@ -23,7 +23,7 @@ export default class Card2Compnent extends Component {
               </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-6 my-2 col-lg-3">
               <img src={image2} className="card-img-top" alt="..." />
               <div className="card-body text-center">
                 <a href="http://localhost:3000/home/Ayurveda" className="btn btn-outline-success" >
@@ -32,7 +32,7 @@ export default class Card2Compnent extends Component {
               </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-6 my-2 col-lg-3">
               <img src={image3} className="card-img-top" alt="..." />
               <div className="card-body text-center">
                 <a href="http://localhost:3000/home/Medicines" className="btn btn-outline-success">
@@ -41,7 +41,7 @@ export default class Card2Compnent extends Component {
               </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-6 my-2 col-lg-3">
               <img src={image4} className="card-img-top" alt="..." />
               <div className="card-body text-center">
                 <a href="http://localhost:3000/home/MedicalDevice" className="btn btn-outline-success">
