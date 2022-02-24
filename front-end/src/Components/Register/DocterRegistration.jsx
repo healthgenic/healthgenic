@@ -373,7 +373,7 @@ class DocterRegistration extends React.Component {
                     </div>
                     <div className="mb-3">
                       <button
-                        className="btn btn-primary"
+                        className="btn btn-success"
                         onClick={this.sendOtp}
                       >
                         Get OTP
@@ -447,7 +447,7 @@ class DocterRegistration extends React.Component {
                       <input
                         type="submit"
                         value="Sign Up"
-                        className="btn btn-block w-100 btn-primary "
+                        className="btn btn-block w-100 btn-success "
                         disabled
                         ref={this.submitButtonRef}
                       />

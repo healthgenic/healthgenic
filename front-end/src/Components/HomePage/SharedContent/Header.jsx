@@ -31,7 +31,6 @@ export default class Header extends Component {
               </Link>
             </li>
             <li className="navbar-link px-3 py-2 rounded">
-              {" "}
               <Link className="navbar-link" to="/login">
                Log in
               </Link>

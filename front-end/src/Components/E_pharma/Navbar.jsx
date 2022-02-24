@@ -17,7 +17,7 @@ const Navbar=({setShow}) => {
               <ul >
                   <li className='icon'>
                  
-                    <i class="fa-solid fa-hand-holding-medical"></i>
+                  <i class="fas fa-hand-holding-medical"></i>
               
                   <a href="http://localhost:3000/home/covidEssential" className="my_shop" onClick={()=>setShow(true)} > Covid Essentials</a>
                   </li>
@@ -26,19 +26,19 @@ const Navbar=({setShow}) => {
               <ul>
               <li className='icon'>
 
-              <i class="fa-brands fa-pagelines"></i>
+              <i class="fab fa-pagelines"></i>
                   <a href="http://localhost:3000/home/Ayurveda" className="my_shop"> Ayurveda Products</a>
                   </li>
               </ul>
               <ul>
               <li className='icon'>
-              <i class="fa-solid fa-pills"></i>
+              <i class="fas fa-pills"></i>
                   <a href="http://localhost:3000/home/Medicines" className="my_shop"> Medicines</a>
                   </li>
               </ul>
               <ul>
               <li className='icon'>
-              <i class="fa-solid fa-stethoscope"></i>
+              <i class="fas fa-stethoscope"></i>
                   <a href="http://localhost:3000/home/MedicalDevice" className="my_shop"> Medical Devices</a>
                   </li>
               </ul>
