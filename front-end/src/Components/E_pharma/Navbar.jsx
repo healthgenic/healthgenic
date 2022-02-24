@@ -1,13 +1,9 @@
-import {React, useState} from 'react'
+import {React} from 'react'
 import "./Styles/Navbar.css";
-import Ecommerce from './Ecommerce';
+import { Link } from 'react-router-dom';
 
 
-
-
-const Navbar=({setShow}) => {
-
-    
+const Navbar=({setShow, size}) => {
  
     return (
         <div>
@@ -19,7 +15,8 @@ const Navbar=({setShow}) => {
                  
                     <i class="fa-solid fa-hand-holding-medical"></i>
               
-                  <a href="http://localhost:3000/home/covidEssential" className="my_shop" onClick={()=>setShow(true)} > Covid Essentials</a>
+                  <Link to="/Epharma/covidEssential" className="my_shop" onClick={()=>setShow(true)}>Covid Essentials</Link>
+                 
                   </li>
                  
               </ul>
@@ -27,26 +24,30 @@ const Navbar=({setShow}) => {
               <li className='icon'>
 
               <i class="fa-brands fa-pagelines"></i>
-                  <a href="http://localhost:3000/home/Ayurveda" className="my_shop"> Ayurveda Products</a>
+                 
+                  <Link to="/Epharma/Ayurveda" className="my_shop" onClick={()=>setShow(true)}>Ayurveda</Link>
                   </li>
               </ul>
               <ul>
               <li className='icon'>
               <i class="fa-solid fa-pills"></i>
-                  <a href="http://localhost:3000/home/Medicines" className="my_shop"> Medicines</a>
+               
+               <Link to="/Epharma/Medicines" className="my_shop" onClick={()=>setShow(true)}>Medicines</Link>
                   </li>
               </ul>
               <ul>
               <li className='icon'>
               <i class="fa-solid fa-stethoscope"></i>
-                  <a href="http://localhost:3000/home/MedicalDevice" className="my_shop"> Medical Devices</a>
+                  
+                  <Link to="/Epharma/MedicalDevice" className="my_shop" onClick={()=>setShow(true)}>MedicalDevice</Link>
+
                   </li>
               </ul>
               <div className="cart" onClick={()=>setShow(false)}>
               <span>
                   <i class="fas fa-cart-plus"></i>
               </span>
-              <span>1</span>
+              <span>{size}</span>
               
               </div>
           </div>

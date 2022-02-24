@@ -4,16 +4,16 @@ import Cards from "../Cards";
 import Navbar from "../Navbar";
 import "../Styles/Navbar.css";
 
-function MedicinesSection(){
+function MedicinesSection({handleClick}){
     return(
       
         <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='section'>
             
         {
     
-         list.map((item) => <Cards key={item.id} item={item}/> )
+         list.map((item) => <Cards key={item.id} item={item} handleClick={handleClick}/> )
     
         }
     

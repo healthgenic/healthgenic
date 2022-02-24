@@ -1,25 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Container, Input, Button} from "reactstrap";
 import { useState } from 'react';
 import swal from 'sweetalert';
 import axios from 'axios';
 import useRazorpay from 'react-razorpay';
 
-
-
-
 const RazorPay=()=>  {
 
 
     const Razorpay = useRazorpay();
-    const [amount, setAmount] = useState({});
+    const amt = localStorage.getItem('price')
+    const [amount, setAmount] = useState({'amount': amt});
+     const [name, setName] = useState({}); 
+     const [address, setAddress] = useState({}); 
+     const [pincode, setPincode] = useState({}); 
+     const [mobile, setMobile] = useState({}); 
    
     const handleAmount = (e) => {
         console.log(amount);
-         postData(amount);
-         
-      
-    };
+        console.log(name);
+        const data = {'amount': amount.amount, 'name':name.name, 'address':address.address,'pincode':pincode.pincode,'mobile':mobile.mobile}
+        console.log(data);
+         postData(data);
+   };
 
    
 
@@ -46,9 +49,9 @@ const RazorPay=()=>  {
     
     
     //post data on server
-        const postData= async (amount)=> {
-
-        const datafetch = await axios.post(` http://localhost:7773/create-order`,amount).then(
+        const postData= async (data)=> {
+           debugger;
+        const datafetch = await axios.post(` http://localhost:7773/create-order`,data).then(
             (response)=>{
                 console.log(response);
                 console.log("success with post data through AXIOS");
@@ -61,10 +64,14 @@ const RazorPay=()=>  {
                       var options={
                           key: "rzp_test_ADUmf8lV5Avque",
                           amount: response.data.amount,
+                          name: response.data.name,
+                          address:response.data.address,
+                          pincode:response.data.pincode,
+                          mobile:response.data.mobile,
                           currency: "INR",
                           name: "Payment Mechanism",
                           description: "Pay",
-                          image:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Ffreepng%2Fhospital-icon-vector-flat-design_5430448.html&psig=AOvVaw1HY_IYGRs7zyDU09F5XEen&ust=1644950209169000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCICkvZjr__UCFQAAAAAdAAAAABAQ",
+                          image:"https://www.digitaloutlook.com.au/wp-content/uploads/2017/09/future_payment_methods-compressor-1.jpg",
                           order_id:response.data.id,
                           handler:function(response){
                           console.log(response.razorpay_payment_id);
@@ -76,7 +83,7 @@ const RazorPay=()=>  {
 
                           updatePaymentOnServer(response.razorpay_payment_id, response.razorpay_order_id,"paid")
 
-                          swal("Conratulation !!", "success");
+                          swal("Conratulation !!","Your Payment is Succussful", "success");
 
                           },
                           "prefill": {
@@ -126,14 +133,45 @@ const RazorPay=()=>  {
         return (
             <div>
                   
-                 <Container className="text-center"> 
-                 <label><b>Amount</b></label>
-                <Input type="number" placeholder="Enter Amount" name="amt" id="amount" required
+                 <Container> 
+
+                 <label><b>Name</b></label>
+                 <Input type='text' placeholder="Enter Your Name"  name='name' id='name'
                   onChange={
-                    (e) => {
-                        setAmount({ ...amount, amount: e.target.value });
-                    }
-                }/>
+                  (e) => {
+                      setName({ ...name, name: e.target.value });
+                  }}  />
+
+                 <label><b>Address</b></label>
+                 <Input type='text' placeholder=" (Home No,Building,Street,Area,City,State)" name='address' id='address'
+                  onChange={
+                  (e) => {
+                      setAddress({ ...address, address: e.target.value });
+                  }}  />
+                     
+                     <label><b>Pincode</b></label>
+                 <Input type='number' placeholder="Enter Your Pincode"  name='pincode' id='pincode'
+                  onChange={
+                  (e) => {
+                      setPincode({ ...pincode, pincode: e.target.value });
+                  }}  />
+
+                 <label><b>Mobile No.</b></label>
+                 <Input type='number' placeholder="Enter Your Mobile Number" name='mobile' id='mobile'
+                  onChange={
+                  (e) => {
+                      setMobile({ ...mobile, mobile: e.target.value });
+                  }}  />
+
+
+                 <label><b>Amount</b></label>
+                 <Input name="amt" id="amount" value={amount.amount} disabled
+                   onChange={
+                     (e) => {
+                         setAmount({ ...amount, amount: e.target.value });
+                     }
+                 } 
+                /> 
                    <br/>
                 <Button onClick={handleAmount} type="submit" color="success" className="btn-block">Pay</Button>
                   </Container>

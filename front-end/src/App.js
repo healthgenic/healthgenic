@@ -16,7 +16,6 @@ import AyurvedaSection from './Components/E_pharma/Ayurveda_Products/AyurvedaSec
 import MedicalDeviceSection from './Components/E_pharma/Medical_Devices/MedicalDeviceSection'
 import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
 
-import { ContextProvider } from './SocketContext';
 
 
 function App() {
@@ -36,14 +35,18 @@ function App() {
                     <Route path="/login" component={UserLogin}/>
                     <Route path="/consult" component={OnlineConsultation}/>
                    
-                    <Route path="/Epharma" component={Epharma}/>
+                    <Route path="/Epharma" /* component={Epharma} */>
+
+                    <Epharma showNavbar={true} />  
+                   </Route>
+
                     <Route path="/Register" component={UserRegistration} exact/>
                     <Route path="/DocRegister" component={DocterRegistration}/>
                     <Route path="/covidEssential" component={CovidSection}/>
                     <Route path="/Ayurveda" component={AyurvedaSection}/>
                     <Route path="/Medicines" component={MedicinesSection}/>
                     <Route path="/MedicalDevice" component={MedicalDeviceSection}/>
-                    
+                   
                     
                     <Route path="/Payment" component={RazorPay}/>
                 </Switch>
@@ -58,11 +61,3 @@ function App() {
 }
 
 export default App;
-//yes
-
-// {/* <Route path = "/add-employee/:id" component = {CreateEmployeeComponent}></Route>
-//                           <Route path = "/view-employee/:id" component = {ViewEmployeeComponent}></Route> */}
-//                           {/* <Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}></Route> */}
-
-
-//                           // this is a comment

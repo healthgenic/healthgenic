@@ -10,6 +10,7 @@
     "ajax-client": "^2.1.1",
     "axios": "^0.25.0",
     "firebase": "^9.6.6",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "razorpay": "^2.8.0",
     "react": "^17.0.2",

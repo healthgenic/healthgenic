@@ -1,6 +1,6 @@
 const list =[
     {
-        id: 1,
+        id: 31,
         title: "PACTOL 650mg Tablet 10's",
         Mkt: "West Coast Pharmaceutical Works Ltd",
         Price:  15.00,
@@ -10,21 +10,21 @@ const list =[
     
     },
     {
-        id: 2,
+        id: 32,
         title: "Saridon Headache Relief Tablet 10's",
         Mkt: "Piramal Healthcare Ltd",
         Price:  30.80,
         img: "https://www.netmeds.com/images/product-v1/600x600/109486/saridon_tablet_10s_0_2.jpg",
     },
     {
-        id: 3,
+        id: 33,
         title: "Similia Feverid Syrup 60 ml",
         Mkt: "Omron Healthcare Co Ltd",
         Price: 1864.00,
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlcvQIvDUIE0TscOqneXMhlg-LEY6kHEuzqw&usqp=CAU",
     },
     {
-        id: 4,
+        id: 34,
         title: "MaxioCel Chitson Wound Dressing (5 cm X 10 cm) (Box of 10)",
         Mkt: " Similia Homoeo Laboratory",
         Price: 70.00,
@@ -32,7 +32,7 @@ const list =[
         
     },
     {
-        id: 5,
+        id: 35,
         title: "WIN BP H 20/12.5mg Tablet 10'S",
         Mkt: "Abbott Healthcare Pvt Ltd",
         Price: 126.60,
@@ -40,14 +40,14 @@ const list =[
         
     },
     {
-        id: 6,
+        id: 36,
         title: "Dr. Vaidya's Herbo24Turbo Capsule (Pack of 2 x 30's)",
         Mkt: "Herbolab India Pvt Ltd",
         Price:  1000.80,
         img: "https://www.netmeds.com/images/product-v1/600x600/953776/dr_vaidyas_herbo24turbo_capsule_pack_of_2_x_30s_0_0.jpg",
     },
     {
-        id: 7,
+        id: 37,
         title: "Wokadine 2% with Menthol Gargle 100ml",
         Mkt: " Dr Reddy'S Laboratories Ltd",
         Price: 144.00,
@@ -55,21 +55,21 @@ const list =[
        
     },
     {
-        id: 8,
+        id: 38,
         title: "Zincovit Tablet 15's",
         Mkt: " Apex Laboratories Pvt. Ltd.",
         Price: 89.25,
         img: "https://www.practostatic.com/practopedia-images/v3/res-150/zincovit-tablet-15-s_b65a0677-01fc-4490-aa89-d357ecab7166.JPG",
     },
     {
-        id: 9,
+        id: 39,
         title: "Paracip 650 MG Tablet",
         Mkt: "Cipla Ltd.",
         Price: 17.51,
         img: "https://www.netmeds.com/images/product-v1/600x600/369512/paracip_650mg_tablet_10_s_0.jpg",
     },
     {
-        id: 10,
+        id: 40,
         title: "DICLO (MORPHEN LABS) 50MG TABLET 10`S",
         Mkt: "MOREPEN LABORATORIES LIMITED",
         Price:  87.80,

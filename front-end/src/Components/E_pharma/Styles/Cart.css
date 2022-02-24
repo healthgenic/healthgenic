@@ -18,7 +18,7 @@ article{
 }
 .cart_img p {
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 .cart_box{
     display: flex;
@@ -44,7 +44,7 @@ article{
     border: none;
     outline: none;
     color: white;
-    background-color: seashell;
+    background-color: rgb(126, 75, 39);
     border-radius: 5px;
     cursor: pointer;
 
@@ -56,7 +56,7 @@ article{
 }
 .cart_box div:nth-child(3) span
 {
-    background-color: lightgreen;
+    background-color: rgb(151, 177, 151);
     padding: 5px 10px;
     border-radius:  5px;
     margin-right: 10px;
@@ -69,7 +69,7 @@ article{
 .total span:nth-child(1)
 {
     font-size: 2rem;
-    color: seagreen;
+    color: rgb(124, 216, 164);
     font-weight: bold;
     letter-spacing: 2px;
 }

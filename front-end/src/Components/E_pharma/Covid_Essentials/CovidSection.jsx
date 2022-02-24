@@ -10,7 +10,7 @@ import "../Styles/Navbar.css"
     return (
         <div>
 
-       <Navbar />
+         {/* <Navbar />  */}
        
         <div className='section'>
         {
