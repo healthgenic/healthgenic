@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./Styles/Card.css"
 
+
 const Cards=({item, handleClick}) => {
     const {id,title,Mkt,Price,img} = item;
     return(

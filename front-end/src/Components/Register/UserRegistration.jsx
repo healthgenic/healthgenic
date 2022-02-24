@@ -3,7 +3,7 @@ import 'firebase/auth';
 import firebase from './firebase';
 import swal from 'sweetalert';
 import image from "./ub2.jpg";
-
+import { Link } from "react-router-dom";
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
 import {Container, Form, FormGroup, Input, Button} from "reactstrap";
@@ -72,10 +72,13 @@ class UserRegistration extends react.Component {
   render() {
     return (
       <Fragment>
-                <img src={image}  className="card-img-top rounded-3" alt="..." />
-
-         <h1 className='text-center'>User Registration</h1> 
-          
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+              <h1 className='my-3 mt-5'>User Registration</h1> 
+              <p>Are you a doctor? <Link className="link-primary" to="/DocRegister">
+                Register Here 
+              </Link></p>
           <Form onSubmit={this.onSignInSubmit}>
             <div id="sign-in-button"></div>
            
@@ -114,7 +117,10 @@ class UserRegistration extends react.Component {
             </Container>
             
           </form>
-        
+              </div>
+              <div className="col-md-6"></div>
+            </div>
+          </div>
           </Fragment>
     );
   }

@@ -1,10 +1,11 @@
 import {React, useState} from 'react'
 import "./Styles/Navbar.css";
+import Ecommerce from './Ecommerce';
 
 
 
 
-const Navbar=() => {
+const Navbar=({setShow}) => {
 
     
  
@@ -18,7 +19,7 @@ const Navbar=() => {
                  
                     <i class="fa-solid fa-hand-holding-medical"></i>
               
-                  <a href="http://localhost:3000/home/covidEssential" className="my_shop" > Covid Essentials</a>
+                  <a href="http://localhost:3000/home/covidEssential" className="my_shop" onClick={()=>setShow(true)} > Covid Essentials</a>
                   </li>
                  
               </ul>
@@ -41,7 +42,7 @@ const Navbar=() => {
                   <a href="http://localhost:3000/home/MedicalDevice" className="my_shop"> Medical Devices</a>
                   </li>
               </ul>
-              <div className="cart" >
+              <div className="cart" onClick={()=>setShow(false)}>
               <span>
                   <i class="fas fa-cart-plus"></i>
               </span>
