@@ -5,7 +5,7 @@ import Peer from 'simple-peer';
 const SocketContext =createContext();
 
 //const socket = io('http://localhost:8000');
-const socket=io('https://healthgenicserver.herokuapp.com/');
+const socket=io('https://healthgenicserver.herokuapp.com');
 //const socket = io('https://warm-wildwood-81069.herokuapp.com');
 
 const ContextProvider = ({children})=> {
@@ -39,29 +39,29 @@ const ContextProvider = ({children})=> {
 
     //Code for reciever side
     const answerCall = () => {
-        setCallAccepted(true)
-
-        const peer=new Peer ({ initiator:false,trickle:false,stream});
-
-        peer.on('signal', (data)=>{
-            socket.emit('answercall',{signal:data,to:call.from });
+        setCallAccepted(true);
+    
+        const peer = new Peer({ initiator: false, trickle: false, stream });
+    
+        peer.on('signal', (data) => {
+          socket.emit('answerCall', { signal: data, to: call.from });
         });
-
-        peer.on('stream',(currentStream)=> {
-            userVideo.current.srcObject=currentStream;
-        })
-
+    
+        peer.on('stream', (currentStream) => {
+          userVideo.current.srcObject = currentStream;
+        });
+    
         peer.signal(call.signal);
-        connectionRef.current=peer;
-
-    }
+    
+        connectionRef.current = peer;
+      };
 
     //caller side code
     const calluser =(id) => {
         const peer=new Peer ({ initiator:true,trickle:false,stream});     //Initiator is true as we are caller
 
         peer.on('signal', (data)=>{
-            socket.emit('calluser',{userToCall:id,signalData:data ,from:me,name });
+            socket.emit('calluser',{userToCall:id, signalData:data , from:me,name });
         });
 
         peer.on('stream',(currentStream)=> {
@@ -74,8 +74,9 @@ const ContextProvider = ({children})=> {
             peer.signal(signal);
 
         });
+        connectionRef.current = peer;
 
-    }
+    };
 
     const leaveCall =() => {
 
@@ -109,4 +110,4 @@ const ContextProvider = ({children})=> {
     );
 }
 
-export {ContextProvider,SocketContext};
+export { ContextProvider, SocketContext};

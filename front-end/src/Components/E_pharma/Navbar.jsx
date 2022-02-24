@@ -13,7 +13,7 @@ const Navbar=({setShow, size}) => {
               <ul >
                   <li className='icon'>
                  
-                    <i class="fa-solid fa-hand-holding-medical"></i>
+                  <i class="fas fa-hand-holding-medical"></i>
               
                   <Link to="/Epharma/covidEssential" className="my_shop" onClick={()=>setShow(true)}>Covid Essentials</Link>
                  

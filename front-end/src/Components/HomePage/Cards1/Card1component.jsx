@@ -12,7 +12,7 @@ export default class Card1component extends Component {
       <div>
         <div className="container justify-content-center mt-5 ">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-6 my-2 col-lg-3">
               <div className="card text-center">
                 <div className="overflow">
                   <img src={image1} alt="img1" className="card-img-top" />
@@ -28,7 +28,7 @@ export default class Card1component extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-6 my-2 col-lg-3">
               <div className="card text-center">
                 <div className="overflow">
                   <img src={image2} alt="img2" className="card-img-top" />
@@ -44,7 +44,7 @@ export default class Card1component extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-6 my-2 col-lg-3">
               <div className="card text-center">
                 <div className="overflow">
                   <img src={image3} alt="img3" className="card-img-top" />
@@ -60,7 +60,7 @@ export default class Card1component extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-6 my-2 col-lg-3">
               <div className="card text-center">
                 <div className="overflow">
                   <img src={image4} alt="img4" className="card-img-top" />
