@@ -37,8 +37,8 @@ const RazorPay=()=>  {
 
         axios({
             method: 'post',
-            url: ` http://localhost:7773/update-order`,
-            headers: {}, 
+            url: `http://localhost:7773/update-order`,
+           /*  headers: {},  */
             data: {
               'payment_id': payment_id, 
               'order_id': order_id,
@@ -50,8 +50,8 @@ const RazorPay=()=>  {
     
     //post data on server
         const postData= async (data)=> {
-           debugger;
-        const datafetch = await axios.post(` http://localhost:7773/create-order`,data).then(
+          
+        const datafetch = await axios.post(`http://localhost:7773/create-order`,data).then(
             (response)=>{
                 console.log(response);
                 console.log("success with post data through AXIOS");

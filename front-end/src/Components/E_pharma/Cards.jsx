@@ -7,7 +7,7 @@ const Cards=({item, handleClick}) => {
     return(
         <div className="cards">
             <div className="image_box">
-               <img src={img} alt="" /><br />
+               <img src={img} alt="" />
                
 
             </div>
@@ -15,7 +15,7 @@ const Cards=({item, handleClick}) => {
                 <p>{title}</p>
                 <p>{Mkt}</p>
                 <p>{Price}</p>
-                <button onClick={()=>handleClick(item)}>Add to cart</button><br /><br /><hr />
+                <button onClick={()=>handleClick(item)}>Add to cart</button><br /><br />
             </div>
         </div>
     )

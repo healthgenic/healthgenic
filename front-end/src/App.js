@@ -8,13 +8,16 @@ import Footer from './Components/HomePage/SharedContent/Footer';
 import UserLogin from './Components/Login/UserLogin';
 import OnlineConsultation from './Components/Online_Consultation/OnlineConsultation';
 import Epharma from './Components/E_pharma/Epharma';
-import UserRegistration from './Components/Register/UserRegistration';
+/* import UserRegistration from './Components/Register/UserRegistration'; */
 import DocterRegistration from './Components/Register/DocterRegistration';
 import RazorPay from './Components/Payment/RazorPay';
 import CovidSection from './Components/E_pharma/Covid_Essentials/CovidSection';
 import AyurvedaSection from './Components/E_pharma/Ayurveda_Products/AyurvedaSection'
 import MedicalDeviceSection from './Components/E_pharma/Medical_Devices/MedicalDeviceSection'
 import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
+/* import UserProfile from './Components/Login/UserProfile'; */
+import Register from './Components/Login/register';
+/* import Profile from '../src/Components/Profile/user-profile'; */
 
 
 
@@ -40,15 +43,16 @@ function App() {
                     <Epharma showNavbar={true} />  
                    </Route>
 
-                    <Route path="/Register" component={UserRegistration} exact/>
+                    <Route path="/Register" component={Register} exact/>
                     <Route path="/DocRegister" component={DocterRegistration}/>
                     <Route path="/covidEssential" component={CovidSection}/>
                     <Route path="/Ayurveda" component={AyurvedaSection}/>
                     <Route path="/Medicines" component={MedicinesSection}/>
                     <Route path="/MedicalDevice" component={MedicalDeviceSection}/>
                    
-                    
+                   {/*  <Route path="/profile" component={Profile} />  */}
                     <Route path="/Payment" component={RazorPay}/>
+                    {/* <Route path="/userProfile" component={UserProfile} /> */}
                 </Switch>
         
             <Footer/>
