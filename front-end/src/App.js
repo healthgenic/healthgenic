@@ -8,18 +8,20 @@ import Footer from './Components/HomePage/SharedContent/Footer';
 import UserLogin from './Components/Login/UserLogin';
 import OnlineConsultation from './Components/Online_Consultation/OnlineConsultation';
 import Epharma from './Components/E_pharma/Epharma';
-import UserRegistration from './Components/Register/UserRegistration';
+/* import UserRegistration from './Components/Register/UserRegistration'; */
 import DocterRegistration from './Components/Register/DocterRegistration';
 import RazorPay from './Components/Payment/RazorPay';
 import CovidSection from './Components/E_pharma/Covid_Essentials/CovidSection';
 import AyurvedaSection from './Components/E_pharma/Ayurveda_Products/AyurvedaSection'
 import MedicalDeviceSection from './Components/E_pharma/Medical_Devices/MedicalDeviceSection'
 import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
-import Category from './Components/E_pharma/Category';
-import Card2Compnent from './Components/HomePage/Cards2/Card2Component';
-import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment';
+/* import UserProfile from './Components/Login/UserProfile'; */
+import Register from './Components/Login/register';
+/* import Profile from '../src/Components/Profile/user-profile'; */
 import Checkout from './Components/Online_Consultation/AppointMent Booking/Checkout';
-
+import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment';
+import UserRegistration from './Components/Register/UserRegistration';
+import Card2Component from './Components/HomePage/Cards2/Card2Component';
 
 
 function App() {
@@ -40,7 +42,7 @@ function App() {
                     <Route path="/consult" component={OnlineConsultation}/>
                    
                     <Route path="/Epharma" /* component={Epharma} */>
-                    <Card2Compnent/>
+                    <Card2Component/>
                    </Route>
 
                       

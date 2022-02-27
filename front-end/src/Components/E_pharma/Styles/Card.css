@@ -6,9 +6,9 @@
 .section{
     width: 80%;
     margin: auto;
-    margin-top: 5%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    margin-top: 6%;
+    display:grid;
+    grid-template-columns: repeat(4, 0.5fr);
     grid-template-rows: auto;
 
 }
@@ -19,11 +19,11 @@
 }
 .cards:hover
 {
-    box-shadow: 0 10px 10px rgba(0,0,0,1);
+   /*  box-shadow: 0 10px 10px rgba(0,0,0,1); */
     cursor: pointer;;
 }
 .image_box img{
-    width: 150px;
+    width: 170px;
     height: 200px;
 }
 .details p:nth-child(1){
@@ -32,8 +32,8 @@
     
 }
 .details p:nth-child(2){
-    color: gray;
-    font-size: 0.8rem;
+    color: rgb(41, 39, 39);
+    font-size: 0.9rem;
    
 }
 
@@ -41,14 +41,14 @@
 {
     
     font-weight: bold;
-    color: gray;
+    color: rgb(10, 10, 10);
    
 }
 .details button{
     padding: 5px 10px;
     border: none;
     font-weight: bold;
-    background-color: skyblue;
+    background-color: rgb(141, 207, 96);
     outline: none;
 
 }
