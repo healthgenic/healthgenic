@@ -44,17 +44,15 @@ function Epharma() {
           (<Navbar setShow={setShow} size={cart.length} />
           {show ? (
             <div>
-              <Card2Component handleClick={handleClick} />
+              {/* <Card2Component handleClick={handleClick} /> */}
 
               <Switch>
-                <Route path="/cart" ><Cart handleClick={handleClick} /></Route>
-
-                <Route path="/Epharma/covidEssential" ><CovidSection handleClick={handleClick} /></Route>
-                <Route path="/Epharma/Ayurveda"><AyurvedaSection handleClick={handleClick} /></Route>
-                <Route path="/Epharma/Medicines"><MedicinesSection handleClick={handleClick} /></Route>
-                <Route path="/Epharma/MedicalDevice"><MedicalDeviceSection handleClick={handleClick} /></Route>
-                <Route path="/cardComponent"><Card2Component handleClick={handleClick} /></Route>
-                
+                    <Route path="/cart" ><Cart handleClick={handleClick} /></Route>
+                    <Route path="/Epharma/covidEssential" ><CovidSection handleClick={handleClick} /></Route>
+                    <Route path="/Epharma/Ayurveda"><AyurvedaSection handleClick={handleClick} /></Route>
+                    <Route path="/Epharma/Medicines"><MedicinesSection handleClick={handleClick} /></Route>
+                    <Route path="/Epharma/MedicalDevice"><MedicalDeviceSection handleClick={handleClick} /></Route>
+                    <Route path="/cardComponent"><Card2Component handleClick={handleClick} /></Route>
               </Switch>
             </div>
 

@@ -58,7 +58,7 @@ export default class Testimonials extends Component {
 
           <Carousel.Item interval={50}>
           <p className="text-center">
-          Very easy to book,maintain history. Hassle free from older versions of booking appointment via telephone.. <br/>Thanks Practo for making it simple.
+          Very easy to book,maintain history. Hassle free from older versions of booking appointment via telephone.. <br/>Thanks HealthGenic for making it simple.
               </p>
               <p className="text-center">
                 <svg

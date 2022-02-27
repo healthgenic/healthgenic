@@ -24,11 +24,9 @@ const RazorPay=()=>  {
          postData(data);
    };
 
-   
-
     //updating the data on server
     const updatePaymentOnServer= async (payment_id,order_id,status)=> {
-       
+    
         const params = new URLSearchParams()
         params.append('payment_id',payment_id)
         params.append('order_id', order_id)
@@ -37,7 +35,7 @@ const RazorPay=()=>  {
 
         axios({
             method: 'post',
-            url: ` http://localhost:7773/update-order`,
+            url: `http://localhost:7773/update-order`,
             headers: {}, 
             data: {
               'payment_id': payment_id, 
@@ -77,7 +75,6 @@ const RazorPay=()=>  {
                           console.log(response.razorpay_payment_id);
                           console.log(response.razorpay_order_id)
                           console.log(response.razorpay_signature)
-
 
                           //for the database
 

@@ -1,7 +1,7 @@
 // import './register.css';
 import React from "react";
 import "firebase/auth";
-import firebase from "./firebase";
+import firebase from '../../firebase';
 import { validate } from "./validate";
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";

@@ -15,36 +15,37 @@ function Card2Compnent() {
         <h3 className="mb-5">Shop by Category</h3>
 
         <div class="card-deck">
-          <div className="col-3">
+
+          <div className="col-3 card">
             <img src={image1} className="card-img-top rounded-3" alt="..." />
             <div className="card-body text-center">
-            <Link to="/Epharma/covidEssential" className="btn btn-outline-success" >Covid Essentials</Link>
-
+            <Link to="/covidEssential" className="btn btn-outline-success" >Covid Essentials</Link>
             </div>
           </div>
 
-          <div className="col-3">
+          <div className="col-3 card">
             <img src={image2} className="card-img-top" alt="..." />
             <div className="card-body text-center">
-              <Link to="/Epharma/Ayurveda" className="btn btn-outline-success">Ayurveda</Link>
+              <Link to="/Ayurveda" className="btn btn-outline-success">Ayurveda</Link>
             </div>
           </div>
 
-          <div className="col-3">
+          <div className="col-3 card">
             <img src={image3} className="card-img-top" alt="..." />
             <div className="card-body text-center">
-              <Link to="/Epharma/Medicines" className="btn btn-outline-success" >Medicines</Link>
+              <Link to="/Medicines" className="btn btn-outline-success" >Medicines</Link>
             </div>
           </div>
 
-          <div className="col-3">
+          <div className="col-3 card">
             <img src={image4} className="card-img-top" alt="..." />
             <div className="card-body text-center">
-              <Link to="/Epharma/MedicalDevice" className="btn btn-outline-success" >MedicalDevice</Link>
-           
+              <Link to="/MedicalDevice" className="btn btn-outline-success" >MedicalDevice</Link>
             </div>
           </div>
+
         </div>
+
       </div>
     </div>
   );

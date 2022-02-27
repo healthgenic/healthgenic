@@ -15,6 +15,10 @@ import CovidSection from './Components/E_pharma/Covid_Essentials/CovidSection';
 import AyurvedaSection from './Components/E_pharma/Ayurveda_Products/AyurvedaSection'
 import MedicalDeviceSection from './Components/E_pharma/Medical_Devices/MedicalDeviceSection'
 import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
+import Category from './Components/E_pharma/Category';
+import Card2Compnent from './Components/HomePage/Cards2/Card2Component';
+import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment';
+import Checkout from './Components/Online_Consultation/AppointMent Booking/Checkout';
 
 
 
@@ -36,19 +40,23 @@ function App() {
                     <Route path="/consult" component={OnlineConsultation}/>
                    
                     <Route path="/Epharma" /* component={Epharma} */>
-
-                    <Epharma showNavbar={true} />  
+                    <Card2Compnent/>
                    </Route>
 
+                      
                     <Route path="/Register" component={UserRegistration} exact/>
                     <Route path="/DocRegister" component={DocterRegistration}/>
+
                     <Route path="/covidEssential" component={CovidSection}/>
                     <Route path="/Ayurveda" component={AyurvedaSection}/>
                     <Route path="/Medicines" component={MedicinesSection}/>
                     <Route path="/MedicalDevice" component={MedicalDeviceSection}/>
-                   
-                    
+
                     <Route path="/Payment" component={RazorPay}/>
+
+                    <Route path="/bookAppointment" component={BookAppointment}/>
+
+                    <Route path='/Checkout' component={Checkout}/>
                 </Switch>
         
             <Footer/>

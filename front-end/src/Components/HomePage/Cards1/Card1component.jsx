@@ -22,9 +22,9 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Connect within 60sec
                   </p>
-                  <a href="#" className="btn btn-outline-success">
+                  <Link to="" className="btn btn-outline-success">
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -38,9 +38,9 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Essentials at your Doorstep
                   </p>
-                  <a href="#" className="btn btn-outline-success">
+                  <Link to="#" className="btn btn-outline-success">
                     Buy Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -54,9 +54,9 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Sample pickup at your Home
                   </p>
-                  <a href="#" className="btn btn-outline-success">
+                  <Link to="#" className="btn btn-outline-success">
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -70,9 +70,9 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Confirmed appointments
                   </p>
-                  <a href="#" className="btn btn-outline-success">
+                  <Link to="#" className="btn btn-outline-success">
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
