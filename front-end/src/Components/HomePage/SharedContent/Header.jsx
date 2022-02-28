@@ -10,7 +10,7 @@ function Header() {
       setCurrentUser(user);
       //setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
       //setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
-    }else{
+    } else {
 
     }
   }, []);
@@ -18,33 +18,33 @@ function Header() {
   const logOut = () => {
     AuthService.logout();
   };
-  
-    return (
-      <div className="container-fluid bg-light" id="nav-container">
-        <nav className="container nav-element-container d-flex justify-content-between align-items-center" >
-          <h5 className="text-success">
-            <i class="fas fa-heartbeat me-1"></i>
-            HealthGenic
-          </h5>
-          <ul className="nav-list-container d-flex align-items-center">
-            <li className="nav-element ms-3">
-              <Link className="navbar-link px-3 py-2 rounded" to="/">
-                Home
-              </Link>
-            </li>
 
-            <li className="nav-element ms-3">
-              <Link
-               className="navbar-link px-3 py-2 rounded"
-                aria-current="page"
-                to="/consult"
-              >
-                Video Consultation
-              </Link>
-            </li>
+  return (
+    <div className="container-fluid bg-light" id="nav-container">
+      <nav className="container nav-element-container d-flex justify-content-between align-items-center" >
+        <h5 className="text-success">
+          <i class="fas fa-heartbeat me-1"></i>
+          HealthGenic
+        </h5>
+        <ul className="nav-list-container d-flex align-items-center">
+          <li className="nav-element ms-3">
+            <Link className="navbar-link px-3 py-2 rounded" to="/">
+              Home
+            </Link>
+          </li>
 
-            
-            {/* <li className="navbar-link px-3 py-2 rounded">
+          <li className="nav-element ms-3">
+            <Link
+              className="navbar-link px-3 py-2 rounded"
+              aria-current="page"
+              to="/consult"
+            >
+              Video Consultation
+            </Link>
+          </li>
+
+
+          {/* <li className="navbar-link px-3 py-2 rounded">
               <Link className="navbar-link" to="/Register">
                 Sign Up
               </Link>
@@ -56,7 +56,7 @@ function Header() {
     </li>*/}
 
 
-{currentUser ? (
+          {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
@@ -82,10 +82,10 @@ function Header() {
               </ul>
             </div>
           )}
-          </ul>
-        </nav>
-      </div>
-    );
-  }
+        </ul>
+      </nav>
+    </div>
+  );
+}
 
 export default Header;
