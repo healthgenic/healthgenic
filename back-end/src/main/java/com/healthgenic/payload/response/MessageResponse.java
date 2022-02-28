@@ -1,11 +1,30 @@
 package com.healthgenic.payload.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data @NoArgsConstructor @AllArgsConstructor
 public class MessageResponse {
-  private int status;
-  private String message;
+    private int status;
+    private String message;
+
+    public MessageResponse() {
+    }
+
+    public MessageResponse(int status, String message) {
+        this.status = status;
+        this.message = message;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

@@ -4,10 +4,6 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.healthgenic.payload.response.JwtResponse;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,15 +19,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@Slf4j
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
+	private static final String TAG = CustomAuthenticationFilter.class.getSimpleName();
     private final String jwtSecret;
 
     private AuthenticationManager authenticationManager;
@@ -45,8 +39,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        log.info("username is {}", username);
-        log.info("password is {}", password);
+        System.out.println(TAG + " username is "+ username);
+        System.out.println(TAG + " password is "+ password);
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password, null);
         return authenticationManager.authenticate(authenticationToken);
     }
@@ -67,19 +61,13 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
                 .withExpiresAt(new Date(System.currentTimeMillis() + 30*60*1000))
                 .withIssuer(request.getRequestURL().toString())
                 .sign(algorithm);
-        /*response.setHeader("accessToken", accessToken);
-        response.setHeader("refreshToken", refreshToken);*/
+        
         JwtResponse jwtResponse = new JwtResponse();
         jwtResponse.setAccessToken(accessToken);
         jwtResponse.setRefreshToken(refreshToken);
         jwtResponse.setUsername(user.getUsername());
         jwtResponse.setRoles(user.getAuthorities().stream().map(GrantedAuthority :: getAuthority).collect(Collectors.toList()));
 
-        /*Map<String, Object> tokens = new HashMap<>();
-        tokens.put("username", user.getUsername());
-        tokens.put("roles", user.getAuthorities().stream().map(GrantedAuthority :: getAuthority).collect(Collectors.toList()));
-        tokens.put("accessToken", accessToken);
-        tokens.put("refreshToken", refreshToken);*/
         response.setContentType(APPLICATION_JSON_VALUE);
         new ObjectMapper().writeValue(response.getOutputStream(), jwtResponse);
     }
