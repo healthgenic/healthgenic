@@ -18,7 +18,8 @@ import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
 /* import UserProfile from './Components/Login/UserProfile'; */
 import Register from './Components/Login/register';
 /* import Profile from '../src/Components/Profile/user-profile'; */
-
+import Checkout from './Components/Online_Consultation/AppointMent Booking/Checkout';
+import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment';
 
 
 function App() {
@@ -53,6 +54,11 @@ function App() {
                    {/*  <Route path="/profile" component={Profile} />  */}
                     <Route path="/Payment" component={RazorPay}/>
                     {/* <Route path="/userProfile" component={UserProfile} /> */}
+
+                    <Route path="/bookAppointment" component={BookAppointment}/>
+
+                    <Route path='/Checkout' component={Checkout}/>  
+
                 </Switch>
         
             <Footer/>
