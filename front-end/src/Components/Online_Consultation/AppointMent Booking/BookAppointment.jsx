@@ -80,9 +80,16 @@ onSubmitOTP = (e) => {
     // User signed in successfully.
     const user = result.user;
     console.log(JSON.stringify(user))
+<<<<<<< HEAD
     swal("Congratulations!! You Have Registered Successfully");
     // let navigate = useNavigate();
     // navigate('/Checkout');
+=======
+    //swal("Congratulations!! You Have Registered Successfully");
+    // let navigate = useNavigate();
+    // navigate('/Checkout');
+    window.location.href("http://localhost:3000/home/checkout");
+>>>>>>> f2bdc75388a203887b9f3f618682cb2567629e9a
 
   }).catch((error) => {
     // User couldn't sign in (bad verification code?)

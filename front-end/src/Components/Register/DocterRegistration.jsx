@@ -1,7 +1,11 @@
 // import './register.css';
 import React from "react";
 import "firebase/auth";
+<<<<<<< HEAD
 import firebase from '../../firebase';
+=======
+import firebase from "../../firebase";
+>>>>>>> f2bdc75388a203887b9f3f618682cb2567629e9a
 import { validate } from "./validate";
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";

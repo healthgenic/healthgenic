@@ -20,8 +20,11 @@ import Register from './Components/Login/register';
 /* import Profile from '../src/Components/Profile/user-profile'; */
 import Checkout from './Components/Online_Consultation/AppointMent Booking/Checkout';
 import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment';
+<<<<<<< HEAD
 import UserRegistration from './Components/Register/UserRegistration';
 import Card2Component from './Components/HomePage/Cards2/Card2Component';
+=======
+>>>>>>> f2bdc75388a203887b9f3f618682cb2567629e9a
 
 
 function App() {
@@ -55,10 +58,19 @@ function App() {
                     <Route path="/MedicalDevice" component={MedicalDeviceSection}/>
 
                     <Route path="/Payment" component={RazorPay}/>
+<<<<<<< HEAD
 
                     <Route path="/bookAppointment" component={BookAppointment}/>
 
                     <Route path='/Checkout' component={Checkout}/>
+=======
+                    {/* <Route path="/userProfile" component={UserProfile} /> */}
+
+                    <Route path="/bookAppointment" component={BookAppointment}/>
+
+                    <Route path='/Checkout' component={Checkout}/>  
+
+>>>>>>> f2bdc75388a203887b9f3f618682cb2567629e9a
                 </Switch>
         
             <Footer/>
