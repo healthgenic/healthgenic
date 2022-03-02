@@ -4,6 +4,10 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.healthgenic.payload.response.JwtResponse;
+import com.healthgenic.service.UserService;
+
+import org.apache.catalina.valves.HealthCheckValve;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -30,6 +34,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	private static final String TAG = CustomAuthenticationFilter.class.getSimpleName();
     private final String jwtSecret;
 
+    @Autowired
+    private UserService userService;
     private AuthenticationManager authenticationManager;
     public CustomAuthenticationFilter(AuthenticationManager authenticationManager){
         this.authenticationManager = authenticationManager;
@@ -64,10 +70,12 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
                 .withIssuer(request.getRequestURL().toString())
                 .sign(algorithm);
         
+        com.healthgenic.model.User healtgenicUser = userService.getUser(user.getUsername());
         JwtResponse jwtResponse = new JwtResponse();
         jwtResponse.setAccessToken(accessToken);
         jwtResponse.setRefreshToken(refreshToken);
         jwtResponse.setUsername(user.getUsername());
+        jwtResponse.setName(healtgenicUser.getName());
         jwtResponse.setRoles(user.getAuthorities().stream().map(GrantedAuthority :: getAuthority).collect(Collectors.toList()));
 
         response.setContentType(APPLICATION_JSON_VALUE);
@@ -77,5 +85,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
         super.unsuccessfulAuthentication(request, response, failed);
+        System.out.println("Unsuccessfull Login");
     }
 }
