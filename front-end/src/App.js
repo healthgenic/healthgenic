@@ -7,7 +7,6 @@ import HomePage from './Components/HomePage/HomePage';
 import Footer from './Components/HomePage/SharedContent/Footer';
 import UserLogin from './Components/Login/UserLogin';
 import OnlineConsultation from './Components/Online_Consultation/OnlineConsultation';
-import Epharma from './Components/E_pharma/Epharma';
 import DocterRegistration from './Components/Register/DocterRegistration';
 import RazorPay from './Components/Payment/RazorPay';
 import CovidSection from './Components/E_pharma/Covid_Essentials/CovidSection';
@@ -21,19 +20,20 @@ import Checkout from './Components/Online_Consultation/AppointMent Booking/Check
 import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment';
 import UserRegistration from './Components/Register/UserRegistration';
 import Card2Component from './Components/HomePage/Cards2/Card2Component';
-
 function App() {
   return (
     <BrowserRouter basename='/home'>
       <div className="App">
         <Header />
+        {/* <UserProfile /> */}
       </div>
       <Switch>
+
         <Route path="/" component={HomePage} exact />
         <Route path="/login" component={UserLogin} />
         <Route path="/consult" component={OnlineConsultation} />
 
-        <Route path="/Epharma" /* component={Epharma} */>
+        <Route path="/Epharma" /*component={Epharma}..*/ >
           <Card2Component />
         </Route>
         <Route path="/Register" component={Register} exact />
@@ -52,7 +52,7 @@ function App() {
         <Route path='/Checkout' component={Checkout} />
       </Switch>
       <Footer />
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 

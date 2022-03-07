@@ -1,24 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const Menus = () => {
     return (
         <ListGroup>
-            <ListGroupItem tag="a" href='/personalDetails' action>
+            <Link className="list-group-item list-group-item-action" tag="a" to='/personalDetails' action>
                 Personal Details
-            </ListGroupItem>
-            <ListGroupItem tag="a" href='/myappointments' action>
+            </Link>
+            <Link className="list-group-item list-group-item-action" tag="a" to='/myappointments' action>
                 My Appointments
-            </ListGroupItem>
-            <ListGroupItem  tag="a" href='/mytestlabs' action>
+            </Link>
+            <Link className="list-group-item list-group-item-action"  tag="a" to='/mytestlabs' action>
                 My Test Labs
-            </ListGroupItem>
-            <ListGroupItem tag="a" href='/mymedicineorders' action>
+            </Link>
+            <Link className="list-group-item list-group-item-action" tag="a" to='/mymedicineorders' action>
                 My Medicine Orders
-            </ListGroupItem>
-            <ListGroupItem tag="a" href='/logout' action>
+            </Link>
+            <Link className="list-group-item list-group-item-action" tag="a" to='/logout' action>
                 Logout
-            </ListGroupItem>
+            </Link>
         </ListGroup>
     )
 }

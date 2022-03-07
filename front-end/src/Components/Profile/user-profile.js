@@ -1,26 +1,30 @@
 import React, { useEffect } from "react";
 import { Col, Row } from "reactstrap";
 import AuthService from "../../service/auth.service";
-import Home from "./Home";
+import PersonalDetails from "./PersonalDetails";
 import Menus from "./Menus";
 import UserProfile from "../../service/user-service"
-
+import { Route } from "react-router-dom";
+import AppointmentCard from "./AppointmentCard";
+import MyAppointments from "./MyAppointments";
+import MyTestLabs from "./MyTestLabs";
+import MyEpharmaOrders from "./MyEpharmaOrders";
 const Profile = () => {
   const currentUser = AuthService.getCurrentUser();
 
-  useEffect(() => {
+  /*useEffect(() => {
     document.title = 'Home'
     UserProfile.getUserProfile(currentUser.username).then(
       (response)=>{
           console.log(response);
     }, (error) => {console.log(error)})
-}, []);
+}, []);*/
 
   return (
     <div className="container">
       <header className="jumbotron">
         <h3>
-          <strong>{currentUser.username}</strong> Profile
+          <strong>{currentUser?.username}</strong> Profile
         </h3>
       </header>
 
@@ -30,7 +34,10 @@ const Profile = () => {
               <Menus />
             </Col>
             <Col md={8}>
-              <Home/>
+              <Route path="/personalDetails" component={PersonalDetails} exact/>
+              <Route path="/myappointments" component={MyAppointments} exact/>
+              <Route path="/mytestlabs" component={MyTestLabs} exact/>
+              <Route path="/mymedicineorders" component={MyEpharmaOrders} exact/>
               {/* <Route path="/" component={Home} exact />
               <Route path='/header' component={Header} exact /> */}
             </Col>
