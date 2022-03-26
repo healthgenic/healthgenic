@@ -20,6 +20,7 @@ import Checkout from './Components/Online_Consultation/AppointMent Booking/Check
 import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment';
 import UserRegistration from './Components/Register/UserRegistration';
 import Card2Component from './Components/HomePage/Cards2/Card2Component';
+import Epharma from './Components/E_pharma/Epharma';
 function App() {
   return (
     <BrowserRouter basename='/home'>
@@ -34,7 +35,8 @@ function App() {
         <Route path="/consult" component={OnlineConsultation} />
 
         <Route path="/Epharma" /*component={Epharma}..*/ >
-          <Card2Component />
+          {/* <Card2Component /> */}
+          <Epharma showNavbar={true} /> 
         </Route>
         <Route path="/Register" component={Register} exact />
         <Route path="/DocRegister" component={DocterRegistration} />

@@ -28,7 +28,7 @@ public class PaymentController {
 	public String createOrder(@RequestBody Map<String, Object> data) throws Exception {
 		System.out.println("On server: working with post axios get ");
 		System.out.println(data);
-		int amt = Integer.parseInt(data.get("amount").toString());
+		float amt = Float.parseFloat(data.get("amount").toString());
 		RazorpayClient client = new RazorpayClient("rzp_test_ADUmf8lV5Avque", "M3uvxa92gEFAsF2Ax30cskDh");
 
 		JSONObject ob = new JSONObject();
