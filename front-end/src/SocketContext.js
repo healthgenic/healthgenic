@@ -6,7 +6,7 @@ const SocketContext =createContext();
 
 //const socket = io('http://localhost:8000');
 const socket=io('https://healthgenicserver.herokuapp.com');
-//const socket = io('https://warm-wildwood-81069.herokuapp.com');
+
 
 const ContextProvider = ({children})=> {
     const [stream , setStream]=useState();

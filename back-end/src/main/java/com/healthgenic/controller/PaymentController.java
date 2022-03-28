@@ -29,10 +29,10 @@ public class PaymentController {
 		System.out.println("On server: working with post axios get ");
 		System.out.println(data);
 		float amt = Float.parseFloat(data.get("amount").toString());
-		RazorpayClient client = new RazorpayClient("rzp_test_ADUmf8lV5Avque", "M3uvxa92gEFAsF2Ax30cskDh");
+		RazorpayClient client = new RazorpayClient("rzp_test_ADUmf8lV5Avque", "M3uvxa92gEFAsF2Ax30cskDh"); //key,secret
 
 		JSONObject ob = new JSONObject();
-		ob.put("amount", amt * 100);
+		ob.put("amount", amt*100);
 		ob.put("currency", "INR");
 		ob.put("receipt", "txn_123456");
 

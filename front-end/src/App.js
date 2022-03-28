@@ -21,6 +21,9 @@ import BookAppointment from './Components/Online_Consultation/AppointMent Bookin
 import UserRegistration from './Components/Register/UserRegistration';
 import Card2Component from './Components/HomePage/Cards2/Card2Component';
 import Epharma from './Components/E_pharma/Epharma';
+import HealthBlogs from './Components/Blogs/HealthBlogs';
+import AppointmentPay from './Components/Online_Consultation/AppointMent Booking/AppointmentPay';
+
 function App() {
   return (
     <BrowserRouter basename='/home'>
@@ -32,7 +35,7 @@ function App() {
 
         <Route path="/" component={HomePage} exact />
         <Route path="/login" component={UserLogin} />
-        <Route path="/consult" component={OnlineConsultation} />
+        
 
         <Route path="/Epharma" /*component={Epharma}..*/ >
           {/* <Card2Component /> */}
@@ -49,9 +52,13 @@ function App() {
         <Route path="/Payment" component={RazorPay} />
         <Route path="/userProfile" component={UserProfile} />
         <Route path="/profile" component={Profile} />
-        <Route path="/bookAppointment" component={BookAppointment} />
+
+        <Route path="/consult" component={OnlineConsultation} />
+        <Route path="/bookAppointment" component={BookAppointment} exact/>
+        <Route path='/bookAppointment/pay' component={AppointmentPay} exact/>
 
         <Route path='/Checkout' component={Checkout} />
+       
       </Switch>
       <Footer />
     </BrowserRouter >
