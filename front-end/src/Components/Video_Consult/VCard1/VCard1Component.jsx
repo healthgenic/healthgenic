@@ -23,7 +23,7 @@ export default class VCard1Component extends Component {
                   <p className="card-text text-secondary">
                     General Physician
                   </p>
-                  <Link to="#" className="btn text-primary">
+                  <Link to="/Video_Consult/bookAppointment" className="btn text-primary">
                     Consult Now
                   </Link>
                 </div>

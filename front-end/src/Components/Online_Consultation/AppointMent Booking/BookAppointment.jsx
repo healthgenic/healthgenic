@@ -134,7 +134,7 @@ onSubmitOTP = () => {
 
 pushfunc= (e) => { 
   console.log("hello")
-  this.props.history.push('/bookAppointment/pay');
+  this.props.history.push('/Video_Consult/bookAppointment/pay');
 } 
 
 wrapperFunction = (e) => {

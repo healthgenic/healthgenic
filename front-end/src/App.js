@@ -40,7 +40,7 @@ function App() {
         <Route path="/login" component={UserLogin} />
 
         <Route path="/consult" component={OnlineConsultation} />
-        <Route path="/Video_Consult" component={VideoConsult} />
+       
 
         <Route path="/Epharma" /*component={Epharma}..*/ >
 
@@ -65,8 +65,9 @@ function App() {
         <Route path="/profile" component={Profile} />
 
         <Route path="/consult" component={OnlineConsultation} />
-        <Route path="/bookAppointment" component={BookAppointment} exact/>
-        <Route path='/bookAppointment/pay' component={AppointmentPay} exact/>
+        <Route path="/Video_Consult" component={VideoConsult} exact />
+        <Route path="/Video_Consult/bookAppointment" component={BookAppointment} exact/>
+        <Route path='/Video_Consult/bookAppointment/pay' component={AppointmentPay} exact/>
 
         <Route path='/Checkout' component={Checkout} />
 
