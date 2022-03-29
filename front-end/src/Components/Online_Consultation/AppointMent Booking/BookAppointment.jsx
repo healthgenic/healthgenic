@@ -122,7 +122,6 @@ onSubmitOTP = () => {
     const user = result.user;
     //nconsole.log(JSON.stringify(user))
     //swal("Congratulations!! You Have Registered Successfully");
-    // let navigate = useNavigate();
     // navigate('/Checkout');
     
     //window.location.href("http://localhost:3000/home/checkout");
