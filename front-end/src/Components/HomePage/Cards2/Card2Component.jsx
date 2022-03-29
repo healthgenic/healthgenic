@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import image1 from "./12.png";
 import image2 from "./13.jpg";
-import image3 from "./bb.jpg";
+import image3 from "./44.jpg";
 import image4 from "./11.jpg";
 
 

@@ -18,8 +18,7 @@ export default class Footer extends Component {
             <h5 className="text-uppercase fw-bold text-success">HealthGenic</h5>
             
             <p>
-              A Complete platform for your all health needs.
-            </p>
+            HealthGenic is on a mission to make quality healthcare affordable and accessible for over a billion+ Indians.            </p>
           </div>
     
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -54,7 +53,7 @@ export default class Footer extends Component {
               <Link to="#!" className="text-dark">About Us</Link>
             </p>
             <p>
-              <Link to="#!" className="text-dark">Help</Link>
+              <Link to="/Help" className="text-dark">Help</Link>
             </p>
           </div>
     
