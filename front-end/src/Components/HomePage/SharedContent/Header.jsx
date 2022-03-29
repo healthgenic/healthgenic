@@ -22,14 +22,20 @@ function Header() {
   return (
     <div className="container-fluid bg-light" id="nav-container">
       <nav className="container nav-element-container d-flex justify-content-between align-items-center" >
-        <h5 className="text-success">
+        <h3 className="text-success">
           <i class="fas fa-heartbeat me-1"></i>
           HealthGenic
-        </h5>
+        </h3>
         <ul className="nav-list-container d-flex align-items-center">
           <li className="nav-element ms-3">
             <Link className="navbar-link px-3 py-2 rounded" to="/">
               Home
+            </Link>
+          </li>
+
+          <li className="nav-element ms-3">
+            <Link className="navbar-link px-3 py-2 rounded" to="/Video_Consult">
+              Video Consult
             </Link>
           </li>
 
