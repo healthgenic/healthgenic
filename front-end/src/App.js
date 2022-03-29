@@ -21,8 +21,12 @@ import Checkout from './Components/Online_Consultation/AppointMent Booking/Check
 import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment';
 import UserRegistration from './Components/Register/UserRegistration';
 import Card2Component from './Components/HomePage/Cards2/Card2Component';
+<<<<<<< HEAD
 import Help from './Components/Help/Help';
 
+=======
+import Epharma from './Components/E_pharma/Epharma';
+>>>>>>> 5f75bb281074e28ee002023b7df3d02767ba70db
 function App() {
   return (
     <BrowserRouter basename='/home'>
@@ -37,8 +41,13 @@ function App() {
         <Route path="/consult" component={OnlineConsultation} />
         <Route path="/Video_Consult" component={VideoConsult} />
         <Route path="/Epharma" /*component={Epharma}..*/ >
+<<<<<<< HEAD
         
           <Card2Component />
+=======
+          {/* <Card2Component /> */}
+          <Epharma showNavbar={true} /> 
+>>>>>>> 5f75bb281074e28ee002023b7df3d02767ba70db
         </Route>
         
         <Route path="/Register" component={Register} exact />

@@ -5,6 +5,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.healthgenic.payload.response.JwtResponse;
 import com.healthgenic.service.UserService;
+import com.healthgenic.service.UserServiceImpl;
 
 import org.apache.catalina.valves.HealthCheckValve;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.servlet.FilterChain;
@@ -34,9 +37,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	private static final String TAG = CustomAuthenticationFilter.class.getSimpleName();
     private final String jwtSecret;
 
-    @Autowired
-    private UserService userService;
     private AuthenticationManager authenticationManager;
+    
     public CustomAuthenticationFilter(AuthenticationManager authenticationManager){
         this.authenticationManager = authenticationManager;
         jwtSecret = "secret";
@@ -70,12 +72,12 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
                 .withIssuer(request.getRequestURL().toString())
                 .sign(algorithm);
         
-        com.healthgenic.model.User healtgenicUser = userService.getUser(user.getUsername());
+        //com.healthgenic.model.User healtgenicUser = userService.getUser(user.getUsername());
         JwtResponse jwtResponse = new JwtResponse();
         jwtResponse.setAccessToken(accessToken);
         jwtResponse.setRefreshToken(refreshToken);
         jwtResponse.setUsername(user.getUsername());
-        jwtResponse.setName(healtgenicUser.getName());
+        //jwtResponse.setName(healtgenicUser.getName());
         jwtResponse.setRoles(user.getAuthorities().stream().map(GrantedAuthority :: getAuthority).collect(Collectors.toList()));
 
         response.setContentType(APPLICATION_JSON_VALUE);

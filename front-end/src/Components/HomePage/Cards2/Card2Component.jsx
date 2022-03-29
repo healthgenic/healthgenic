@@ -17,28 +17,28 @@ function Card2Compnent() {
           <div className="col-6 my-2 col-lg-3">
             <img src={image1} className="card-img-top rounded-3" alt="..." />
             <div className="card-body text-center">
-            <Link to="/covidEssential" className="btn btn-outline-success" >Covid Essentials</Link>
+            <Link to="/Epharma/covidEssential" className="btn btn-outline-success" >Covid Essentials</Link>
             </div>
           </div>
 
           <div className="col-6 my-2 col-lg-3">
             <img src={image2} className="card-img-top" alt="..." />
             <div className="card-body text-center">
-              <Link to="/Ayurveda" className="btn btn-outline-success">Ayurveda</Link>
+              <Link to="/Epharma/Ayurveda" className="btn btn-outline-success">Ayurveda</Link>
             </div>
           </div>
 
           <div className="col-6 my-2 col-lg-3">
             <img src={image3} className="card-img-top" alt="..." />
             <div className="card-body text-center">
-              <Link to="/Medicines" className="btn btn-outline-success" >Medicines</Link>
+              <Link to="/Epharma/Medicines" className="btn btn-outline-success" >Medicines</Link>
             </div>
           </div>
 
           <div className="col-6 my-2 col-lg-3">
             <img src={image4} className="card-img-top" alt="..." />
             <div className="card-body text-center">
-              <Link to="/MedicalDevice" className="btn btn-outline-success" >MedicalDevice</Link>
+              <Link to="/Epharma/MedicalDevice" className="btn btn-outline-success" >MedicalDevice</Link>
             </div>
           </div>
 

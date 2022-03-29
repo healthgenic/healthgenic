@@ -31,7 +31,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationFilter.setFilterProcessesUrl("/auth/login");
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.authorizeRequests().antMatchers("/auth/**", "/user/**").permitAll();
+        http.authorizeRequests().antMatchers("/auth/**", "/user/**", "/**").permitAll();
         /*http.authorizeRequests().antMatchers(GET, "/auth/user/**").hasAnyAuthority("ROLE_USER");
         http.authorizeRequests().antMatchers(POST, "/api/user/save/**").hasAnyAuthority("ROLE_USER");*/
         http.authorizeRequests().anyRequest().authenticated();

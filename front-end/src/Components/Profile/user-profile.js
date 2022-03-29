@@ -34,10 +34,10 @@ const Profile = () => {
               <Menus />
             </Col>
             <Col md={8}>
-              <Route path="/personalDetails" component={PersonalDetails} exact/>
-              <Route path="/myappointments" component={MyAppointments} exact/>
-              <Route path="/mytestlabs" component={MyTestLabs} exact/>
-              <Route path="/mymedicineorders" component={MyEpharmaOrders} exact/>
+              <Route path="/profile/personalDetails" component={PersonalDetails} exact/>
+              <Route path="/profile/myappointments" component={MyAppointments} exact/>
+              <Route path="/profile/mytestlabs" component={MyTestLabs} exact/>
+              <Route path="/profile/mymedicineorders" component={MyEpharmaOrders} exact/>
               {/* <Route path="/" component={Home} exact />
               <Route path='/header' component={Header} exact /> */}
             </Col>
