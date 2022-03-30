@@ -20,7 +20,7 @@ const BookNow = (props) => {
     e.preventDefault()
     const data = { 'userName': userName.userName, 'mnumber': mnumber.mnumber, 'mailid': mailid.mailid, 'bgroup': bgroup.bgroup, 'age': age.age, 'gender': gender.gender, 'day': day.day, 'date': date.date, 'time': time.time, 'did': props.location.state.id.did, 'name': props.location.state.name.name }
     console.log(data);
-    debugger;
+    
      postData(data);
     swal("Conratulation !!", "Your Appointment is Done !!  be on time.", "success")
       // swal("Click on either the button or outside the modal.")
@@ -128,8 +128,8 @@ const BookNow = (props) => {
                         setTime({ ...time, time: e.target.value });
                       }}>
                       <option value="Select">Select</option>
-                      <option value="noon">2:00 pm - 4:00 pm</option>
-                      <option value="eve">7:00 pm - 9:00 pm</option>
+                      <option value="2:00 pm - 4:00 pm">2:00 pm - 4:00 pm</option>
+                      <option value="7:00 pm - 9:00 pm">7:00 pm - 9:00 pm</option>
                     </select>
                   </FormGroup>
                   <br />

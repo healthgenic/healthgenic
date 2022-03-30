@@ -17,7 +17,7 @@ const DrNearMe = () => {
     console.log(inputSearch);
     //search filter
     if (inputSearch && inputSearch.length != 0) {
-      debugger;
+      
       setUpdateList(list.filter(
         (item) =>
           item.location.toLowerCase().search(inputSearch.toLowerCase().trim()) !==
