@@ -23,21 +23,21 @@ const Navbar=({setShow, size}) => {
               <ul>
               <li className='icon'>
 
-              <i class="fa-brands fa-pagelines"></i>
+              <i class="fab fa-pagelines"></i>
                  
                   <Link to="/Epharma/Ayurveda" className="my_shop" onClick={()=>setShow(true)}>Ayurveda</Link>
                   </li>
               </ul>
               <ul>
               <li className='icon'>
-              <i class="fa-solid fa-pills"></i>
+              <i class="fas fa-pills"></i>
                
                <Link to="/Epharma/Medicines" className="my_shop" onClick={()=>setShow(true)}>Medicines</Link>
                   </li>
               </ul>
               <ul>
               <li className='icon'>
-              <i class="fa-solid fa-stethoscope"></i>
+              <i class="fas fa-stethoscope"></i>
                   
                   <Link to="/Epharma/MedicalDevice" className="my_shop" onClick={()=>setShow(true)}>MedicalDevice</Link>
 
