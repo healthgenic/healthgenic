@@ -44,7 +44,7 @@ export default class Card1component extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-6 my-2 col-lg-3">
+             <div className="col-6 my-2 col-lg-3"> 
               <div className="card text-center">
                 <div className="overflow">
                   <img src={image3} alt="img3" className="card-img-top" />

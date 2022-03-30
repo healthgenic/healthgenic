@@ -22,7 +22,7 @@ import Register from './Components/Login/register';
 
 
 
-function App() {
+ function App() { 
 
   
   return (
