@@ -155,22 +155,22 @@ wrapperFunction = (e) => {
 
           <div className='form-group mt-3'>
             <label>Enter your name</label>
-            <input type='text' className='form-control' name='name' value={this.state.name} onChange={this.changeNameHandler}></input>
+            <input type='text' className='form-control' name='name' value={this.state.name} onChange={this.changeNameHandler} required></input>
           </div>
 
           <div className='form-group mt-3'>
             <label>Address</label>
-            <input type='text' className='form-control' name='address' value={this.state.address} onChange={this.changeAddressHandler}></input>
+            <input type='text' className='form-control' name='address' value={this.state.address} onChange={this.changeAddressHandler}required></input>
           </div>
 
           <div className='form-group mt-3'>
             <label>Pin Code</label>
-            <input type='text' className='form-control' name='pin' value={this.state.pin} onChange={this.changePinHandler}></input>
+            <input type='text' className='form-control' name='pin' value={this.state.pin} onChange={this.changePinHandler}required></input>
           </div>
 
           <div className='form-group'>
             <label>Tell us you health issues</label>
-            <input type='text' className='form-control' name='hIssue' value={this.state.hIssue} onChange={this.changeHIssueHandler}></input>
+            <input type='text' className='form-control' name='hIssue' value={this.state.hIssue} onChange={this.changeHIssueHandler}required></input>
           </div>
           <br></br>
 
@@ -185,7 +185,7 @@ wrapperFunction = (e) => {
 
           <div className='form-group'>
             <label>Mobile Number</label>
-            <input type='number' className='form-control' required name='number' value={this.state.number} onChange={this.changeNumberHandler}></input>
+            <input type='number' className='form-control' required name='number' value={this.state.number} onChange={this.changeNumberHandler}  ></input>
           </div>
           <button className='btn btn-success mt-3' onClick={this.onSignInSubmit}>Get Otp</button>
 
@@ -193,7 +193,7 @@ wrapperFunction = (e) => {
 
           <div className='form-group mt-3'>
             <label>OTP</label>
-            <input type='number' className='form-control' onChange={this.changeOTPHandler}></input>
+            <input type='number' className='form-control' onChange={this.changeOTPHandler} required></input>
           </div>
 
           <div className='form-group mt-3'>
