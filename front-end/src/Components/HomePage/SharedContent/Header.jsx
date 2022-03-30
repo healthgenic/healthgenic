@@ -55,7 +55,7 @@ function Header() {
                 Sign Up
               </Link>
             </li>
-            <li className="navbar-link px-3 py-2 rounded">
+            <li classNagit restore me="navbar-link px-3 py-2 rounded">
               <Link className="navbar-link" to="/login">
                Log in
               </Link> 
@@ -78,12 +78,12 @@ function Header() {
           ) : (
             <div>
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <button type="button" className="btn btn-outline-secondary">
-                    <Link className="nav-link active" to="/login">
+                <li className="nav-item ms-3">
+             
+                    <Link className="btn  btn-outline-success" to="/login">
                       Login/Register
                     </Link>
-                  </button>
+          
                 </li>
               </ul>
             </div>
