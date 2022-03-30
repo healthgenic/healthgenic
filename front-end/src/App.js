@@ -25,8 +25,8 @@ import Help from './Components/Help/Help';
 import Epharma from './Components/E_pharma/Epharma';
 import HealthBlogs from './Components/Blogs/HealthBlogs';
 import AppointmentPay from './Components/Online_Consultation/AppointMent Booking/AppointmentPay';
-
-
+import DrNearMe from '../../../front-end/front-end/src/Components/findDr/drNearMe';
+import BookNow from '../../../front-end/front-end/src/Components/findDr/BookNow';
 function App() {
   return (
     <BrowserRouter basename='/home'>
@@ -68,7 +68,8 @@ function App() {
         <Route path="/Video_Consult" component={VideoConsult} exact />
         <Route path="/Video_Consult/bookAppointment" component={BookAppointment} exact/>
         <Route path='/Video_Consult/bookAppointment/pay' component={AppointmentPay} exact/>
-
+        <Route path="/SearchDr" component={drNearMe} />
+        <Route path="/bookNow" component={BookNow} />
         <Route path='/Checkout' component={Checkout} />
 
         <Route path='/Help' component={Help} />
