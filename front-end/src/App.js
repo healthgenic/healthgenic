@@ -17,6 +17,8 @@ import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
 /* import UserProfile from './Components/Login/UserProfile'; */
 import Register from './Components/Login/register';
 /* import Profile from '../src/Components/Profile/user-profile'; */
+import BookNow from '../src/Components/findDr/BookNow'
+import drNearMe from '../src/Components/findDr/drNearMe'
 
 
 
