@@ -10,8 +10,8 @@ const Options =({children}) => {
     return (
     <div className='container'>
     <Paper> 
-        <div className='card-deck'>
-            <div className='card'>
+        <div className='card'>
+            <div className='card-body'>
                     <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth />
                     {console.log(me)}
                     <CopyToClipboard text={me}>
@@ -19,7 +19,7 @@ const Options =({children}) => {
                     </CopyToClipboard>
             </div>
 
-            <div className='card'>
+            <div className='card-body'>
                     <TextField label="ID to Call" value={idToCall} onChange={(e) => setIdToCall(e.target.value)} fullWidth />
                     {callAccepted && !callEnded ? (
                         <button className='btn btn-primary' onClick={leaveCall}>End Call</button>

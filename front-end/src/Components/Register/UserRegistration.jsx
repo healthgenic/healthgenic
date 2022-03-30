@@ -1,6 +1,6 @@
 import react, { Fragment } from 'react';
 import 'firebase/auth';
-import firebase from './firebase';
+import firebase from '../../firebase';
 import swal from 'sweetalert';
 import image from "./ub2.jpg";
 import { Link } from "react-router-dom";
@@ -15,6 +15,10 @@ class UserRegistration extends react.Component {
       [name]: value
     })
   }
+
+
+  //Step 1. Set up the reCAPTCHA verifier
+
   configureCaptch = () => {
     const auth = getAuth();
     window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
@@ -22,12 +26,14 @@ class UserRegistration extends react.Component {
       'callback': (response) => {
         // reCAPTCHA solved, allow signInWithPhoneNumber.
         this.onSignInSubmit();
-        console.log("recaptch varify ")
-      
+        console.log("recaptch verify ")
       },
   
     }, auth);
   }
+
+  //Step2. Send Verification code to user
+
   onSignInSubmit = (e) => {
     // import { getAuth, signInWithPhoneNumber } from "firebase/auth";
     e.preventDefault()
@@ -50,6 +56,9 @@ class UserRegistration extends react.Component {
         console.log(error);
       });
   }
+
+  //step3. Sign in the user with the verification code
+
   onSubmitOTP = (e) => {
     e.preventDefault()
     const code = this.state.OTP
@@ -67,8 +76,9 @@ class UserRegistration extends react.Component {
       // User couldn't sign in (bad verification code?)
       // ...
     });
+}
 
-  }
+
   render() {
     return (
       <Fragment>
@@ -80,31 +90,31 @@ class UserRegistration extends react.Component {
                 Register Here 
               </Link></p>
           <Form onSubmit={this.onSignInSubmit}>
-            <div id="sign-in-button"></div>
-           
-           <FormGroup>
-            <label><b>Full Name </b></label><br />
-            <Input type="text" placeholder="Enter Your Name" id="username" name="userID" required /><br />
-            </FormGroup>
+                  <div id="sign-in-button"></div>
+                
+                <FormGroup>
+                  <label><b>Full Name </b></label><br />
+                  <Input type="text" placeholder="Enter Your Name" id="username" name="userID" required /><br />
+                  </FormGroup>
 
-            <FormGroup>
-            <label><b>Mobile number</b></label><br />
-            <Input typw="number" placeholder="Enter Mobile number" id="moNumber" name="mnumber" required onChange={this.handleChange} /><br />
-            </FormGroup>
+                  <FormGroup>
+                  <label><b>Mobile number</b></label><br />
+                  <Input typw="number" placeholder="Enter Mobile number" id="moNumber" name="mnumber" required onChange={this.handleChange} /><br />
+                  </FormGroup>
 
-            <FormGroup>
-            <label><b>Email id</b> :</label><br />
-            <Input type="email" placeholder="Enter Email ID" id="emailid" name="mailid" required /><br />
-            </FormGroup>
+                  <FormGroup>
+                  <label><b>Email id</b> :</label><br />
+                  <Input type="email" placeholder="Enter Email ID" id="emailid" name="mailid" required /><br />
+                  </FormGroup>
 
-            <FormGroup>
-            <label><b>Password</b></label><br />
-            <Input type="password" placeholder="Enter Your Password" id="password" name="password" required /><br />
-            <Button color="warning">Generate OTP</Button>
-            </FormGroup>
+                  <FormGroup>
+                  <label><b>Password</b></label><br />
+                  <Input type="password" placeholder="Enter Your Password" id="password" name="password" required /><br />
+                  <Button color="warning">Generate OTP</Button>
+                  </FormGroup>
 
-            <br/>
-             </Form>
+                  <br/>
+          </Form>
 
           <form onSubmit={this.onSubmitOTP} >
 

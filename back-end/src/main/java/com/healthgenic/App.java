@@ -1,7 +1,5 @@
 package com.healthgenic;
 
-import com.healthgenic.model.ERole;
-import com.healthgenic.model.Role;
 import com.healthgenic.model.User;
 import com.healthgenic.service.UserService;
 import org.springframework.boot.CommandLineRunner;
@@ -10,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import sun.tools.jar.CommandLine;
-
-import java.util.ArrayList;
 
 @SpringBootApplication
 public class App{
@@ -28,7 +24,7 @@ public class App{
 	@Bean
 	CommandLineRunner run(UserService userService){
 		return args -> {
-			userService.saveRole(new Role(null, "ROLE_USER"));
+			/*userService.saveRole(new Role(null, "ROLE_USER"));
 			userService.saveRole(new Role(null, "ROLE_DOCTOR"));
 			userService.saveRole(new Role(null, "ROLE_ADMIN"));
 			userService.saveRole(new Role(null, "ROLE_PATIENT"));
@@ -43,7 +39,7 @@ public class App{
 			userService.addRoleToUser("aksh@123", "ROLE_ADMIN");
 			userService.addRoleToUser("mahima@123", "ROLE_DOCTOR");
 			userService.addRoleToUser("mahesh@123", "ROLE_DOCTOR");
-			userService.addRoleToUser("ajay@123", "ROLE_PATIENT");
+			userService.addRoleToUser("ajay@123", "ROLE_PATIENT");*/
 		};
 	}
 }

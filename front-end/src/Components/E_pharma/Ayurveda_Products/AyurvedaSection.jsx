@@ -6,16 +6,16 @@ import "../Styles/Navbar.css";
 
 function AyurvedaSection({handleClick}){
     return(
-        <div>
+    <div>
       
 
         <div className='section'>
-        {
+            {
     
-         list.map((item) => <Cards key={item.id} item={item} handleClick={handleClick}/> )
-    
-        }
-    </div>
+            list.map((item) => <Cards key={item.id} item={item} handleClick={handleClick}/> )
+            
+            }
+        </div>
     </div>
 
     );

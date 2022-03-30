@@ -9,8 +9,9 @@
     "@testing-library/user-event": "^13.5.0",
     "ajax-client": "^2.1.1",
     "axios": "^0.25.0",
-    "firebase": "^9.6.6",
+    "firebase": "^9.6.7",
     "font-awesome": "^4.7.0",
+    "history": "^5.3.0",
     "jquery": "^3.6.0",
     "razorpay": "^2.8.0",
     "react": "^17.0.2",
@@ -18,7 +19,7 @@
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.2",
     "react-razorpay": "^1.1.4",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.0",
     "react-toastify": "^8.2.0",
     "react-validation": "^3.0.7",
     "reactstrap": "^9.0.1",
@@ -54,6 +55,6 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^5.2.0"
   }
 }

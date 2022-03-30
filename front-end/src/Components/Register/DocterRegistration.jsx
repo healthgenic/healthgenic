@@ -1,7 +1,7 @@
 // import './register.css';
 import React from "react";
 import "firebase/auth";
-import firebase from "./firebase";
+import firebase from "../../firebase";
 import { validate } from "./validate";
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
@@ -195,6 +195,8 @@ class DocterRegistration extends React.Component {
       auth
     );
   };
+
+
   sendOtp = (e) => {
     // import { getAuth, signInWithPhoneNumber } from "firebase/auth";
     e.preventDefault();
@@ -231,6 +233,7 @@ class DocterRegistration extends React.Component {
         console.log(error);
       });
   };
+  
   verifyOtp = () => {
     const code = this.state.otp;
     console.log(code);
@@ -371,6 +374,7 @@ class DocterRegistration extends React.Component {
                         ></div>
                       </div>
                     </div>
+
                     <div className="mb-3">
                       <button
                         className="btn btn-success"
@@ -378,6 +382,7 @@ class DocterRegistration extends React.Component {
                       >
                         Get OTP
                       </button>
+
                     </div>
                     <div className="mb-3">
                       <div className="otp-container d-flex">
