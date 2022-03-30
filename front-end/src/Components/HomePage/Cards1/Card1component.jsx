@@ -70,8 +70,8 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Confirmed appointments
                   </p>
-                  <a href="#" className="btn btn-outline-success">
-                    Book Now
+                  <a href="" className="btn btn-outline-success">
+                   find
                   </a>
                 </div>
               </div>

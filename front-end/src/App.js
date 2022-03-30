@@ -21,6 +21,7 @@ import Register from './Components/Login/register';
 
 
 
+
 function App() {
 
   
@@ -53,6 +54,7 @@ function App() {
                    {/*  <Route path="/profile" component={Profile} />  */}
                     <Route path="/Payment" component={RazorPay}/>
                     {/* <Route path="/userProfile" component={UserProfile} /> */}
+                   
                 </Switch>
         
             <Footer/>
