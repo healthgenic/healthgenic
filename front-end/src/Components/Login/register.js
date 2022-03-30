@@ -7,45 +7,12 @@ import AuthService from "../../service/auth.service"
 import { toast, ToastContainer } from 'react-toastify';
 import swal from "sweetalert";
 
-const required = (value) => {
-    if (!value) {
-        return (
-            <div className="alert alert-danger" role="alert">
-                This field is required!
-            </div>
-        );
-    }
-};
 
-const validEmail = (value) => {
-    if (!isEmail(value)) {
-        return (
-            <div className="alert alert-danger" role="alert">
-                This is not a valid email.
-            </div>
-        );
-    }
-};
 
-const vusername = (value) => {
-    if (value.length < 3 || value.length > 20) {
-        return (
-            <div className="alert alert-danger" role="alert">
-                The username must be between 3 and 20 characters.
-            </div>
-        );
-    }
-};
 
-const vpassword = (value) => {
-    if (value.length < 6 || value.length > 40) {
-        return (
-            <div className="alert alert-danger" role="alert">
-                The password must be between 6 and 40 characters.
-            </div>
-        );
-    }
-};
+
+
+
 
 const Register = (props) => {
     const form = useRef();
@@ -55,16 +22,57 @@ const Register = (props) => {
     const [password, setPassword] = useState("");
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState("");
+    
+    
+    const [invalidPasswordText,setInvalidPasswordText] = useState(" ");
+    const [invalidUsernameLengthText, setInvalidUsernameLengthText] = useState(" ");
+    const [invalidEmailFormatText,setInvalidEmailFormatText] = useState(" ");
+    const [inputFieldEmptyText, setInputFieldEmptyText] = useState(" ");
+    // to inform user for invalid form input 
+    const vpassword = (value) => {
+        if (value.length < 6 || value.length > 40) {
+           setInvalidPasswordText("The password must be between 6 and 40 characters.");
+         
+        }else{
+            setInvalidPasswordText("");
+        }
+    };
+    const vusername = (value) => {
+        if (value.length < 3 || value.length > 20) {
+            setInvalidUsernameLengthText("The username must be between 3 and 20 characters.");
+        }else{
+            setInvalidUsernameLengthText("");   
+        }
+    };
+    
+    const validEmail = (value) => {
+        if (!isEmail(value)) {
+            setInvalidEmailFormatText("This is not a valid email.");
+        }else{
+            setInvalidEmailFormatText(" ")   
+        }
+    };
+    const required = (value) => {
+        if (!value) {
+            setInputFieldEmptyText("This field is required!");
+        }
+    };
+
+
+
     const onChangeName = (e) => {
         const name = e.target.value;
+        vusername(name);
         setName(name);
     };
     const onChangeUsername = (e) => {
         const username = e.target.value;
+        validEmail(username);
         setUsername(username);
     };
     const onChangePassword = (e) => {
         const password = e.target.value;
+        vpassword(password);
         setPassword(password);
     };
     const handleRegister = (e) => {
@@ -100,54 +108,65 @@ const Register = (props) => {
         }
     };
     return (
-        <div className="col-md-12">
+       <div className="row my-5 mx-5 d-flex justify-content-center ">
+            <div className="col-xl-4 col-md-4">
             {/* <ToastContainer/> */}
-            <div className="card card-container">
+            
                 <Form onSubmit={handleRegister} ref={form}>
                     {!successful && (
                         <div>
                             <div className="form-group">
-                                <label htmlFor="username">Username</label>
+                               <div className="mb-2">
+                               <label className="form-label"htmlFor="username">Username</label>
                                 <Input
                                     type="text"
                                     className="form-control"
                                     name="name"
                                     value={name}
+                                    required
                                     onChange={onChangeName}
-                                    validations={[required, vusername]}
                                 />
+                               </div>
+                               
+                               <small className="text-danger">{invalidUsernameLengthText}&nbsp;</small>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
+                               <div className="mb-1">
+                               <label className="form-label"htmlFor="email">Email</label>
                                 <Input
                                     type="text"
                                     className="form-control"
                                     name="username"
+                                    required
                                     value={username}
                                     onChange={onChangeUsername}
-                                    validations={[required, validEmail]}
                                 />
+                               <small className="text-danger">{invalidEmailFormatText}&nbsp;</small>
+                               </div>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="password">Password</label>
+                               <div className="mb-1">
+                               <label className="form-label"htmlFor="password">Password</label>
                                 <Input
                                     type="password"
                                     className="form-control"
                                     name="password"
                                     value={password}
+                                    required
                                     onChange={onChangePassword}
-                                    validations={[required, vpassword]}
                                 />
+                                <small className="text-danger">{invalidPasswordText}&nbsp;</small>
+                               </div>
                             </div>
                             <div className="form-group">
-                                <button className="btn btn-primary btn-block">Sign Up</button>
+                                <button className="btn btn-success">Sign Up</button>
                             </div>
                         </div>
                     )}
                     {message && (
                         <div className="form-group">
                             <div
-                                className={successful ? "alert alert-success" : "alert alert-danger"}
+                                className={successful ? "alert alert-success mt-2" : "alert alert-danger mt-2"}
                                 role="alert"
                             >
                                 {message}
@@ -156,8 +175,8 @@ const Register = (props) => {
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
                 </Form>
-            </div>
         </div>
+       </div>
     );
 };
 export default Register;
