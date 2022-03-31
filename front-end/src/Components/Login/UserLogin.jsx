@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import AuthService from '../../service/auth.service'
 import UserService from '../../service/user-service'
-//import './login.scss';
+import './login.css';
+import image from "./background.jpg";
 
 const required = (value) => {
   if (!value) {
@@ -67,8 +68,10 @@ export default function UserLogin(props) {
 
   return (
     <div>
+      <img src={image}  className="card-img-top rounded-3" alt="..." />
+
       {/* <ToastContainer/> */}
-      <form onSubmit={handleLogin} ref={form}>
+      <form className="login" onSubmit={handleLogin} ref={form}>
         <h3>
           <b>Login to your account</b>
         </h3>
