@@ -22,7 +22,7 @@ const BookNow = (props) => {
     console.log(data);
     
      postData(data);
-    swal("Conratulation !!", "Your Appointment is Done !!  be on time.", "success")
+    swal("Congratulation !!", "Your Appointment is Done !!  be on time.", "success")
       // swal("Click on either the button or outside the modal.")
     .then((value) => {
         // swal(`The returned value is: ${value}`);

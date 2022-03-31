@@ -18,10 +18,12 @@ import MedicinesSection from './Components/E_pharma/Medicines/MedicinesSection'
 import Register from './Components/Login/register';
 /* import Profile from '../src/Components/Profile/user-profile'; */
 import BookNow from '../src/Components/findDr/BookNow'
-import drNearMe from '../src/Components/findDr/drNearMe'
-
-
-
+import drNearMe from './Components/findDr/drNearMe'
+import Help from './Components/Help/Help';
+import AppointmentPay from './Components/Online_Consultation/AppointMent Booking/AppointmentPay'
+import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment'
+import VideoConsult from './Components/Video_Consult/VideoConsult'
+import UserProfile from './Components/Profile/user-profile'
 
  function App() { 
 
@@ -43,7 +45,7 @@ import drNearMe from '../src/Components/findDr/drNearMe'
           <Route path="/Epharma" /*component={Epharma}..*/ >
 
           
-            <Card2Component />
+
 
             {/* <Card2Component /> */}
             <Epharma showNavbar={true} /> 
@@ -53,6 +55,8 @@ import drNearMe from '../src/Components/findDr/drNearMe'
           <Route path="/Register" component={Register} exact />
           <Route path="/DocRegister" component={DocterRegistration} />
 
+
+          
           <Route path="/covidEssential" component={CovidSection} />
           <Route path="/Ayurveda" component={AyurvedaSection} />
           <Route path="/Medicines" component={MedicinesSection} />
@@ -60,14 +64,14 @@ import drNearMe from '../src/Components/findDr/drNearMe'
 
           <Route path="/Payment" component={RazorPay} />
           <Route path="/userProfile" component={UserProfile} />
-          <Route path="/profile" component={Profile} />
+          {/* <Route path="/profile" component={Profile} /> */}
 
           <Route path="/consult" component={OnlineConsultation} />
           <Route path="/Video_Consult" component={VideoConsult} exact />
           <Route path="/Video_Consult/bookAppointment" component={BookAppointment} exact/>
           <Route path='/Video_Consult/bookAppointment/pay' component={AppointmentPay} exact/>
 
-          <Route path='/Checkout' component={Checkout} />
+          {/*  <Route path='/Checkout' component={Checkout} /> */}
 
           <Route path='/Help' component={Help} />
           <Route path="/SearchDr" component={drNearMe} />

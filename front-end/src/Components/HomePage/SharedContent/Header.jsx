@@ -35,7 +35,13 @@ function Header() {
 
           <li className="nav-element ms-3">
             <Link className="navbar-link px-3 py-2 rounded" to="/Video_Consult">
-              Video Consult
+              Book Appointment
+            </Link>
+          </li>
+
+          <li className="nav-element ms-3">
+            <Link className="navbar-link px-3 py-2 rounded" to="/Epharma">
+              E-Pharma
             </Link>
           </li>
 
