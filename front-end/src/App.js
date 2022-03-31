@@ -36,42 +36,42 @@ function App() {
       </div>
       <Switch>
 
-        <Route path="/" component={HomePage} exact />
-        <Route path="/login" component={UserLogin} />
+          <Route path="/" component={HomePage} exact />
+          <Route path="/login" component={UserLogin} />
 
-        <Route path="/consult" component={OnlineConsultation} />
-       
-
-        <Route path="/Epharma" /*component={Epharma}..*/ >
-
+          <Route path="/consult" component={OnlineConsultation} />
         
-          <Card2Component />
 
-          {/* <Card2Component /> */}
-          <Epharma showNavbar={true} /> 
+          <Route path="/Epharma" /*component={Epharma}..*/ >
 
-        </Route>
-        
-        <Route path="/Register" component={Register} exact />
-        <Route path="/DocRegister" component={DocterRegistration} />
+          
+            <Card2Component />
 
-        <Route path="/covidEssential" component={CovidSection} />
-        <Route path="/Ayurveda" component={AyurvedaSection} />
-        <Route path="/Medicines" component={MedicinesSection} />
-        <Route path="/MedicalDevice" component={MedicalDeviceSection} />
+            {/* <Card2Component /> */}
+            <Epharma showNavbar={true} /> 
 
-        <Route path="/Payment" component={RazorPay} />
-        <Route path="/userProfile" component={UserProfile} />
-        <Route path="/profile" component={Profile} />
+          </Route>
+          
+          <Route path="/Register" component={Register} exact />
+          <Route path="/DocRegister" component={DocterRegistration} />
 
-        <Route path="/consult" component={OnlineConsultation} />
-        <Route path="/Video_Consult" component={VideoConsult} exact />
-        <Route path="/Video_Consult/bookAppointment" component={BookAppointment} exact/>
-        <Route path='/Video_Consult/bookAppointment/pay' component={AppointmentPay} exact/>
+          <Route path="/covidEssential" component={CovidSection} />
+          <Route path="/Ayurveda" component={AyurvedaSection} />
+          <Route path="/Medicines" component={MedicinesSection} />
+          <Route path="/MedicalDevice" component={MedicalDeviceSection} />
 
-        <Route path='/Checkout' component={Checkout} />
+          <Route path="/Payment" component={RazorPay} />
+          <Route path="/userProfile" component={UserProfile} />
+          <Route path="/profile" component={Profile} />
 
-        <Route path='/Help' component={Help} />
+          <Route path="/consult" component={OnlineConsultation} />
+          <Route path="/Video_Consult" component={VideoConsult} exact />
+          <Route path="/Video_Consult/bookAppointment" component={BookAppointment} exact/>
+          <Route path='/Video_Consult/bookAppointment/pay' component={AppointmentPay} exact/>
+
+          <Route path='/Checkout' component={Checkout} />
+
+          <Route path='/Help' component={Help} />
         
 
       </Switch>
