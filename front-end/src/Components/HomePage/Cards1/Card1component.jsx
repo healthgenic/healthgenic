@@ -44,7 +44,7 @@ export default class Card1component extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-6 my-2 col-lg-3">
+             <div className="col-6 my-2 col-lg-3"> 
               <div className="card text-center">
                 <div className="overflow">
                   <img src={image3} alt="img3" className="card-img-top" />
@@ -70,9 +70,10 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Confirmed appointments
                   </p>
-                  <Link to="#" className="btn btn-outline-success">
-                    Book Now
-                  </Link>
+                  <a href="http://localhost:3001/SearchDr" className="btn btn-outline-success">
+                   Find Doctor
+                  </a>
+                  
                 </div>
               </div>
             </div>

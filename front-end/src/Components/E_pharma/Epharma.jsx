@@ -44,7 +44,7 @@ function Epharma() {
           (<Navbar setShow={setShow} size={cart.length} />
           {show ? (
             <div>
-              <Card2Component handleClick={handleClick} />
+              {/* <Card2Component handleClick={handleClick} /> */}
 
               <Switch>
                     <Route path="/cart" ><Cart handleClick={handleClick} /></Route>
