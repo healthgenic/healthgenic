@@ -24,6 +24,7 @@ import AppointmentPay from './Components/Online_Consultation/AppointMent Booking
 import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment'
 import VideoConsult from './Components/Video_Consult/VideoConsult'
 import UserProfile from './Components/Profile/user-profile'
+import AboutUs from './Components/HomePage/AboutUs';
 
  function App() { 
 
@@ -34,7 +35,7 @@ import UserProfile from './Components/Profile/user-profile'
         <Header />
         {/* <UserProfile /> */}
       </div>
-      <Switch>
+      <Switch>*
 
           <Route path="/" component={HomePage} exact />
           <Route path="/login" component={UserLogin} />
@@ -43,9 +44,6 @@ import UserProfile from './Components/Profile/user-profile'
         
 
           <Route path="/Epharma" /*component={Epharma}..*/ >
-
-          
-
 
             {/* <Card2Component /> */}
             <Epharma showNavbar={true} /> 
@@ -76,6 +74,8 @@ import UserProfile from './Components/Profile/user-profile'
           <Route path='/Help' component={Help} />
           <Route path="/SearchDr" component={drNearMe} />
           <Route path="/bookNow" component={BookNow} />
+
+          <Route path="/AboutUs" component={AboutUs}/>
 
       </Switch>
       <Footer />

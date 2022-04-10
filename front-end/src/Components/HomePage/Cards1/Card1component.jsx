@@ -10,6 +10,7 @@ export default class Card1component extends Component {
   render() {
     return (
       <div>
+
         <div className="container justify-content-center mt-5 ">
           <div className="row">
             <div className="col-6 my-2 col-lg-3">
@@ -79,6 +80,7 @@ export default class Card1component extends Component {
             </div>
           </div>
         </div>
+        
       </div>
     );
   }
