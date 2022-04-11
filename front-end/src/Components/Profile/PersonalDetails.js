@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { } from 'reactstrap'
-import base_url from '../../api/service'
-import axios from 'axios'
 import userService from '../../service/user-service'
 import authService from '../../service/auth.service'
 const Home = () => {

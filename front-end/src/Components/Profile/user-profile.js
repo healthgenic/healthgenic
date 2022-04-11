@@ -9,6 +9,7 @@ import AppointmentCard from "./AppointmentCard";
 import MyAppointments from "./MyAppointments";
 import MyTestLabs from "./MyTestLabs";
 import MyEpharmaOrders from "./MyEpharmaOrders";
+import DocterDetails from "./DocterDetails";
 const Profile = () => {
   const currentUser = AuthService.getCurrentUser();
 

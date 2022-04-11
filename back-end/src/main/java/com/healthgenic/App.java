@@ -40,7 +40,7 @@ public class App{
 
 			userService.addRoleToUser("aksh@123", "ROLE_USER");
 			userService.addRoleToUser("mahima@123", "ROLE_USER");
-			userService.addRoleToUser("aksh@123", "ROLE_ADMIN");
+			//userService.addRoleToUser("aksh@123", "ROLE_ADMIN");
 			userService.addRoleToUser("mahima@123", "ROLE_DOCTOR");
 			userService.addRoleToUser("mahesh@123", "ROLE_DOCTOR");
 			userService.addRoleToUser("ajay@123", "ROLE_PATIENT");*/
