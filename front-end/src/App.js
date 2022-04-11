@@ -24,10 +24,9 @@ import AppointmentPay from './Components/Online_Consultation/AppointMent Booking
 import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment'
 import VideoConsult from './Components/Video_Consult/VideoConsult'
 import UserProfile from './Components/Profile/user-profile'
+import Profile from './Components/Profile/user-profile';
 
- function App() { 
-
-  
+ function App() {
   return (
     <BrowserRouter basename='/home'>
       <div className="App">
@@ -43,10 +42,6 @@ import UserProfile from './Components/Profile/user-profile'
         
 
           <Route path="/Epharma" /*component={Epharma}..*/ >
-
-          
-
-
             {/* <Card2Component /> */}
             <Epharma showNavbar={true} /> 
 
@@ -64,7 +59,7 @@ import UserProfile from './Components/Profile/user-profile'
 
           <Route path="/Payment" component={RazorPay} />
           <Route path="/userProfile" component={UserProfile} />
-          {/* <Route path="/profile" component={Profile} /> */}
+          <Route path="/profile" component={Profile} /> 
 
           <Route path="/consult" component={OnlineConsultation} />
           <Route path="/Video_Consult" component={VideoConsult} exact />

@@ -23,7 +23,7 @@ const setUserProfile = (data) => {
     method: 'post',
     url: API_URL + `/add/profile`,
     //headers: { header },
-    data: data
+    data: data 
   });
 }
 

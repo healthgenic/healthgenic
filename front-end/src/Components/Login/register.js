@@ -6,13 +6,7 @@ import { isEmail } from "validator";
 import AuthService from "../../service/auth.service"
 import { toast, ToastContainer } from 'react-toastify';
 import swal from "sweetalert";
-
-
-
-
-
-
-
+import { FormControlLabel, Radio, RadioGroup } from "@material-ui/core";
 
 const Register = (props) => {
     const form = useRef();
@@ -22,34 +16,34 @@ const Register = (props) => {
     const [password, setPassword] = useState("");
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState("");
-    
-    
-    const [invalidPasswordText,setInvalidPasswordText] = useState(" ");
+    const [role, setRole] = useState(['ROLE_USER']);
+
+    const [invalidPasswordText, setInvalidPasswordText] = useState(" ");
     const [invalidUsernameLengthText, setInvalidUsernameLengthText] = useState(" ");
-    const [invalidEmailFormatText,setInvalidEmailFormatText] = useState(" ");
+    const [invalidEmailFormatText, setInvalidEmailFormatText] = useState(" ");
     const [inputFieldEmptyText, setInputFieldEmptyText] = useState(" ");
     // to inform user for invalid form input 
     const vpassword = (value) => {
         if (value.length < 6 || value.length > 40) {
-           setInvalidPasswordText("The password must be between 6 and 40 characters.");
-         
-        }else{
+            setInvalidPasswordText("The password must be between 6 and 40 characters.");
+
+        } else {
             setInvalidPasswordText("");
         }
     };
     const vusername = (value) => {
         if (value.length < 3 || value.length > 20) {
             setInvalidUsernameLengthText("The username must be between 3 and 20 characters.");
-        }else{
-            setInvalidUsernameLengthText("");   
+        } else {
+            setInvalidUsernameLengthText("");
         }
     };
-    
+
     const validEmail = (value) => {
         if (!isEmail(value)) {
             setInvalidEmailFormatText("This is not a valid email.");
-        }else{
-            setInvalidEmailFormatText(" ")   
+        } else {
+            setInvalidEmailFormatText(" ")
         }
     };
     const required = (value) => {
@@ -57,8 +51,6 @@ const Register = (props) => {
             setInputFieldEmptyText("This field is required!");
         }
     };
-
-
 
     const onChangeName = (e) => {
         const name = e.target.value;
@@ -75,21 +67,41 @@ const Register = (props) => {
         vpassword(password);
         setPassword(password);
     };
+    const onRadioButtonChange = (e) => {
+        let role = e.target.value;
+        setRole([role]);
+    }
+
+    const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
     const handleRegister = (e) => {
         e.preventDefault();
         setMessage("");
         setSuccessful(false);
         form.current.validateAll();
         if (checkBtn.current.context._errors.length === 0) {
-            AuthService.register(name, username, password).then(
+            AuthService.register(name, username, password, role).then(
                 (response) => {
                     setMessage(response.data.message);
                     setSuccessful(true);
                     //toast.success("Registration Successfull!!!")
-                    swal("Registration Successfull", "success")
-                    AuthService.login(username, password)
-                    props.history.push("/userprofile");
-                    window.location.reload();
+                    //swal("Registration Successfull", "success")
+                    AuthService.login(username, password).then(
+                        (data) => {
+                            if (equals(role, ['ROLE_USER'])) {
+                                console.log(role)
+                                props.history.push({
+                                    pathname: "/userprofile",
+                                    email: username,
+                                    name
+                                });
+                            }
+                            else if (equals(role, ['ROLE_DOCTOR'])) {
+                                console.log(role);
+                            }
+                        }
+                    )
+                    //window.location.reload();
                 },
                 (error) => {
                     const resMessage =
@@ -98,7 +110,7 @@ const Register = (props) => {
                             error.response.data.message) ||
                         error.message ||
                         error.toString();
-                        
+
                     setMessage(resMessage);
                     setSuccessful(false);
                     //toast.error("Error");
@@ -108,55 +120,65 @@ const Register = (props) => {
         }
     };
     return (
-       <div className="row my-5 mx-5 d-flex justify-content-center ">
+        <div className="row my-5 mx-5 d-flex justify-content-center ">
             <div className="col-xl-4 col-md-4">
-            {/* <ToastContainer/> */}
-            
+                {/* <ToastContainer/> */}
+
                 <Form onSubmit={handleRegister} ref={form}>
                     {!successful && (
                         <div>
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                defaultValue="ROLE_USER"
+                                name="row-radio-buttons-group"
+                                onChange={onRadioButtonChange}
+                            >
+                                <FormControlLabel value="ROLE_USER" control={<Radio />} label="I'm a User" />
+                                <FormControlLabel value="ROLE_DOCTOR" control={<Radio />} label="I'm a Doctor" />
+                            </RadioGroup>
                             <div className="form-group">
-                               <div className="mb-2">
-                               <label className="form-label"htmlFor="username">Username</label>
-                                <Input
-                                    type="text"
-                                    className="form-control"
-                                    name="name"
-                                    value={name}
-                                    required
-                                    onChange={onChangeName}
-                                />
-                               </div>
-                               
-                               <small className="text-danger">{invalidUsernameLengthText}&nbsp;</small>
+                                <div className="mb-2">
+                                    <label className="form-label" htmlFor="username">Username</label>
+                                    <Input
+                                        type="text"
+                                        className="form-control"
+                                        name="name"
+                                        value={name}
+                                        required
+                                        onChange={onChangeName}
+                                    />
+                                </div>
+
+                                <small className="text-danger">{invalidUsernameLengthText}&nbsp;</small>
                             </div>
                             <div className="form-group">
-                               <div className="mb-1">
-                               <label className="form-label"htmlFor="email">Email</label>
-                                <Input
-                                    type="text"
-                                    className="form-control"
-                                    name="username"
-                                    required
-                                    value={username}
-                                    onChange={onChangeUsername}
-                                />
-                               <small className="text-danger">{invalidEmailFormatText}&nbsp;</small>
-                               </div>
+                                <div className="mb-1">
+                                    <label className="form-label" htmlFor="email">Email</label>
+                                    <Input
+                                        type="text"
+                                        className="form-control"
+                                        name="username"
+                                        required
+                                        value={username}
+                                        onChange={onChangeUsername}
+                                    />
+                                    <small className="text-danger">{invalidEmailFormatText}&nbsp;</small>
+                                </div>
                             </div>
                             <div className="form-group">
-                               <div className="mb-1">
-                               <label className="form-label"htmlFor="password">Password</label>
-                                <Input
-                                    type="password"
-                                    className="form-control"
-                                    name="password"
-                                    value={password}
-                                    required
-                                    onChange={onChangePassword}
-                                />
-                                <small className="text-danger">{invalidPasswordText}&nbsp;</small>
-                               </div>
+                                <div className="mb-1">
+                                    <label className="form-label" htmlFor="password">Password</label>
+                                    <Input
+                                        type="password"
+                                        className="form-control"
+                                        name="password"
+                                        value={password}
+                                        required
+                                        onChange={onChangePassword}
+                                    />
+                                    <small className="text-danger">{invalidPasswordText}&nbsp;</small>
+                                </div>
                             </div>
                             <div className="form-group">
                                 <button className="btn btn-success">Sign Up</button>
@@ -175,8 +197,8 @@ const Register = (props) => {
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
                 </Form>
+            </div>
         </div>
-       </div>
     );
 };
 export default Register;

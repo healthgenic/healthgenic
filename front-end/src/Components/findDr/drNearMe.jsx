@@ -5,7 +5,6 @@ import Cards from './Cards'
 import SearchIcon from '@material-ui/icons/Search';
 import AddLocationIcon from '@material-ui/icons/AddLocation';
 
-
 const DrNearMe = () => {
 
   const [updateList, setUpdateList] = useState(list);

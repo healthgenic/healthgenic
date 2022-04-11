@@ -20,5 +20,5 @@ const Cards=({item, handleClick}) => {
         </div>
     )
 }
-
+ 
 export default Cards;
