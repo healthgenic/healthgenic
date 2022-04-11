@@ -78,14 +78,14 @@ export default function UserLogin(props) {
 
         <div className="form-outline mb-2">
           <label className="form-label">
-            Username
+            Email ID
           </label>
           <input
             type="email"
             id="form2"
             className="form-control"
             name="username"
-            placeholder="Phone number or email address"
+            placeholder="Enter your email address"
             value={username}
             onChange={onChangeUsername}
           />

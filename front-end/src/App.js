@@ -64,6 +64,7 @@ import Profile from './Components/Profile/user-profile';
 
           <Route path="/consult" component={OnlineConsultation} />
           <Route path="/Video_Consult" component={VideoConsult} exact />
+          
           <Route path="/Video_Consult/bookAppointment" component={BookAppointment} exact/>
           <Route path='/Video_Consult/bookAppointment/pay' component={AppointmentPay} exact/>
 
