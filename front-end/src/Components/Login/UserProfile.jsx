@@ -94,69 +94,95 @@ export default function UserProfile(props) {
         
     };
     return (
-        <div>
-            <form onSubmit={submitUserProfile} ref={form}>
-                <div>
-                    <label>Name</label>
-                    <input type="text" name='name' onChange={onChangeName} />
+        <div className="container">
+            <h2 className='my-3'>Complete your profile..</h2>
+            <hr></hr>
+            <div className='row '>
+                <div className="col-md-6 mb-3">
+                <form onSubmit={submitUserProfile} ref={form}>
+               <div className="row">
+                   <div className="col-md-6 mb-3">
+         
+                    <label className="form-label">Name</label>
+                    <input type="text" className="form-control"  name='name' onChange={onChangeName} />
+                </div >
+                
+                <div className="col-md-6 mb-3">
+                    <label className="form-label">Username</label>
+                    <input type="text" className="form-control" name='username' onChange={onChangeUsername} />
                 </div>
-                <div>
-                    <label>Username</label>
-                    <input type="text" name='username' onChange={onChangeUsername} />
+          
+               </div>
+               <div className="row">
+               <div className="col-md-6 mb-3">
+                    <label className="form-label">Phone Number</label>
+                    <input type="text" className="form-control" name='phoneNumber' onChange={onChangePhoneNumber} />
                 </div>
-                <div>
-                    <label>Phone Number</label>
-                    <input type="text" name='phoneNumber' onChange={onChangePhoneNumber} />
+                <div className="col-md-6 mb-3">
+                    <label className="form-label">Email</label>
+                    <input type="text" className="form-control" name='email' onChange={onChangeEmail} />
                 </div>
-                <div>
-                    <label>Email</label>
-                    <input type="text" name='email' onChange={onChangeEmail} />
+               </div>
+               <div className="row">
+               <div className="col-md-6 mb-3">
+                    <label className="form-label">Gender</label>
+                    <input type="text" className="form-control" name='gender' onChange={onChangeGender} />
                 </div>
-                <div>
-                    <label>Gender</label>
-                    <input type="text" name='gender' onChange={onChangeGender} />
+                <div className="col-md-6 mb-3">
+                    <label className="form-label">Date of Birth</label>
+                    <input type="text" className="form-control" name='dateOfBirth' onChange={onChangeDateOfBirth} />
                 </div>
-                <div>
-                    <label>Date of Birth</label>
-                    <input type="text" name='dateOfBirth' onChange={onChangeDateOfBirth} />
+               </div>
+               <div className="row">
+               <div className="col-md-6 mb-3">
+                    <label className="form-label">Blood group</label>
+                    <input type="text" className="form-control" name='bloodGroup' onChange={onChangeBloodGroup} />
                 </div>
-                <div>
-                    <label>Blood group</label>
-                    <input type="text" name='bloodGroup' onChange={onChangeBloodGroup} />
+                
+                <h4 className='my-4'>Address</h4>
+                <div className="col-md-6 mb-3">
+                    <label className="form-label">House No/Stree Name</label>
+                    <input type="text" className="form-control" name='stree' onChange={onChangeArea} />
                 </div>
-                <h4>Address</h4>
-                <div>
-                    <label>House No/Stree Name</label>
-                    <input type="text" name='stree' onChange={onChangeArea} />
+               </div>
+               <div className="row">
+               <div className="col-md-6 mb-3">
+                    <label className="form-label">Locality</label>
+                    <input type="text" className="form-control" name='locality' onChange={onChangeLocality} />
                 </div>
-                <div>
-                    <label>Locality</label>
-                    <input type="text" name='locality' onChange={onChangeLocality} />
+                <div className="col-md-6 mb-3">
+                    <label className="form-label">City</label>
+                    <input type="text" className="form-control" name='city' onChange={onChangeCity} />
                 </div>
-                <div>
-                    <label>City</label>
-                    <input type="text" name='city' onChange={onChangeCity} />
+               </div>
+               <div className="row">
+               <div className="col-md-6 mb-3">
+                    <label className="form-label">State</label>
+                    <input type="text" className="form-control" name='state' onChange={onChangeState} />
                 </div>
-                <div>
-                    <label>State</label>
-                    <input type="text" name='state' onChange={onChangeState} />
+                <div className="col-md-6 mb-3">
+                    <label className="form-label">Country</label>
+                    <input type="text" className="form-control" name='country' onChange={onChangeCountry} />
                 </div>
-                <div>
-                    <label>Country</label>
-                    <input type="text" name='country' onChange={onChangeCountry} />
+               </div>
+              <div className="row">
+              <div className="col-md-6 mb-3">
+                    <label className="form-label">Pincode</label>
+                    <input type="text" className="form-control" name='pincode' onChange={onChangePincode} />
                 </div>
-                <div>
-                    <label>Pincode</label>
-                    <input type="text" name='pincode' onChange={onChangePincode} />
+                <div className="col-md-6 mb-3">
+                    <label className="form-label">Alternate Phone Number</label>
+                    <input type="text" className="form-control" name='state' onChange={onChangeAlternateNumber} />
                 </div>
-                <div>
-                    <label>Alternate Phone Number</label>
-                    <input type="text" name='state' onChange={onChangeAlternateNumber} />
-                </div>
-                <div className="form-group">
-                    <button className="btn btn-primary btn-block">Submit</button>
+              </div>
+                <div className="col-md-6" >
+                    <button className="btn btn-primary btn-block my-2">Submit</button>
                 </div>
             </form>
+                </div>
+                <div className="col-md-6" ></div>
+           
+        </div>
         </div>
     )
 }
