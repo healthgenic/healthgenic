@@ -22,7 +22,7 @@ function Header() {
     <div className="container-fluid bg-light" id="nav-container">
       <nav className="container nav-element-container d-flex justify-content-between align-items-center" >
         <h3 className="text-success">
-          <i class="fas fa-heartbeat me-1"></i>
+          <i className="fas fa-heartbeat me-1"></i>
           HealthGenic
         </h3>
         <ul className="nav-list-container d-flex align-items-center">
