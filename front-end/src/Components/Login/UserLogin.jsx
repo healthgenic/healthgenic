@@ -1,6 +1,5 @@
 import React, { Component, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import AuthService from '../../service/auth.service'
 import UserService from '../../service/user-service'
 import './login.css';
@@ -23,6 +22,10 @@ export default function UserLogin(props) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+
+  const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+
   const onChangeUsername = (e) => {
     let username = e.target.value;
     setUsername(username);
@@ -40,27 +43,33 @@ export default function UserLogin(props) {
       AuthService.login(username, password).then(
         (response) => {
          //toast.success("Login Successfull");
+         const role=AuthService.getCurrentUser().roles;
+        // debugger;
+         if (equals(role, ['ROLE_DOCTOR'])) {
+          props.history.push({
+              pathname: "/docdetails",
+          });
+          window.location.reload();
+      }
+      else{
          UserService.getUserProfile(username).then((response) => {
           
           console.log(response)
-           if(response.data === ""){
+
+          if(response.data === ""){
             console.log(username);
             props.history.push({
               pathname: "/userprofile",
           });
-
             props.history.push("/userprofile");
             //window.location.reload();
-          }else if (equals(role, ['ROLE_DOCTOR'])) {
-            props.history.push({
-                pathname: "/",
-            });
-        }else{
+          }
+          else{
             props.history.push("/");
             window.location.reload();
           } 
          })
-        },
+        }},
         (error) => {
           //toast.error("Error")
           const resMessage =
@@ -138,5 +147,4 @@ export default function UserLogin(props) {
       </form>
     </div>
   );
-
 }
