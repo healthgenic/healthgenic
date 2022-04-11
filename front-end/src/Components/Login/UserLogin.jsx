@@ -23,6 +23,10 @@ export default function UserLogin(props) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+
+  const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+
   const onChangeUsername = (e) => {
     let username = e.target.value;
     setUsername(username);
@@ -40,9 +44,19 @@ export default function UserLogin(props) {
       AuthService.login(username, password).then(
         (response) => {
          //toast.success("Login Successfull");
+         const role=AuthService.getCurrentUser().roles;
+        // debugger;
+         if (equals(role, ['ROLE_DOCTOR'])) {
+          props.history.push({
+              pathname: "/docdetails",
+          });
+          window.location.reload();
+      }
+      else{
          UserService.getUserProfile(username).then((response) => {
           
           console.log(response)
+
            if(response.data === ""){
             console.log(username);
             props.history.push({
@@ -51,12 +65,15 @@ export default function UserLogin(props) {
 
             props.history.push("/userprofile");
             //window.location.reload();
-          }else{
+          }
+       
+          
+          else{
             props.history.push("/");
             window.location.reload();
           } 
          })
-        },
+        }},
         (error) => {
           //toast.error("Error")
           const resMessage =

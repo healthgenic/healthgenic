@@ -108,7 +108,7 @@ const Register = (props) => {
                             }
                             else if (equals(role, ['ROLE_DOCTOR'])) {
                                 props.history.push({
-                                    pathname: "/",
+                                    pathname: "/home/docdetails",
                                 });
                                 window.location.reload();
                             }
