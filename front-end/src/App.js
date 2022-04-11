@@ -26,6 +26,7 @@ import VideoConsult from './Components/Video_Consult/VideoConsult'
 import UserProfile from './Components/Login/UserProfile'
 import AboutUs from './Components/HomePage/AboutUs';
 import Profile from './Components/Profile/user-profile';
+import DocterDetails from './Components/Profile/DocterDetails';
 
  function App() {
   return (
@@ -75,6 +76,7 @@ import Profile from './Components/Profile/user-profile';
           <Route path="/bookNow" component={BookNow} />
 
           <Route path="/AboutUs" component={AboutUs}/>
+          <Route path="/docdetails" component={DocterDetails} />
 
       </Switch>
       <Footer />

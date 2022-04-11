@@ -4,8 +4,6 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 import AuthService from "../../service/auth.service"
-import { toast, ToastContainer } from 'react-toastify';
-import swal from "sweetalert";
 import { FormControlLabel, Radio, RadioGroup } from "@material-ui/core";
 import userService from "../../service/user-service";
 
@@ -108,7 +106,7 @@ const Register = (props) => {
                             }
                             else if (equals(role, ['ROLE_DOCTOR'])) {
                                 props.history.push({
-                                    pathname: "/",
+                                    pathname: "/docdetails",
                                 });
                                 window.location.reload();
                             }

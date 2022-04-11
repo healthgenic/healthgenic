@@ -84,6 +84,7 @@ public class AuthController {
 		user.setName(signUpRequest.getName());
 
 		Set<String> strRoles = signUpRequest.getRole();
+		System.out.println(strRoles);
 		List<Role> roles = new ArrayList<>();
 		if (strRoles == null) {
 			Role userRole = userService.getRole("ROLE_USER");

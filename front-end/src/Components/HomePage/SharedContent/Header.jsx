@@ -11,19 +11,18 @@ function Header() {
       //setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
       //setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
     } else {
-
     }
   }, []);
 
   const logOut = () => {
     AuthService.logout();
   };
-
+  const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   return (
     <div className="container-fluid bg-light" id="nav-container">
       <nav className="container nav-element-container d-flex justify-content-between align-items-center" >
         <h3 className="text-success">
-          <i class="fas fa-heartbeat me-1"></i>
+          <i className="fas fa-heartbeat me-1"></i>
           HealthGenic
         </h3>
         <ul className="nav-list-container d-flex align-items-center">
@@ -33,11 +32,11 @@ function Header() {
             </Link>
           </li>
 
-          <li className="nav-element ms-3">
+          {!equals(currentUser?.roles, ['ROLE_DOCTOR']) ? (<li className="nav-element ms-3">
             <Link className="navbar-link px-3 py-2 rounded" to="/Video_Consult">
               Book Appointment
             </Link>
-          </li>
+          </li>) : (<></>) }
 
           <li className="nav-element ms-3">
             <Link className="navbar-link px-3 py-2 rounded" to="/Epharma">
@@ -45,7 +44,7 @@ function Header() {
             </Link>
           </li>
 
-          <li className="nav-element ms-3">
+          {equals(currentUser?.roles, ['ROLE_DOCTOR']) ? <li className="nav-element ms-3">
             <Link
               className="navbar-link px-3 py-2 rounded"
               aria-current="page"
@@ -53,7 +52,7 @@ function Header() {
             >
               Video Consultation
             </Link>
-          </li>
+          </li> : <></>}
 
 
           {/* <li className="navbar-link px-3 py-2 rounded">
@@ -71,9 +70,11 @@ function Header() {
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
+              {!equals(currentUser?.roles, ['ROLE_DOCTOR']) ? <Link to={"/profile"} className="nav-link">
                   {currentUser.username}
-                </Link>
+                </Link>:<Link to={"/docdetails"} className="nav-link">
+                  {currentUser.username}
+                </Link>}
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={logOut}>
