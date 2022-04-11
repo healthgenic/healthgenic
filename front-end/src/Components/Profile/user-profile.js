@@ -9,6 +9,7 @@ import AppointmentCard from "./AppointmentCard";
 import MyAppointments from "./MyAppointments";
 import MyTestLabs from "./MyTestLabs";
 import MyEpharmaOrders from "./MyEpharmaOrders";
+import DocterDetails from "./DocterDetails";
 const Profile = () => {
   const currentUser = AuthService.getCurrentUser();
 
@@ -35,7 +36,7 @@ const Profile = () => {
           </Col>
           <Col md={8}>
             <Route path="/profile/personalDetails" component={PersonalDetails} exact />
-            <Route path="/profile/myappointments" component={MyAppointments} exact />
+            <Route path="/profile/myappointments" component={DocterDetails} exact />
             <Route path="/profile/mytestlabs" component={MyTestLabs} exact />
             <Route path="/profile/mymedicineorders" component={MyEpharmaOrders} exact />
             {/* <Route path="/" component={Home} exact />
