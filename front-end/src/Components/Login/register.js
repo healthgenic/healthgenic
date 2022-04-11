@@ -88,6 +88,7 @@ const Register = (props) => {
                     //swal("Registration Successfull", "success")
                     AuthService.login(username, password).then(
                         (data) => {
+
                             if (equals(role, ['ROLE_USER'])) {
                                 console.log(role)
                                 props.history.push({
@@ -101,7 +102,7 @@ const Register = (props) => {
                             }
                         }
                     )
-                    //window.location.reload();
+                    window.location.reload();
                 },
                 (error) => {
                     const resMessage =

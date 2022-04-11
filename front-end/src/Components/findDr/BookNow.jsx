@@ -33,7 +33,7 @@ const BookNow = (props) => {
   const postData = async (data) => {
     axios({
       method: 'post',
-      url: `/getDetails`,
+      url: `http://localhost:8080/getDetails`,
       data: data
     });
   }

@@ -23,7 +23,7 @@ import Help from './Components/Help/Help';
 import AppointmentPay from './Components/Online_Consultation/AppointMent Booking/AppointmentPay'
 import BookAppointment from './Components/Online_Consultation/AppointMent Booking/BookAppointment'
 import VideoConsult from './Components/Video_Consult/VideoConsult'
-import UserProfile from './Components/Profile/user-profile'
+import UserProfile from './Components/Login/UserProfile'
 import AboutUs from './Components/HomePage/AboutUs';
 import Profile from './Components/Profile/user-profile';
 
