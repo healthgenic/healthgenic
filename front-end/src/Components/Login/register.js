@@ -110,6 +110,7 @@ const Register = (props) => {
                                 props.history.push({
                                     pathname: "/",
                                 });
+                                window.location.reload();
                             }
                         }
                     )
