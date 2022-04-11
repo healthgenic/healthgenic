@@ -149,8 +149,8 @@ wrapperFunction = (e) => {
 
   render() {
     return (
-      <div className='container p-3 col-4 border mt-3'>
-        <form>
+      <div className='container col-4 mt-3'>
+        <form className='shadow-lg p-5 mb-5 mt-5 bg-white rounded'>
           <h2 className='text-center mb-3'>Book Your Appointment</h2>
 
           <div className='form-group mt-3'>
