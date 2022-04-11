@@ -110,11 +110,7 @@ export default function UserProfile(props) {
                     <input type="text" className="form-control"  name='name' onChange={onChangeName} />
                 </div >
                 
-                <div className="col-md-6 mb-3">
-                    <label className="form-label">Username</label>
-                    <input type="text" className="form-control" name='username' onChange={onChangeUsername} />
-                </div>
-          
+         
                </div>
                <div className="row">
                <div className="col-md-6 mb-3">
