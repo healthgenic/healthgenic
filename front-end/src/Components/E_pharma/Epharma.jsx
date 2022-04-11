@@ -7,7 +7,8 @@ import Cart from './Covid_Essentials/Cart';
 import Navbar from './Navbar';
 import MedicalDeviceSection from './Medical_Devices/MedicalDeviceSection';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-
+import './Styles/animate-cards.css'
+import Swal from 'sweetalert2'
 function Epharma() {
   const cartItem = JSON.parse(localStorage.getItem('cartItem'))
   const [show, setShow] = useState(true);
@@ -19,6 +20,13 @@ function Epharma() {
     else {
       item.amount = 1;
       setCart([...cart, item]);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Item Added into cart',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
     
   };

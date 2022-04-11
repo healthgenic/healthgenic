@@ -4,14 +4,14 @@ const list =[
         title: "Sahyog Wellness Hot Water Bottle/Bag - Red",
         Mkt: "Sahyog Wellness",
         Price:  249.00,
-        img: "https://rukminim1.flixcart.com/image/416/416/k6s82vk0/hot-water-bag/y/n/y/sahyog-wellness-hot-water-bottle-bag-non-electrical-for-pain-original-imafp5awxgfhckcf.jpeg?q=70",
+        img: "https://m.media-amazon.com/images/I/61Hvqg+2g0L._SL1000_.jpg",
     },
     {
         id: 22,
         title: "Omron Compressor Nebulizer (NE-C101)",
         Mkt: " Omron Healthcare Co Ltd",
         Price:  1904.00,
-        img: "https://m.media-amazon.com/images/I/71lVvrepOgL._SX569_.jpg",
+        img: "https://m.media-amazon.com/images/I/6148q470FVL._SX679_.jpg",
     },
     {
         id: 23,

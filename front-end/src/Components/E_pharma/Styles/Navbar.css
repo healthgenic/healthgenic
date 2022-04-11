@@ -26,6 +26,7 @@ nav{
     color: white;
     font-family: cursive;
     cursor: pointer;
+    text-decoration: none;
     
 }
 a:hover

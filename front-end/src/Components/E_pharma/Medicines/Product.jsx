@@ -21,7 +21,7 @@ const list =[
         title: "Similia Feverid Syrup 60 ml",
         Mkt: "Omron Healthcare Co Ltd",
         Price: 1864.00,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlcvQIvDUIE0TscOqneXMhlg-LEY6kHEuzqw&usqp=CAU",
+        img: "https://www.netmeds.com/images/product-v1/600x600/888080/similia_feverid_syrup_60_ml_0.jpg",
     },
     {
         id: 34,
