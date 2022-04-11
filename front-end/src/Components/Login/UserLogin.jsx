@@ -44,8 +44,13 @@ export default function UserLogin(props) {
           
           console.log(response)
            if(response.data === ""){
+            console.log(username);
+            props.history.push({
+              pathname: "/userprofile",
+          });
+
             props.history.push("/userprofile");
-            window.location.reload();
+            //window.location.reload();
           }else{
             props.history.push("/");
             window.location.reload();

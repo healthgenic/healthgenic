@@ -12,12 +12,12 @@ const register = (name, username, password, roles) => {
   return axios({
     method: 'post',
     url: API_URL + '/register/user',
-   /*  headers: {}, */
+    /*  headers: {}, */
     data: {
       'name': name,
       'username': username,
       'password': password,
-      'role':roles
+      'role': roles
     }
   });
 }

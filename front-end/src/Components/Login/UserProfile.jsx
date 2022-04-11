@@ -1,10 +1,12 @@
+import { ControlCameraOutlined, ControlPointSharp } from '@material-ui/icons';
 import React, { useRef, useState } from 'react'
+import authService from '../../service/auth.service';
 import userService from '../../service/user-service';
 
 export default function UserProfile(props) {
     const form = useRef();
     const [name, setName] = useState("");
-    const [username, setUsername] = useState("")
+    const username = authService.getCurrentUser().username;
     const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = useState("")
     const [gender, setGender] = useState("");
@@ -18,15 +20,16 @@ export default function UserProfile(props) {
     const [pincode, setPincode] = useState("")
     const [alternateNumber, setAlternateNumber] = useState("")
 
+    console.log(username);
     const onChangeName = (e) => {
         const name = e.target.value;
         setName(name);
     };
 
-    const onChangeUsername = (e) => {
-        const username = e.target.value;
-        setUsername(username);
-    };
+    // const onChangeUsername = (e) => {
+    //     const username = authService.getCurrentUser.username;
+    //     setUsername(username);
+    // };
     const onChangePhoneNumber = (e) => {
         const phoneNumber = e.target.value;
         setPhoneNumber(phoneNumber);
@@ -98,11 +101,7 @@ export default function UserProfile(props) {
             <form onSubmit={submitUserProfile} ref={form}>
                 <div>
                     <label>Name</label>
-                    <input type="text" name='name' onChange={onChangeName} />
-                </div>
-                <div>
-                    <label>Username</label>
-                    <input type="text" name='username' onChange={onChangeUsername} />
+                    <input type="text" name='name' onChange={onChangeName} value={props?.name}/>
                 </div>
                 <div>
                     <label>Phone Number</label>
@@ -110,7 +109,7 @@ export default function UserProfile(props) {
                 </div>
                 <div>
                     <label>Email</label>
-                    <input type="text" name='email' onChange={onChangeEmail} />
+                    <input type="text" name='email' onChange={onChangeEmail} value={props?.username} />
                 </div>
                 <div>
                     <label>Gender</label>

@@ -16,12 +16,12 @@ const DrNearMe = () => {
     console.log(inputSearch);
     //search filter
     if (inputSearch && inputSearch.length != 0) {
-      
+
       setUpdateList(list.filter(
         (item) =>
           item.location.toLowerCase().search(inputSearch.toLowerCase().trim()) !==
           -1));
-console.log(inputSearch);
+      console.log(inputSearch);
     } else {
 
       setUpdateList(list);

@@ -18,7 +18,10 @@ const BookNow = (props) => {
  
   const handleClick = (e) => {
     e.preventDefault()
-    const data = { 'userName': userName.userName, 'mnumber': mnumber.mnumber, 'mailid': mailid.mailid, 'bgroup': bgroup.bgroup, 'age': age.age, 'gender': gender.gender, 'day': day.day, 'date': date.date, 'time': time.time, 'did': props.location.state.id.did, 'name': props.location.state.name.name }
+    const data = { 'userName': userName.userName, 'mnumber': mnumber.mnumber, 
+    'mailid': mailid.mailid, 'bgroup': bgroup.bgroup, 'age': age.age, 'gender': gender.gender, 
+    'day': day.day, 'date': date.date, 'time': time.time, 
+    'did': props.location.state.id.did, 'name': props.location.state.name.name }
     console.log(data);
     
      postData(data);

@@ -7,6 +7,7 @@ import AuthService from "../../service/auth.service"
 import { toast, ToastContainer } from 'react-toastify';
 import swal from "sweetalert";
 import { FormControlLabel, Radio, RadioGroup } from "@material-ui/core";
+import userService from "../../service/user-service";
 
 const Register = (props) => {
     const form = useRef();
@@ -88,21 +89,31 @@ const Register = (props) => {
                     //swal("Registration Successfull", "success")
                     AuthService.login(username, password).then(
                         (data) => {
-
                             if (equals(role, ['ROLE_USER'])) {
                                 console.log(role)
-                                props.history.push({
-                                    pathname: "/userprofile",
-                                    email: username,
-                                    name
-                                });
+                                userService.getUserProfile(username).then(
+                                    (response) => {
+                                        if(response.data === ""){
+                                            props.history.push({
+                                                pathname: "/userprofile"
+                                            });
+                                        }else{
+                                            props.history.push({
+                                                pathname: "/",
+                                            });
+                                            window.location.reload();
+                                        }
+                                    }
+                                );
                             }
                             else if (equals(role, ['ROLE_DOCTOR'])) {
-                                console.log(role);
+                                props.history.push({
+                                    pathname: "/",
+                                });
                             }
                         }
                     )
-                    window.location.reload();
+                    //
                 },
                 (error) => {
                     const resMessage =
@@ -133,7 +144,7 @@ const Register = (props) => {
                                 aria-labelledby="demo-row-radio-buttons-group-label"
                                 defaultValue="ROLE_USER"
                                 name="row-radio-buttons-group"
-                                onChange={onRadioButtonChange}
+                                onClick={onRadioButtonChange}
                             >
                                 <FormControlLabel value="ROLE_USER" control={<Radio />} label="I'm a User" />
                                 <FormControlLabel value="ROLE_DOCTOR" control={<Radio />} label="I'm a Doctor" />
