@@ -51,7 +51,11 @@ export default function UserLogin(props) {
 
             props.history.push("/userprofile");
             //window.location.reload();
-          }else{
+          }else if (equals(role, ['ROLE_DOCTOR'])) {
+            props.history.push({
+                pathname: "/",
+            });
+        }else{
             props.history.push("/");
             window.location.reload();
           } 
