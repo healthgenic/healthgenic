@@ -44,7 +44,7 @@ class VCard3Component extends Component {
                   <h6 className="profile-rating mt-2 mb-2 ">
                   <i class="fa fa-check-circle-o" ></i> Verified Doctors
                   </h6>
-                  <button type="button" class="btn btn-outline-primary mt-3 mb-4"><Link to="/Video_Consult/bookAppointment">Consult Now</Link></button>
+                  <button type="button" class="btn btn-outline-primary mt-3 mb-4"><Link to="/SearchDr">Consult Now</Link></button>
                 </div>
               </div>
             </div>

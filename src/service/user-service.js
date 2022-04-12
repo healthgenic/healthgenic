@@ -7,7 +7,6 @@ const API_URL = "http://localhost:8080/user";
 const getUserProfile = (username) => {
 
   const header = authHeader()
-  console.log({ header })
   return axios({
     method: 'post',
     url: API_URL + `/profile`,
@@ -23,7 +22,7 @@ const setUserProfile = (data) => {
     method: 'post',
     url: API_URL + `/add/profile`,
     //headers: { header },
-    data: data
+    data: data 
   });
 }
 

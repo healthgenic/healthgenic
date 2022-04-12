@@ -1,45 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import { } from 'reactstrap'
-import base_url from '../../api/service'
-import axios from 'axios'
-import { toast } from 'react-toastify'
+import userService from '../../service/user-service'
+import authService from '../../service/auth.service'
 const Home = () => {
+    
+    const username = authService.getCurrentUser().username;
+
+    const [data, setData] = useState({});
+    
+    const profile = () => userService.getUserProfile(username).then(
+        (response)=>{
+            setData(response.data);
+        }
+    )
+
     useEffect(() => {
         document.title = 'Home'
-        //getAllUser();
+        profile();
     }, []);
 
-    //function to call server
-    /*const getAllUser = () => {
-        axios.get(`${base_url}/users`).then(
-            (response) => {
-                console.log(response.data)
-                //toast.success("Successfully Loaded");
-                setUsers(response.data)
-            },
-            (error) => {
-                console.log(error)
-            }
-        )
-    }*/
-    const [users, setUsers] = useState([
-        //{username:"akshay", password:"askh@132"}
-    ]);
     return (
         <div>
             <div className="jumbotron">
             <fieldset>
                 <legend>Personal Details</legend>
-                <div><label>Name: </label><label>Akshay Agrawal</label></div>
-                <div><label>Email: </label><label>Akshay Agrawal</label></div>
-                <div><label>Phone Number: </label><label>Akshay Agrawal</label></div>
-                <div><label>Address: </label><label>Akshay Agrawal</label></div>
+                <div><label>Name: </label><label>{data.name}</label></div>
+                <div><label>Email: </label><label>{data.email}</label></div>
+                <div><label>Phone Number: </label><label>{data.phoneNumber}</label></div>
+                <div><label>Address: </label><label>{data.city}</label></div>
 
-                <div><label>Blood Group: </label><label>Akshay Agrawal</label></div>
-                <div><label>Alternate Phone Number: </label><label>Akshay Agrawal</label></div>
-                <div><label>Gender: </label><label>Akshay Agrawal</label></div>
-                <div><label>Date of Birth: </label><label>Akshay Agrawal</label></div>
-
+                <div><label>Blood Group: </label><label>{data.bloodGroup}</label></div>
+                <div><label>Alternate Phone Number: </label><label>{data.alternateNumber}</label></div>
+                <div><label>Gender: </label><label>{data.gender}</label></div>
+                <div><label>Date of Birth: </label><label>{data.dateOfBirth}</label></div>
             </fieldset>
             </div>
         </div>

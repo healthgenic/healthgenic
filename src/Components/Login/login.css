@@ -1,11 +1,10 @@
-/* 
-form{
+.login{
     height: 500px;
     width: 350px;
     background-color: rgba(255, 255, 255, 0.575);
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 55%;
+    top: 52%;
     left: 70%;
     border-radius: 10px;
     backdrop-filter: blur(2px);
@@ -13,10 +12,3 @@ form{
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
     }
-    form *{
-    font-family: 'Poppins',sans-serif;
-    color: black;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-    } */

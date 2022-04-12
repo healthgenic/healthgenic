@@ -4,23 +4,22 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const Menus = () => {
     return (
+        <div className='container'>
         <ListGroup>
-            <Link className="list-group-item list-group-item-action" tag="a" to='/profile/personalDetails' action>
+            <Link className="list-group-item list-group-item-action" tag="a" to='/profile/personalDetails' action="true">
                 Personal Details
             </Link>
-            <Link className="list-group-item list-group-item-action" tag="a" to='/profile/myappointments' action>
-                My Appointments
+            <Link className="list-group-item list-group-item-action" tag="a" to='/profile/myappointments' action="true">
+                Appointments
             </Link>
-            <Link className="list-group-item list-group-item-action"  tag="a" to='/profile/mytestlabs' action>
-                My Test Labs
+            <Link className="list-group-item list-group-item-action"  tag="a" to='/profile/mytestlabs' action="true">
+                Test Labs
             </Link>
-            <Link className="list-group-item list-group-item-action" tag="a" to='/profile/mymedicineorders' action>
-                My Medicine Orders
-            </Link>
-            <Link className="list-group-item list-group-item-action" tag="a" to='/profile/logout' action>
-                Logout
+            <Link className="list-group-item list-group-item-action" tag="a" to='/profile/mymedicineorders' action="true">
+                Medicine Orders
             </Link>
         </ListGroup>
+        </div>
     )
 }
 

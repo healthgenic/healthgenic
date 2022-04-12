@@ -10,6 +10,7 @@ export default class Card1component extends Component {
   render() {
     return (
       <div>
+
         <div className="container justify-content-center mt-5 ">
           <div className="row">
             <div className="col-6 my-2 col-lg-3">
@@ -22,7 +23,7 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Connect within 60sec
                   </p>
-                  <Link to="" className="btn btn-outline-success">
+                  <Link to="/consult" className="btn btn-outline-success">
                     Book Now
                   </Link>
                 </div>
@@ -38,13 +39,13 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Essentials at your Doorstep
                   </p>
-                  <Link to="#" className="btn btn-outline-success">
+                  <Link to="/Epharma/Medicines" className="btn btn-outline-success">
                     Buy Now
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="col-6 my-2 col-lg-3">
+             <div className="col-6 my-2 col-lg-3"> 
               <div className="card text-center">
                 <div className="overflow">
                   <img src={image3} alt="img3" className="card-img-top" />
@@ -70,14 +71,16 @@ export default class Card1component extends Component {
                   <p className="card-text text-secondary">
                     Confirmed appointments
                   </p>
-                  <Link to="#" className="btn btn-outline-success">
-                    Book Now
+                  <Link to="/SearchDr" className="btn btn-outline-success">
+                   Find Doctor
                   </Link>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
     );
   }

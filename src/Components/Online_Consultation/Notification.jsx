@@ -9,8 +9,8 @@ const Notification=()=> {
     <>
       {call.isReceivedCall && !callAccepted && (
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <h1>{call.name} is calling:</h1>
-          <button variant="contained" className="btn btn-sm" color="primary" onClick={answerCall}>
+          <h1>{call.name} Accept Call</h1>
+          <button variant="contained" className="btn btn-sm btn-success"  onClick={answerCall}>
             Answer
           </button>
         </div>

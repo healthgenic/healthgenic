@@ -1,9 +1,9 @@
 import React, { Component, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import AuthService from '../../service/auth.service'
 import UserService from '../../service/user-service'
-//import './login.scss';
+import './login.css';
+import image from "./background.jpg";
 
 const required = (value) => {
   if (!value) {
@@ -22,6 +22,10 @@ export default function UserLogin(props) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+
+  const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+
   const onChangeUsername = (e) => {
     let username = e.target.value;
     setUsername(username);
@@ -39,18 +43,33 @@ export default function UserLogin(props) {
       AuthService.login(username, password).then(
         (response) => {
          //toast.success("Login Successfull");
+         const role=AuthService.getCurrentUser().roles;
+        // debugger;
+         if (equals(role, ['ROLE_DOCTOR'])) {
+          props.history.push({
+              pathname: "/docdetails",
+          });
+          window.location.reload();
+      }
+      else{
          UserService.getUserProfile(username).then((response) => {
           
           console.log(response)
-           if(response.data === ""){
+
+          if(response.data === ""){
+            console.log(username);
+            props.history.push({
+              pathname: "/userprofile",
+          });
             props.history.push("/userprofile");
-            window.location.reload();
-          }else{
+            //window.location.reload();
+          }
+          else{
             props.history.push("/");
             window.location.reload();
           } 
          })
-        },
+        }},
         (error) => {
           //toast.error("Error")
           const resMessage =
@@ -67,22 +86,24 @@ export default function UserLogin(props) {
 
   return (
     <div>
+      <img src={image}  className="card-img-top rounded-3" alt="..." />
+
       {/* <ToastContainer/> */}
-      <form onSubmit={handleLogin} ref={form}>
+      <form className="login" onSubmit={handleLogin} ref={form}>
         <h3>
           <b>Login to your account</b>
         </h3>
 
         <div className="form-outline mb-2">
           <label className="form-label">
-            Username
+            Email ID
           </label>
           <input
             type="email"
             id="form2"
             className="form-control"
             name="username"
-            placeholder="Phone number or email address"
+            placeholder="Enter your email address"
             value={username}
             onChange={onChangeUsername}
           />
@@ -126,5 +147,4 @@ export default function UserLogin(props) {
       </form>
     </div>
   );
-
 }

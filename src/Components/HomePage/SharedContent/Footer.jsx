@@ -50,7 +50,7 @@ export default class Footer extends Component {
               <Link to="#!" className="text-dark">HealthBlogs</Link>
             </p>
             <p>
-              <Link to="#!" className="text-dark">About Us</Link>
+              <Link to="/AboutUs" className="text-dark">About Us</Link>
             </p>
             <p>
               <Link to="/Help" className="text-dark">Help</Link>

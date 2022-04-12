@@ -8,17 +8,17 @@ const config = {
   }
 }
 
-const register = (name, username, password) => {
+const register = (name, username, password, roles) => {
   return axios({
     method: 'post',
     url: API_URL + '/register/user',
-   /*  headers: {}, */
+    /*  headers: {}, */
     data: {
       'name': name,
       'username': username,
-      'password': password
+      'password': password,
+      'role': roles
     }
-
   });
 }
 

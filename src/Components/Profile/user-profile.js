@@ -9,6 +9,7 @@ import AppointmentCard from "./AppointmentCard";
 import MyAppointments from "./MyAppointments";
 import MyTestLabs from "./MyTestLabs";
 import MyEpharmaOrders from "./MyEpharmaOrders";
+import DocterDetails from "./DocterDetails";
 const Profile = () => {
   const currentUser = AuthService.getCurrentUser();
 
@@ -29,19 +30,19 @@ const Profile = () => {
       </header>
 
       <div>
-      <Row>
-            <Col md={4}>
-              <Menus />
-            </Col>
-            <Col md={8}>
-              <Route path="/profile/personalDetails" component={PersonalDetails} exact/>
-              <Route path="/profile/myappointments" component={MyAppointments} exact/>
-              <Route path="/profile/mytestlabs" component={MyTestLabs} exact/>
-              <Route path="/profile/mymedicineorders" component={MyEpharmaOrders} exact/>
-              {/* <Route path="/" component={Home} exact />
+        <Row>
+          <Col md={4}>
+            <Menus />
+          </Col>
+          <Col md={8}>
+            <Route path="/profile/personalDetails" component={PersonalDetails} exact />
+            <Route path="/profile/myappointments" component={MyAppointments} exact />
+            <Route path="/profile/mytestlabs" component={MyTestLabs} exact />
+            <Route path="/profile/mymedicineorders" component={MyEpharmaOrders} exact />
+            {/* <Route path="/" component={Home} exact />
               <Route path='/header' component={Header} exact /> */}
-            </Col>
-          </Row>
+          </Col>
+        </Row>
       </div>
       {/* <p>
         <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
