@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./about.css";
 import image1 from "./Mahesh.jpeg";
 import image2 from "./Ajay.jpeg";
-import image3 from "./Akshay.jpeg";
+import image3 from "./Akshay.jpg";
 import image4 from "./Lekha.jpeg";
 import image5 from "./Mahima.jpeg";
 import image6 from "./Kanishka.jpeg";
