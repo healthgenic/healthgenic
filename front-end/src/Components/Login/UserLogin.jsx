@@ -61,7 +61,7 @@ export default function UserLogin(props) {
             props.history.push({
               pathname: "/userprofile",
           });
-            props.history.push("/userprofile");
+            //props.history.push("/userprofile");
             //window.location.reload();
           }
           else{

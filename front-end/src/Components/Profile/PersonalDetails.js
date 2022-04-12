@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { } from 'reactstrap'
 import userService from '../../service/user-service'
 import authService from '../../service/auth.service'
-const Home = () => {
+const Home = (props) => {
     
     const username = authService.getCurrentUser().username;
 
@@ -10,6 +10,13 @@ const Home = () => {
     
     const profile = () => userService.getUserProfile(username).then(
         (response)=>{
+            console.log(response.data);
+            if(response.data === ""){
+                props.history.push({
+                    pathname: "/userprofile",
+                });
+                return;
+            }
             setData(response.data);
         }
     )
