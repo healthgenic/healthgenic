@@ -19,7 +19,7 @@ export default class Card1component extends Component {
                   <img src={image1} alt="img1" className="card-img-top" />
                 </div>
                 <div className="card-body  text-dark">
-                  <h4 className="card-title">Onine Consultation</h4>
+                  <h4 className="card-title">Online Consultation</h4>
                   <p className="card-text text-secondary">
                     Connect within 60sec
                   </p>
