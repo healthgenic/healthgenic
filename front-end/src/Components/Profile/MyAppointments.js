@@ -3,10 +3,10 @@ import AppointmentCard from './AppointmentCard';
 
 export default function MyAppointments(){
     const [appointments, setAppointments] = useState([
-        {date:'08 Mar, 2018', doctorName:'Dr ABC', status:'Done'},
-        {date:'08 Mar, 2018', doctorName:'Dr ABC', status:'Scheduled'},
-        {date:'08 Mar, 2018', doctorName:'Dr ABC', status:'Ongoing'},
-        {date:'08 Mar, 2018', doctorName:'Dr ABC', status:'Upcoming'}
+        // {date:'08 Mar, 2018', doctorName:'Dr ABC', status:'Done'},
+        // {date:'08 Mar, 2018', doctorName:'Dr ABC', status:'Scheduled'},
+        // {date:'08 Mar, 2018', doctorName:'Dr ABC', status:'Ongoing'},
+        // {date:'08 Mar, 2018', doctorName:'Dr ABC', status:'Upcoming'}
     ]);
     return (
         <div>

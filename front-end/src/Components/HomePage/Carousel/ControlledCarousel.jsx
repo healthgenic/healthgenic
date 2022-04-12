@@ -12,7 +12,7 @@ class ControlledCarousel extends Component {
       
       <div className="justify-content-center ">
         <Carousel variant="dark" className="carousel img-fluid">
-          <Carousel.Item interval={150000}>
+          <Carousel.Item interval={5000}>
             <img className="d-block  w-100" src={image3} alt="First slide" />
             <Carousel.Caption>
               <h2 className="text-dark text-right">Take Pathological Tests</h2>
@@ -22,7 +22,7 @@ class ControlledCarousel extends Component {
             </Carousel.Caption>
           </Carousel.Item>
 
-          <Carousel.Item interval={150} className="carousel-item ">
+          <Carousel.Item interval={5000} className="carousel-item ">
             <img className="d-block  w-100" src={image1} alt="Second slide" />
             <Carousel.Caption>
               <h1 className="text-dark">Online Docter Consultation</h1>
@@ -30,7 +30,7 @@ class ControlledCarousel extends Component {
             </Carousel.Caption>
           </Carousel.Item>
 
-          <Carousel.Item interval={50}>
+          <Carousel.Item interval={5000}>
             <img className="d-block  w-100" src={image2} alt="Third slide" />
             <Carousel.Caption>
               <h1 className="text-light text-left">Buy Medicines with us</h1>

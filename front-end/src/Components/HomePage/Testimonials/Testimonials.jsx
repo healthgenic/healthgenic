@@ -10,7 +10,7 @@ export default class Testimonials extends Component {
           <h2 className="mb-5 text-center">See What People Say About Us</h2>
           <Carousel variant="dark" className="carousel img-fluid">
 
-            <Carousel.Item interval={5000}>
+            <Carousel.Item interval={2000}>
               <p className="text-center">
               Very good app. Well thought out about booking/rescheduling/canceling an appointment.<br/> Also, Doctor's feedback mechanism is good and describes all the basics in a good way
               </p>
@@ -33,7 +33,7 @@ export default class Testimonials extends Component {
               </p><br/>
             </Carousel.Item>
 
-            <Carousel.Item interval={5000} className="carousel-item ">
+            <Carousel.Item interval={2000} className="carousel-item ">
             <p className="text-center">
             Very helpful. Far easier than doing same things on computer. Allows quick and easy search with speedy booking. <br/>Even maintains history of doctors visited.
               </p>
@@ -56,7 +56,7 @@ export default class Testimonials extends Component {
               </p><br/>
           </Carousel.Item>
 
-          <Carousel.Item interval={5000}>
+          <Carousel.Item interval={2000}>
           <p className="text-center">
           Very easy to book,maintain history. Hassle free from older versions of booking appointment via telephone.. <br/>Thanks HealthGenic for making it simple.
               </p>
