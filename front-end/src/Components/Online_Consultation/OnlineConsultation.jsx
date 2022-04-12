@@ -15,6 +15,7 @@ const OnlineConsultation = () => {
               <Notification/>
           </Options>
       </ContextProvider>
+      <button className='btn-success btn-sm' ><a href="http://localhost:3000/home" className='text-light'>Back To Home</a></button>
     </div>
   
   )

@@ -32,6 +32,7 @@ public class BookDrContoller {
 		clientData.setMnumber(data.get("mnumber").toString());
 		clientData.setMailid(data.get("mailid").toString());
 		clientData.setBgroup(data.get("bgroup").toString());
+		clientData.sethIssue(data.get("hIssue").toString());
 		clientData.setAge(data.get("age").toString());
 		clientData.setGender(data.get("gender").toString());
 		clientData.setDay(data.get("day").toString());

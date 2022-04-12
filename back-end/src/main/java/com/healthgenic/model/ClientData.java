@@ -16,11 +16,21 @@ public class ClientData {
 	private String mnumber;
 	private String  mailid;
 	private String bgroup;
+	private String hIssue;
+
 	private String age;
 	private String gender;
 	private String day;
 	private String date;
 	private String time;
+	
+	public String gethIssue() {
+		return hIssue;
+	}
+	public void sethIssue(String hIssue) {
+		this.hIssue = hIssue;
+	}
+	
 	public Long getUserId() {
 		return userId;
 	}

@@ -24,8 +24,9 @@ function Header() {
       <nav className="container nav-element-container d-flex justify-content-between align-items-center" >
         <h3 className="text-success">
           <i className="fas fa-heartbeat me-1"></i>
-          HealthGenic
+         <Link to="/" className="text-success text-decoration-none"> HealthGenic</Link>
         </h3>
+
         <ul className="nav-list-container d-flex align-items-center">
           <li className="nav-element ms-3">
             <Link className="navbar-link px-3 py-2 rounded" to="/">
