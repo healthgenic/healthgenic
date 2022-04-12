@@ -10,6 +10,7 @@ const BookNow = (props) => {
   const [mnumber, setMnumber] = useState({});
   const [mailid, setMailid] = useState({});
   const [bgroup, setBgroup] = useState({});
+  const [hIssue, sethIssue] = useState({});
   const [age, setAge] = useState({});
   const [gender, setGender] = useState({});
   const [day, setDay] = useState({});
@@ -18,7 +19,7 @@ const BookNow = (props) => {
  
   const handleClick = (e) => {
     e.preventDefault()
-    const data = { 'userName': userName.userName, 'mnumber': mnumber.mnumber, 'mailid': mailid.mailid, 'bgroup': bgroup.bgroup, 'age': age.age, 'gender': gender.gender, 'day': day.day, 'date': date.date, 'time': time.time, 'did': props.location.state?.id.did, 'name': props.location.state.name.name }
+    const data = { 'userName': userName.userName, 'mnumber': mnumber.mnumber, 'mailid': mailid.mailid, 'bgroup': bgroup.bgroup,'hIssue': hIssue.hIssue, 'age': age.age, 'gender': gender.gender, 'day': day.day, 'date': date.date, 'time': time.time, 'did': props.location.state?.id.did, 'name': props.location.state.name.name }
     console.log(data);
     
      postData(data);
@@ -77,6 +78,7 @@ const BookNow = (props) => {
                           setMailid({ ...mailid, mailid: e.target.value });
                         }} /><br />
                   </FormGroup>
+
                   <FormGroup>
                     <label><b>Blood Group</b> :</label><br />
                     <Input type="text" placeholder="Enter Your Blood Group" id="bg" name="bgroup" required
@@ -85,6 +87,17 @@ const BookNow = (props) => {
                           setBgroup({ ...bgroup, bgroup: e.target.value });
                         }} /><br />
                   </FormGroup>
+
+                  
+                  <FormGroup>
+                    <label><b>Health Issue</b> :</label><br />
+                    <Input type="text" placeholder="Tell Us Your Health Issue" id="bg" name="hIssue" required
+                      onChange={
+                        (e) => {
+                          sethIssue({ ...hIssue, hIssue: e.target.value });
+                        }} /><br />
+                  </FormGroup>
+
                   <FormGroup>
                     <label><b>Age</b> :</label><br />
                     <Input type="text" placeholder="Enter Your Age" id="age" name="age" required onChange={

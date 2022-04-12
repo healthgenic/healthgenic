@@ -19,17 +19,18 @@ export default class DocterDetails extends Component {
   render() {
     return (<div className='container'>
 
-        <h2 className='text-center mt-4 mb-2'>Patient Management System</h2> 
+        <h2 className='text-center mt-4 mb-4'>Patient Management System</h2> 
           <table className="table table-striped table-bordered mt-2">
               <thead>
-                    <th>Patient Name</th>
-                    <th>Mobile Number</th>
-                    <th>Mail ID</th>
-                    <th>Date</th>
-                    <th>Day</th>
-                    <th>Gender</th>
-                    <th>Blood Group</th>
-                    <th>Schedule Appointment</th>
+                    <th className='text-center'>Doctor</th>
+                    <th className='text-center'>Patient Name</th>
+                    <th className='text-center'>Mobile Number</th>
+                    <th className='text-center'>Mail ID</th>
+                    <th className='text-center'>Date</th>
+                    <th className='text-center'>Day</th>
+                    <th className='text-center'>Gender</th>
+                    <th className='text-center'>Blood Group</th>
+                    <th className='text-center'>Schedule Appointment</th>
 
               </thead>
               <tbody>
@@ -37,6 +38,7 @@ export default class DocterDetails extends Component {
                           this.state.patient.map(
                               patient => 
                             <tr key={patient.userName}>
+                                <td>{patient.name}</td>
                                 <td>{patient.userName}</td>
                                 <td>{patient.mnumber}</td>
                                 <td>{patient.mailid}</td>

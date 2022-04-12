@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import AuthService from '../../../service/auth.service'
+
 function Header() {
   const [currentUser, setCurrentUser] = useState(undefined);
   useEffect(() => {
@@ -41,6 +42,12 @@ function Header() {
           <li className="nav-element ms-3">
             <Link className="navbar-link px-3 py-2 rounded" to="/Epharma">
               E-Pharma
+            </Link>
+          </li>
+
+          <li className="nav-element ms-3">
+            <Link className="navbar-link px-3 py-2 rounded" to="/AboutUs">
+              About Us
             </Link>
           </li>
 

@@ -129,52 +129,16 @@ const AppointmentPay=()=>  {
         return (
 
         <div className='container col-4 border mt-5 mb-5'>
-
+            <h1 className='text-center'>Confirm and Pay</h1>
             <form>    
-            <div className='form-group mt-4'>
-                 <label><b>Patient Name</b></label>
-                 <Input type='text' placeholder="Enter Your Name"  name='name' id='name'
-                  onChange={
-                  (e) => {
-                      setName({ ...name, name: e.target.value });
-                  }}  />
-            </div>
-            
-            {/* <div className='form-group' >
-                 <label><b>Address</b></label>
-                 <Input type='text' placeholder=" (Home No,Building,Street,Area,City,State)" name='address' id='address'
-                  onChange={
-                  (e) => {
-                      setAddress({ ...address, address: e.target.value });
-                  }}  />
-            </div>    
-
-            <div className='form-group' >  
-                <label><b>Pincode</b></label>
-                 <Input type='number' placeholder="Enter Your Pincode"  name='pincode' id='pincode'
-                  onChange={
-                  (e) => {
-                      setPincode({ ...pincode, pincode: e.target.value });
-                  }}  />
-            </div> */}
-            
-            {/* <div className='form-group' >
-                 <label><b>Mobile No.</b></label>
-                 <Input type='number' placeholder="Enter Your Mobile Number" name='mobile' id='mobile'
-                  onChange={
-                  (e) => {
-                      setMobile({ ...mobile, mobile: e.target.value });
-                  }}  />
-            </div> */}
-
-                 {/* <label><b>Amount</b></label>
-                 <Input name="amt" id="amount" value={amount.amount}
-                   onChange={
-                     (e) => {
-                         setAmount({ ...amount, amount: e.target.value });
-                     }
-                 }
-                 /> */}
+                    <div className='form-group mt-4'>
+                        <label><b>Patient Name</b></label>
+                        <Input type='text' placeholder="Enter Your Name"  name='name' id='name'
+                        onChange={
+                        (e) => {
+                            setName({ ...name, name: e.target.value });
+                        }}  />
+                    </div>
 
                 <br></br>
                 <div className='form-group'>
@@ -185,11 +149,11 @@ const AppointmentPay=()=>  {
                     </select>
                 </div> 
 
-                   <br/>
+                <br/>
                 
 
             </form> 
-            <Button onClick={handleAmount} type="submit" color="success" className="btn-block">Pay</Button>
+            <Button onClick={handleAmount} type="submit" color="success" className="btn-block btn-lg text-light">Pay</Button>
         </div>
 
 
